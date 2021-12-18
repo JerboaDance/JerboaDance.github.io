@@ -1,6 +1,5 @@
 ---
 name: Gabe Maddox
-status: active
 ---
 Gabe is excited to be dancing again after spending the last 3 years making two tiny humans from scratch.
 

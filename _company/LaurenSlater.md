@@ -1,6 +1,5 @@
 ---
 name: Lauren Slater
-status: active
 ---
 Lauren Christina Slater grew up and trained in sunny Encinitas, CA., studying dance and theater with Janice Lee, Carol Mead, Jean Isaacs, Faith Jensen-Ismay, Tom Hansen, Currie Peterson, and Sue Gilson. Beginning at age 10, she attended pre-professional training programs on scholarship at The Kirov Academy, BalletMet and Pennsylvania Ballet’s Rock School, where she was also a trainee. 
 
