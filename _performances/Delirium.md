@@ -8,7 +8,7 @@ upcoming-show:
         - 2/12 7:00pm
         - 2/12 9:00pm
         - 2/13 2:00pm
-    bpt-id: TBD
+    bpt-id: 5337210
     location: YawTheater
     company: [StellaKutz, JaimeWaliczek, WarrenWoo, ChristopherEMontoya, AngelaSchmidt, SeanCalavan]
     highlights:
@@ -29,7 +29,7 @@ photographs:
         id: /assets/performances/AnimalNature/header.jpg
         featured: [RenadoTozer, AndresLopez]
 ---
-Jerboa Dance is back for another cabaret show! *Delirium* will take you on a wild ride filled with dance, acrobatics, circus, and more all curated by our fabulous emcee. Expect our signature style and playfulness as we celebrate the ability to perform **LIVE** for our audiences that we have so sorely missed. This show is all about fun and entertainment including guest appearances from some previous audience-favorites. Come join in the excitement of live performance happening again. We cannot wait to see you!
+Jerboa Dance is back for another cabaret show! *Delirium* will take you on a wild ride filled with dance, acrobatics, circus, and more all curated by our fabulous emcee. Expect our signature style and playfulness as we celebrate the ability to perform **LIVE** for our audiences that we have so sorely missed. This show is all about fun and entertainment including guest appearances from some previous audience favorites. Come join in the excitement of live performance happening again. We cannot wait to see you!
 
 **VIP tickets $60 presale, $75 at the door**  
 Front row seats, champagne, and chocolate included
