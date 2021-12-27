@@ -31,6 +31,10 @@ photographs:
 ---
 Jerboa Dance is back for another cabaret show! *Delirium* will take you on a wild ride filled with dance, acrobatics, circus, and more all curated by our fabulous emcee. Expect our signature style and playfulness as we celebrate the ability to perform **LIVE** for our audiences that we have so sorely missed. This show is all about fun and entertainment including guest appearances from some previous audience favorites. Come join in the excitement of live performance happening again. We cannot wait to see you!
 
+Covid protocols will apply. All attendees must show proof of vaccination or a negative covid test at the door to attend. Masks will be required for this event. Performers are all fully vaccinated and will take a covid test prior to the show weekend, but they will be unmasked during the performance. For more information on safety measures, please email info@jerboadance.com.
+
+If you would like to attend, but are unable to afford the ticket price, please let us know. Jerboa Dance wants to keep the arts accessible for as many people as possible.
+
 **VIP tickets $60 presale, $75 at the door**  
 Front row seats, champagne, and chocolate included
 

@@ -1,5 +1,5 @@
 ---
-name: Christopher E Montoya
+name: Christopher E. Montoya
 status: active
 ---
 Christopher E. Montoya was born in the small town of St. Johns, Arizona but grew up in South Phoenix. Mr. Montoya began his academic journey with the University of Arizona, taking time off periodically to work with professional dance companies. He started his professional career with Gus Giordano Jazz Dance Chicago as a second company member. He continued his career with David Taylor Dance Theatre, Scorpius Dance Theatre, and Center Dance Ensemble, guesting periodically with Queen City Ballet and Legacy Dance Theater. He also enjoyed dancing on pointe with Les Ballets Trockadero de Monte Carlo, performing as Doris Vidanya around the world, including Japan, Israel, France, Austria, Brazil, Chile, Finland, Spain, and Italy. 

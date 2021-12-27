@@ -28,6 +28,7 @@ function Resize-Image {
     $originalImage.Dispose()
 }
 
+Add-Type -Assembly System.Drawing
 get-childitem *.jpg -Recurse | ForEach-Object {
     if (-not $_.FullName.EndsWith(".small.jpg")) {
         if ($_.BaseName -eq "header" ) {
