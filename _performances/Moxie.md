@@ -1,26 +1,27 @@
 ---
 name: Moxie
 prior-shows:
-    dates: February 14th, 15th, 21st, 22nd 2020
-    location: YawTheater
-    company: [LauranDrackett, AnjaKellnerRogers, StellaKutz, GabeMaddox, LaurenSlater, ConstanzeVillines, JaimeWaliczek, WarrenWoo]
-    highlights:
-        -
-            name: Sean Calavan
-            role: Master of Ceremonies
-            url: "/company/SeanCalavan.html"
-        -
-            name: Jaime Waliczek
-            role: Choreographer
-            url: "/company/JaimeWaliczek.html"
-        -
-            name: Emma Curtiss
-            role: Cyr wheel
-            url: "/company/EmmaCurtiss.html"
-        -
-            name: Tae Phoenix
-            role: Musician
-            url: https://taephoenix.com/ 
+    -
+        dates: February 14th, 15th, 21st, 22nd 2020
+        location: YawTheater
+        company: [LauranDrackett, AnjaKellnerRogers, StellaKutz, GabeMaddox, LaurenSlater, ConstanzeVillines, JaimeWaliczek, WarrenWoo]
+        highlights:
+            -
+                name: Sean Calavan
+                role: Master of Ceremonies
+                url: "/company/SeanCalavan.html"
+            -
+                name: Jaime Waliczek
+                role: Choreographer
+                url: "/company/JaimeWaliczek.html"
+            -
+                name: Emma Curtiss
+                role: Cyr wheel
+                url: "/company/EmmaCurtiss.html"
+            -
+                name: Tae Phoenix
+                role: Musician
+                url: https://taephoenix.com/ 
 photographs:
     -
         id: /assets/performances/AnimalNature/header.jpg
