@@ -23,7 +23,6 @@ upcoming-show:
         -
             name: Jessica Glein
             role: Pole Performer
-            url: "/company/JessicaGlein.html"
 photographs:
     -
         id: /assets/performances/AnimalNature/header.jpg
