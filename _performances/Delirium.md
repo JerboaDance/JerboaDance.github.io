@@ -13,6 +13,10 @@ upcoming-show:
     company: [StellaKutz, JaimeWaliczek, WarrenWoo, ChristopherEMontoya, AngelaSchmidt, SeanCalavan]
     highlights:
         -
+            name: Brenna Duffitt
+            role: Master of Ceremonies
+            url: "/company/BrennaDuffitt.html"
+        -
             name: Jaime Waliczek
             role: Choreographer
             url: "/company/JaimeWaliczek.html"
