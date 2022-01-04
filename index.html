@@ -7,8 +7,8 @@ permalink: /index.html
 {% if upcoming-performance %}        
 <div class="upcoming-performance">
     <a href="{{upcoming-performance.url}}">
-        <h1>{{ upcoming-performance.name }}</h1> 
-        <h2>{{ upcoming-performance.upcoming-show.dates }}</h2>
+        <h2>{{ upcoming-performance.name }}</h2> 
+        <h3>{{ upcoming-performance.upcoming-show.dates }}</h3>
     </a>
     
     {% include venue.html show=upcoming-performance.upcoming-show %}
