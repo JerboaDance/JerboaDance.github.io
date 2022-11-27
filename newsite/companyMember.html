@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <script src="/scripts/populateHeader.js" type="module"></script>
+    <script type="module">
+      import { companyMembers } from "/scripts/database.js";
+      const url = new URL(document.location);
+      const companyMemberId = url.searchParams.get("companyMemberId");
+      // check for valid company member
+      if (companyMemberId && companyMembers[companyMemberId]) {
+        const companyMember = companyMembers[companyMemberId];
+        
+        const name = document.getElementById("name");
+        const role = document.getElementById("role");
+        const bio = document.getElementById("bio");
+
+        name.innerText = companyMember.name;
+        bio.innerHTML = companyMember.bio
+        if (companyMember.role) {
+          role.innerText = companyMember.role;
+        } else {
+          role.hidden = true;
+        }
+
+      } else {
+        const main = document.getElementById("main");
+        main.innerHTML = "Company member not found";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="contentWrapper">
+      <header id="header"></header>
+      <main id="main">
+        <div id="headshot">
+          <img src="" alt =""/>
+          <p>Photo credit</p>
+        </div>
+        <div class="bio-title">
+            <h1 id="name"></h1>
+            <h2 id="role"></h2>  
+        </div>  
+        <div id="bio" class="bio"></div>
+      </main>
+    </div>
+  </body>
+</html>
