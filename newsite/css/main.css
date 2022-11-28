@@ -174,6 +174,40 @@ nav li:hover a:hover {
 }
 
 
+footer {
+  background-color: var(--light-gray-color);
+  padding: 1em;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  column-count: 3;
+}
+footer a {
+  color: var(--text-black-color);
+}
+footer > div {
+  display: inline-block;
+}
+footer div {
+  padding: 0 5px;
+  margin: 0 auto;
+  width: auto;
+}
+.contact-info div {
+  padding: 0;
+  text-align: center;
+}
+.contact-info a {
+  display: inline-block;
+  padding: .25em 7px;
+}
+.social-media-icons img {
+  width: 29px;
+  height: 29px;
+}
+
+
 .upcoming-performance {
   padding-bottom: 3em;
 }

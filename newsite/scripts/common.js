@@ -26,4 +26,11 @@ function populateHeader() {
     })
 }
 
+async function populateFooter() {
+    const footerHtml = await (await fetch('/footer.html')).text();
+    let footer = document.getElementById('footer');
+    footer.innerHTML = footerHtml;
+}
+
 populateHeader();
+populateFooter();
