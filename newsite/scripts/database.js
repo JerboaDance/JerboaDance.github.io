@@ -490,18 +490,20 @@ const photographers = {
 
 const shows = {
   delirium: {
+    id: "delirium",
     name: "Delirium",
     description: `Jerboa Dance is back for another cabaret show! <i>Delirium</i> will take you on a wild ride filled with dance, acrobatics, circus, and more all curated by our fabulous emcee. Expect our signature style and playfulness as we celebrate the ability to perform <b>LIVE</b> for our audiences that we have so sorely missed. This show is all about fun and entertainment including guest appearances from some previous audience favorites. Come join in the excitement of live performance happening again. We cannot wait to see you!
-
+    <p>
     Covid protocols will apply. All attendees must show proof of vaccination or a negative covid test at the door to attend. Masks will be required for this event. Performers are all fully vaccinated and will take a covid test prior to the show weekend, but they will be unmasked during the performance. For more information on safety measures, please email info@jerboadance.com.
-    
+    <p>
     If you would like to attend, but are unable to afford the ticket price, please let us know. Jerboa Dance wants to keep the arts accessible for as many people as possible.
     `,
     performances: [
       {
         dates: "February 11th, 12th, and 13th 2022",
         showtimes: [ "2/11 7:00pm", "2/11 9:00pm", "2/12 7:00pm", "2/12 9:00pm", "2/13 2:00pm"],
-        endDate: new Date(2023,2,14),
+        startDate: new Date(2023, 2, 11),
+        endDate: new Date(2023, 2, 14),
         venue: venues.yawTheater,
         bptId: 5337210,
         ticketTiers: [
@@ -532,6 +534,7 @@ const shows = {
     ]
   },
   moxie: {
+    id: "moxie",
     name: "Moxie",
     description: `“Moxie” – force of character, determination, or know-how
     <p>
@@ -563,6 +566,7 @@ const shows = {
     ]
   },
   reconstruct: {
+    id: "reconstruct",
     name: "Reconstruct",
     description: `Jerboa Dance's Jaime Waliczek created new work with Stella Kutz and performed with the Gray for this contemporary show.  
     <p>
@@ -584,6 +588,7 @@ const shows = {
     ]
   },
   embrace:{
+    id: 'reconstruct',
     name: "Embrace",
     description:`Jerboa delights with another cabaret filled with entertainment and physicality. We will dazzle you with dance, music, acrobatics, circus, and burlesque. Join us on a journey from the jazz club to the apocalypse while we explore power and gender. Come embrace life in all its weirdness with these fantastic performers.
     <p>
@@ -615,6 +620,7 @@ const shows = {
     ]
   },
   animalNature: {
+    id: "animalNature",
     name: "Animal Nature",
     description: `Jerboa Dance presented an evening of revelry and sensuality, journeying from political to mystical. Acts featured Jerboa’s signature athletic and emotional style. Special guests included live music, circus arts, burlesque, and more. Friday and Saturday evening shows were followed by live DJs.
     `,
@@ -649,6 +655,7 @@ const shows = {
     ]
   },
   continuum: {
+    id: "continuum",
     name: "continuum",
     description:`<i>continuum</i> is an exploration the complexities of human relationships and the patterns we fall into, both good and bad. As is Jerboa Dance’s style, it is an acrobatic, energetic work relying on raw emotion and the strong technical background of the dancers to draw in the audience. Rather than a story with a clear beginning and end, continuum is a window into the moments of our lives.
     `,
@@ -707,9 +714,10 @@ const shows = {
     ]
   },
   transformation: {
+    id: "transformation",
     name: "Transformation",
-   description:`Jerboa Dance returned for the second time in 2016 with another new work, Transformation, an athletic, modern exploration of human development from childhood to adulthood, dysfunction, and relationships.`,
-   performances:[
+    description:`Jerboa Dance returned for the second time in 2016 with another new work, Transformation, an athletic, modern exploration of human development from childhood to adulthood, dysfunction, and relationships.`,
+    performances:[
      {
          dates: "Jun 24th & 25th, 2016",
          venue: venues.eriksonTheater,
@@ -734,6 +742,7 @@ const shows = {
      ]
    },
   luminous:{
+    id: "luminous",
     name:"Luminous",
     description:`After a four year hiatus, Jerboa Dance is back! Come in out of the darkness and join us for a fun evening of dance, sexiness, and a DJ’d afterparty. Be entertained by sultry cabaret, witty dialogue, spinning lights, acrobatics, drag, burlesque, and, of course, the sexier side of our modern, athletic partnering.
     <p>
@@ -766,6 +775,7 @@ const shows = {
     ]
   },
   genderallySpeaking:{
+    id: "genderallySpeaking",
     name: "Genderally Speaking",
     description: `Jerboa Dance stepped outside its standard modern dance repertoire to bring you something sexier. Genderally Speaking was filled with naughty ballerinas, muscled acrobats, sultry temptresses, divalicious queens, and bawdy burlesque by none other than fantastic <a href="http://randirascal.com/">Randi Rascal</a>!
     `,
@@ -796,6 +806,7 @@ const shows = {
     ]
   },
   backFromTheBrink: {
+    id:"backFromTheBrink",
     name: "Back From the Brink",
     description: `This acrobatic, energetic modern dance ballet takes audiences on a gripping journey into the human psyche. Conceived around the classic stages of grief, Act I begins after a traumatic event leads the dancers to reflect on their lives. Act II moves into the discovery of how to push forward, build new relationships, find community, and hope.
     `,

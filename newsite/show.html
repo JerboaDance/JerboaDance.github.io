@@ -1,8 +1,111 @@
 <html>
   <head>
     <link rel="stylesheet" href="/css/main.css"/>
-    <script src="/scripts/populateHeader.js" type="module"></script>
-    <script src="/scripts/showPage.js" type="module"></script>
+    <script src="/scripts/common.js" type="module"></script>
+    <script type="module">
+      import { shows } from "/scripts/database.js";
+      import {
+        generateName,
+        generateDates, 
+        generateVenue,
+        generateBrownPaperTicketsWidget,
+        generateDescription, 
+        generateTicketTiers,
+        generateShowtimes,
+        generateCastList,
+        checkForUpcomingPerformance, 
+        checkForPriorPerformances 
+      } from "/scripts/shows.js";
+      
+      function generateUpcomingPerformance(show) {
+        const performance = show.performances[0];
+        const datesElement = generateDates(performance.dates);
+        const venueElement = generateVenue(performance.venue);
+
+        let bptElement;
+        if (performance.bptId) {
+          bptElement = generateBrownPaperTicketsWidget(performance.bptId);
+        }
+
+        const descriptionElement = generateDescription(show.description);
+        const ticketTiersElement = generateTicketTiers(performance.ticketTiers);
+        const showtimesElement = generateShowtimes(performance.showtimes);
+        const castListElement = generateCastList(performance);
+
+        return [
+          datesElement, 
+          venueElement, 
+          bptElement, 
+          descriptionElement,
+          ticketTiersElement,
+          showtimesElement,
+          castListElement
+        ];
+      }
+
+      function generatePriorPerformance(priorPerformance) {
+        const priorPerformanceElement = document.createElement("li");
+        const datesElement = generateDates(priorPerformance.dates);
+        const venueElement = generateVenue(priorPerformance.venue);
+        const castListElement = generateCastList(priorPerformance);
+        priorPerformanceElement.append(datesElement, venueElement, castListElement);
+        return priorPerformanceElement;
+      }
+      
+      function populatePage() {
+        const url = new URL(document.location);
+        const showId = url.searchParams.get("showId");
+
+        const mainElement = document.getElementById("main");
+
+        // check for valid show
+        if (showId && shows[showId]) {
+          const show = shows[showId];
+          
+          const nameElement = generateName(show.name);
+          mainElement.append(nameElement);
+
+          if (show.performances && show.performances.length > 0){
+            const hasUpcomingPerformance = checkForUpcomingPerformance(show);
+            const hasPriorPerformances = checkForPriorPerformances(show);
+
+            if (hasUpcomingPerformance) {
+              mainElement.append(...generateUpcomingPerformance(show));
+            } else {
+              mainElement.append(generateDescription(show.description));
+            }
+
+            if (hasPriorPerformances) {
+              const priorPerformances = document.createElement("div");
+
+              if (hasUpcomingPerformance) {
+                priorPerformances.innerHTML = "<h2>Prior Shows</h2>";
+              }
+
+              const priorPerformancesList = document.createElement("ul");
+              priorPerformancesList.setAttribute("class", "prior-performances");
+              priorPerformances.append(priorPerformancesList);
+
+              let performanceIndex = hasUpcomingPerformance ? 1 : 0;
+              while (performanceIndex < show.performances.length) {
+                const priorPerformance = generatePriorPerformance(show.performances[performanceIndex]);
+                priorPerformancesList.append(priorPerformance);
+                performanceIndex++;
+              }
+
+              mainElement.append(priorPerformances);
+            }
+          } else {
+            mainElement.innerHTML = "This show has no performances";
+          }
+        } else {
+          mainElement.innerHTML = "Show not found";
+        }
+      }
+
+      populatePage();
+    </script>
+
   </head>
   <body>
     <div class="bodyWrapper">
@@ -12,7 +115,6 @@
           <img src="" alt =""/>
           <p>Photo credit</p>
         </div>
-        <h1 id="name"></h1>
       </main>
     </div>
   </body>

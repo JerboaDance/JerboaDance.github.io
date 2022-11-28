@@ -1,14 +1,53 @@
 <html>
   <head>
     <link rel="stylesheet" href="/css/main.css"/>
-    <script src="/scripts/populateHeader.js" type="module"></script>
-    <script src="/scripts/indexPage.js" type="module"></script>
+    <script src="/scripts/common.js" type="module"></script>
+    <script type="module">
+      import { 
+        findNextUpcomingShow,
+        generateLink,
+        generateName,
+        generateDates,
+        generateVenue, 
+        generateBrownPaperTicketsWidget, 
+        generateDescription, 
+        generateTicketTiers,
+        generateShowtimes, 
+        generateCastList 
+      } from "/scripts/shows.js";
+      
+      function populatePage() {
+        const nextUpcomingShow = findNextUpcomingShow();
+        if (nextUpcomingShow) {
+          const performance = nextUpcomingShow.performances[0];
+
+          const bptWidget = generateBrownPaperTicketsWidget(performance.bptId);
+
+          const link = generateLink(nextUpcomingShow);
+          link.setAttribute("class", "index-upcoming");
+          const name = generateName(nextUpcomingShow.name);
+          const dates = generateDates(performance.dates);
+          link.innerHTML = "";
+          link.append(name, dates);
+
+          const venue = generateVenue(performance.venue);
+          const description = generateDescription(nextUpcomingShow.description);
+          const ticketTiers = generateTicketTiers(performance.ticketTiers);
+          const showtimes = generateShowtimes(performance.showtimes);
+          const castList = generateCastList(performance);
+        
+          const mainElement = document.getElementById("main");
+          mainElement.prepend(bptWidget, link, venue, description, ticketTiers, showtimes, castList);
+        }
+      }
+      populatePage();
+    </script>
   </head>
   <body>
     <div class="bodyWrapper">
       <header id="header"></header>
-      <main>
-        HOME PAGE
+      <main id="main">
+        Teaser video goes here
       </main>
     </div>
   </body>

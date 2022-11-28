@@ -1,4 +1,11 @@
+
 import { shows } from "/scripts/database.js";
+
+function generateLink(show) {
+  const link = document.createElement("a");
+  link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${shows.name}</a>`);
+  return link;
+}
 
 function generateHighlight(highlight) {
   const highlightElement = document.createElement("li");
@@ -58,10 +65,16 @@ function generateVenue(venue){
   return venueElement;
 }
 
-function generateDates(date){
+function generateName(name){
+  const nameElement = document.createElement("h1");
+  nameElement.innerText = name;
+  return nameElement;
+}
+
+function generateDates(dates){
   const datesElement = document.createElement("h2");
   datesElement.setAttribute("class", "show-dates");
-  datesElement.innerText = date;
+  datesElement.innerText = dates;
   return datesElement;
 }
 
@@ -120,86 +133,46 @@ function generateDescription(description){
   return descriptionElement;
 }
 
-function generateUpcomingPerformance(show) {
-  const performance = show.performances[0];
-  const datesElement = generateDates(performance.dates);
-  const venueElement = generateVenue(performance.venue);
-
-  let bptElement;
-  if (performance.bptId) {
-    bptElement = generateBrownPaperTicketsWidget(performance.bptId);
-  }
-
-  const descriptionElement = generateDescription(show.description);
-  const ticketTiersElement = generateTicketTiers(performance.ticketTiers);
-  const showtimesElement = generateShowtimes(performance.showtimes);
-  const castListElement = generateCastList(performance);
-
-  return [
-    datesElement, 
-    venueElement, 
-    bptElement, 
-    descriptionElement,
-    ticketTiersElement,
-    showtimesElement,
-    castListElement
-  ];
+function checkForUpcomingPerformance(show) {
+  return show.performances 
+    && show.performances.length > 0 
+    && show.performances[0].endDate > Date.now();
 }
 
-function generatePriorPerformance(priorPerformance) {
-  const priorPerformanceElement = document.createElement("li");
-  const datesElement = generateDates(priorPerformance.dates);
-  const venueElement = generateVenue(priorPerformance.venue);
-  const castListElement = generateCastList(priorPerformance);
-  priorPerformanceElement.append(datesElement, venueElement, castListElement);
-  return priorPerformanceElement;
+function checkForPriorPerformances(show) {
+  const hasUpcomingPerformance = checkForUpcomingPerformance(show);
+  return !hasUpcomingPerformance || (hasUpcomingPerformance && show.performances.length > 1);
 }
 
-const url = new URL(document.location);
-const showId = url.searchParams.get("showId");
-
-const mainElement = document.getElementById("main");
-
-// check for valid show
-if (showId && shows[showId]) {
-  const show = shows[showId];
-  
-  const nameElement = document.getElementById("name");
-  nameElement.innerText = show.name;
-
-  if (show.performances && show.performances.length > 0){
-    const hasUpcomingPerformance = (show.performances[0].endDate > Date.now());
-    const hasPriorPerformances = !hasUpcomingPerformance || (hasUpcomingPerformance && show.performances.length > 1);
-
-    if (hasUpcomingPerformance) {
-      mainElement.append(...generateUpcomingPerformance(show));
-    } else {
-      mainElement.append(generateDescription(show.description));
-    }
-
-    if (hasPriorPerformances) {
-      const priorPerformances = document.createElement("div");
-
-      if (hasUpcomingPerformance) {
-        priorPerformances.innerHTML = "<h2>Prior Shows</h2>";
+function findNextUpcomingShow() {
+  let nextUpcomingShow;
+  Object.keys(shows).forEach(showId => {
+    const show = shows[showId];
+    if (checkForUpcomingPerformance(show)) {
+      if (!nextUpcomingShow) {
+        nextUpcomingShow = show;
+      } else {
+        const nextUpcomingPerformance = nextUpcomingShow.performances[0];
+        if  (nextUpcomingPerformance.startDate > show.performances[0].startDate) {
+          nextUpcomingShow = show;
+        }
       }
-
-      const priorPerformancesList = document.createElement("ul");
-      priorPerformancesList.setAttribute("class", "prior-performances");
-      priorPerformances.append(priorPerformancesList);
-
-      let performanceIndex = hasUpcomingPerformance ? 1 : 0;
-      while (performanceIndex < show.performances.length) {
-        const priorPerformance = generatePriorPerformance(show.performances[performanceIndex]);
-        priorPerformancesList.append(priorPerformance);
-        performanceIndex++;
-      }
-
-      mainElement.append(priorPerformances);
     }
-  } else {
-    mainElement.innerHTML = "This show has no performances";
-  }
-} else {
-  mainElement.innerHTML = "Show not found";
+  });
+  return nextUpcomingShow;
+}
+
+export {
+  generateLink,
+  generateName,
+  generateDates, 
+  generateVenue,
+  generateBrownPaperTicketsWidget,
+  generateDescription, 
+  generateTicketTiers,
+  generateShowtimes,
+  generateCastList,
+  checkForUpcomingPerformance, 
+  checkForPriorPerformances,
+  findNextUpcomingShow
 }
