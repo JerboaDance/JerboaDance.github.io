@@ -503,7 +503,7 @@ const shows = {
         dates: "February 11th, 12th, and 13th 2022",
         showtimes: [ "2/11 7:00pm", "2/11 9:00pm", "2/12 7:00pm", "2/12 9:00pm", "2/13 2:00pm"],
         startDate: new Date(2023, 2, 11),
-        endDate: new Date(2023, 2, 14),
+        endDate: new Date(2023, 2, 13),
         venue: venues.yawTheater,
         bptId: 5337210,
         ticketTiers: [
@@ -545,6 +545,8 @@ const shows = {
     performances: [
       {
         dates: "February 14th, 15th, 21st, 22nd 2020",
+        startDate: new Date(2020, 2, 14),
+        endDate: new Date(2020, 2, 22),
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek, 
@@ -579,6 +581,8 @@ const shows = {
     performances: [
       {
         dates: "May 31st - June 2nd 2019",
+        startDate: new Date(2019, 5, 31),
+        endDate: new Date(2019, 6, 2),
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek, 
@@ -597,6 +601,8 @@ const shows = {
     performances: [
       {
         dates: "February 14th, 15th, 16th 2019",
+        startDate: new Date(2019, 2, 14),
+        endDate: new Date(2019, 2, 16),
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -627,6 +633,8 @@ const shows = {
     performances: [
       {
         dates: "February 9th, 10th, 11th 2018",
+        startDate: new Date(2018, 2, 9),
+        endDate: new Date(2018, 2, 11),
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -662,6 +670,8 @@ const shows = {
     performances: [
       {
         dates: "September 1st & 3rd, 2017 (Bumbershoot)",
+        startDate: new Date(2017, 9, 1),
+        endDate: new Date(2017, 9, 3),
         venue: venues.centerHouseTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -679,6 +689,8 @@ const shows = {
       },
       {
         dates: "March 24th, 25th, 29th, & April 1st, 2017",
+        startDate: new Date(2017, 3, 24),
+        endDate: new Date(2017, 4, 1),
         venue: venues.centerHouseTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -696,6 +708,8 @@ const shows = {
       },
       {
         dates: "June 4th & 5th, 2010",
+        startDate: new Date(2010, 6, 4),
+        endDate: new Date(2010, 6, 5),
         venue: venues.actTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -720,6 +734,8 @@ const shows = {
     performances:[
      {
          dates: "Jun 24th & 25th, 2016",
+         startDate: new Date(2016, 6, 24),
+         endDate: new Date(2016, 6, 25),
          venue: venues.eriksonTheater,
          companyMembers: [
            companyMembers.jaimeWaliczek,
@@ -751,6 +767,8 @@ const shows = {
     performances: [
       {
         dates: "February 12th, 13th, & 14th 2016",
+        startDate: new Date(2016, 2, 12),
+        endDate: new Date(2016, 2, 14),
         venue: venues.velocityDanceCenter,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -782,6 +800,8 @@ const shows = {
     performances:[
       {
         dates: "August 20th, 2010",
+        startDate: new Date(2010, 8, 20),
+        endDate: new Date(2010, 8, 20),
         venue: venues.centerHouseTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -813,6 +833,8 @@ const shows = {
     performances: [
       {
         dates: "September 17th & 18th, 2010",
+        startDate: new Date(2010, 9, 17),
+        endDate: new Date(2010, 9, 18),
         venue: venues.actTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -830,6 +852,8 @@ const shows = {
       },
       {
         dates: "February 13th & 14th, 2009",
+        startDate: new Date(2009, 2, 13),
+        endDate: new Date(2009, 2, 14),
         venue: venues.actTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -847,6 +871,8 @@ const shows = {
       },
       {
         dates: "November 14th, 15th, 16th, & 17th, 2007",
+        startDate: new Date(2007, 11, 14),
+        endDate: new Date(2007, 11, 17),
         venue: venues.hudsonGuildTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,

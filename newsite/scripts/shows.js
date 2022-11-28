@@ -1,4 +1,3 @@
-
 import { shows } from "/scripts/database.js";
 
 function generateLink(show) {

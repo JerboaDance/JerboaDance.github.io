@@ -20,6 +20,8 @@ function populateHeader() {
         if (nextUpcomingShow) {
             const upcomingShowElement = document.getElementById("upcomingShow");
             upcomingShowElement.innerHTML = `<a href="/show.html?showId=${nextUpcomingShow.id}">${nextUpcomingShow.name}</a>`;
+        } else {
+            // TODO donate?
         }
     })
 }

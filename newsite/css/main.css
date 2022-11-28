@@ -52,6 +52,48 @@ main {
   padding: 0em 3em 3em 3em;
 }
 
+
+.two-columns {
+  padding-top: 1.5em;
+}
+.two-columns ul {    
+  padding-top: 1em;
+}
+.two-columns h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.two-columns li {
+  list-style: none;
+  padding-top: 0;
+  margin-bottom: 1.5em;
+}
+.two-columns h2{
+  font-size: 1.17em;
+  font-weight: bold;
+}
+.two-columns h3{
+  padding-top: .15em;
+  font-size: 1em;
+  color: var(--gray-color);
+}
+.two-columns p{
+  padding-top: .3em;
+}
+
+@media (min-width: 40em) {
+  .two-columns ul {
+      column-count: 2;
+  }
+  .two-columns li {
+      overflow: hidden; /* Fix for firefox and IE 10-11  */
+      -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+      page-break-inside: avoid; /* Firefox */
+      break-inside: avoid; /* IE 10+ */
+      break-inside: avoid-column;
+  }
+}
+
 .bodyWrapper {
   background-color: var(--white-color);
   max-width: var(--content-max-width);
@@ -217,4 +259,11 @@ nav li:hover a:hover {
 .bio-image p {
   text-align: center;
   font-size: .75em;
+}
+.bio-preview div {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
