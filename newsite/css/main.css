@@ -25,20 +25,31 @@ body {
   background-color: var(--gray-color);
   font-family: "Lato";
   margin: 0;
-  padding: 0;
 }
 ul, ol, li, p, h1, h2, h3 {
-    margin: 0; padding: 0;
+  margin: 0; padding: 0;
 }
 a {
-    text-decoration: none;
-    color: var(--gray-color);
+  text-decoration: none;
+  color: var(--gray-color);
 }
 a:hover {
-    color: var(--purple-color);
+  color: var(--purple-color);
+}
+p, h3 {
+  font-size: 1.25rem;
+  line-height: 1.4em;
+  color: var(--text-black-color);
+  padding-top: 1rem;
+}
+input, label {
+  display: block;
+}
+main {
+  margin: 0em 2em 3em 2em;
 }
 
-.contentWrapper {
+.bodyWrapper {
   background-color: var(--white-color);
   max-width: var(--content-max-width);
   min-height: 100%;
@@ -57,6 +68,7 @@ header a:hover {
 }
 header h1 {
   font-size: 3em;
+  padding-bottom: 0;
   font-family: "Oswald";
   text-transform: uppercase;
 }
@@ -67,6 +79,7 @@ header h2 {
   text-transform: uppercase;
 }
 
+
 nav {    
   background-color: var(--purple-color);
   text-align: center;
@@ -76,6 +89,8 @@ nav {
   list-style: none;
 }
 nav li {
+  font-size: 1.25rem;
+  line-height: 1.4em;
   display: inline-block;
   padding: 0 0.7em;
   position: relative;
@@ -111,4 +126,92 @@ nav li:hover li a {
 }
 nav li:hover a:hover {
   color: var(--text-black-color);
+}
+
+
+.upcoming-performance {
+  padding-bottom: 3em;
+}
+.upcoming-performance h1, .upcoming-performance h2 {
+  display: inline;
+  padding-right: .5em;
+}
+.prior-performances li {
+  list-style: none;
+}
+
+
+.show-dates {
+  padding-top: 1em;
+  padding-bottom: 0;
+}
+.venue {
+  font-weight: normal;
+  font-size: 1.17rem;
+  padding: .25em 0 0 0;
+}
+.show-times {
+  display: block;
+  width: 100%;
+  margin: 0 auto;    
+  padding-top: 1.4em;
+  padding-bottom: 0.6em;
+  text-align: center;
+}
+.show-times li {
+  display: inline-block;
+  margin: 0 auto;    
+  font-size: 1.17rem;
+  list-style: none;
+  font-weight: bold;
+  padding: 0 1em;
+}
+.cast-list {
+  padding-left: 2em;
+  padding-top: .4em;
+  font-size: 1.17rem;
+}
+.cast-list li {
+  list-style: none;
+  color: var(--gray-color);
+  padding-top: 0;
+  font-size: 1.17rem;
+}
+.cast-list h3 {
+  display: inline;
+  color: var(--text-black-color);
+  padding-right: .25em;
+  font-size: 1.17rem;
+}
+.company-list {
+  display: inline;
+}
+.company-list li {
+  display: inline;
+  color: var(--gray-color);
+  font-size: 1.17rem;
+}
+.company-list li:not(:last-child):after {
+  content: ', ';
+}
+
+
+.bio-title {    
+  padding-top: 2em;
+  padding-bottom: .5em;
+}
+.bio-title  h1, .bio-title h2 {
+  display: inline;
+  padding-right: .5em;
+  padding-bottom: 0;
+}
+.bio-image img {
+  display:block;
+  margin: 0 auto;
+  max-width: 60%;
+  max-height: 20em;
+}
+.bio-image p {
+  text-align: center;
+  font-size: .75em;
 }

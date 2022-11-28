@@ -43,7 +43,7 @@ const companyMembers = {
     id: "alexandriaSipe",
     name: "Alexandria Sipe",
     bio: `Alexandra Sipe found movement at University of Idaho, where she quickly got wrapped up in ballet, contemporary dance, and yoga. She spent her college career touring with Dancers, Drummers, Dreamers and traveling to train at American Dance Festival. Sipe is currently a freelance dance artist and has performed for Bridge Project, Converge, and Seattle International Dance Festival as well as in shows in New York City, Portland, and Washington DC.
-    <br/>
+    <p>
     Alexandra teaches bungee fitness and yoga. While not dancing or upside down, Sipe enjoys writing spy novels and hanging out with her cat, Dude.
     `
   },
@@ -68,7 +68,7 @@ const companyMembers = {
     id: "angelaSchmidt",
     name: "Angela Schmidt",
     bio: `Angela Schmidt began her ballet studies at the age of 13 at the Michigan Classical Ballet Company and later at the Metropolitan Ballet Academy. She participated in four seasons of Regional Dance America and attended summer intensives at the Boston Ballet, Kirov Academy in Washington D.C., Burklyn Ballet Theatre, and Ballet Austin. She also received scholarships to Houston Ballet, Ballet West, and ABT Detroit. 
-    <br/>
+    <p>
     Angela took a break from ballet to attend the University of Michigan. Upon moving to New York, she rekindled her love for dance and performed with the Albano Ballet Company, Jersey City Ballet, and appeared in Valentina Kozlova's International Ballet Competition. Upon moving to Seattle she has performed with Concord dance collective, Julie Tobiasson's Ballet Bird, and Dance Conservatory Seattle. She is thrilled to be performing with Jerboa and contributing to the Seattle dance scene.     
     `
   },
@@ -76,9 +76,9 @@ const companyMembers = {
     id: "anjaKellnerRogers",
     name: "Anja Kellner-Rogers",
     bio: `Anja Kellner-Rogers is a dance artist and yoga teacher based in Seattle, WA. Anja grew up in upstate New York, where she began dancing at the age of 4. Throughout her adolescence she trained with various establishments including Broadway Dance Center, Steps on Broadway, NYU Tisch School of the Arts and Giordano Jazz Dance Chicago. Anja attended SUNY Brockport as a dance major where she had the privilege of studying and performing under the direction of artists Bill Evans, David Dorfman, Suzanne Oliver and Juanita Suarez. She went on to graduate summa cum laude from Ithaca College with degrees in Exercise Science and Dance. 
-    <br/>
+    <p>
     Since re-locating to Seattle in 2013, Anja has worked with various choreographers including KT Niehoff, Shannon Stewart, Alyza DelPan-Monley, Noelle Chun, Alice Gosti, Kimberly Holloway and Tim Johnson. She has been collaborating and performing with Karin Stevens Dance since 2015 and she has collaborated with Dark Set Films under the direction of Emily Durand and Brett Love. 
-    <br/>
+    <p>
     When Anja isn’t dancing, she spends most of her time teaching yoga and leading teacher trainings at The Grinning Yogi, as well as showering her one eyed dog with endless love and affection. 
     `
   },
@@ -104,9 +104,9 @@ const companyMembers = {
     id: "christopherEMontoya",
     name: "Christopher E. Montoya",
     bio: `Christopher E. Montoya was born in the small town of St. Johns, Arizona but grew up in South Phoenix. Mr. Montoya began his academic journey with the University of Arizona, taking time off periodically to work with professional dance companies. He started his professional career with Gus Giordano Jazz Dance Chicago as a second company member. He continued his career with David Taylor Dance Theatre, Scorpius Dance Theatre, and Center Dance Ensemble, guesting periodically with Queen City Ballet and Legacy Dance Theater. He also enjoyed dancing on pointe with Les Ballets Trockadero de Monte Carlo, performing as Doris Vidanya around the world, including Japan, Israel, France, Austria, Brazil, Chile, Finland, Spain, and Italy. 
-    <br/>
+    <p>
     Moving to Seattle in 2011, Mr. Montoya completed his undergraduate degree with Cornish College of the Arts, while also performing with Seattle Dance Project and Men In Dance. While at Cornish, his goals shifted from professional work to teaching dance in higher education, which led him to receive his Master of Fine Arts from the University of Washington. He chose the University of Washington dance department because its curriculum and faculty is one of the best in the country, and he knew the program would prepare him for teaching at the collegiate level while assisting him to understand the importance of dance education. A highlight while attending the University of Washington was working with Chamber Dance Company performing works: To Have and To Hold and Moonlight by Shapiro and Smith, Petrousckha’s Room by Michel Fokine, Cloudless by Susan Marshall, and Center of My Heart by Douglas Elkins. Mr. Montoya is most proud of the class that he developed on the Romantic era of ballet with the assistance of Professor Hannah Wiley.
-    <br/>
+    <p>
     After graduate school, Mr. Montoya began working with Spectrum Dance Theater as the Ballet Division Head, which then turned into the School Director. For the last few years he has been teaching open class for Dance Fremont, and was recently enjoying his role as the Managing Director of Dance Fremont. He would like to further develop his studies of ballet history and looks forward to teaching future generations of dancers at <a href="https://www.danceconservatoryseattle.com/">DANCE CONSERVATORY Seattle</a>.
     `
   },
@@ -114,7 +114,7 @@ const companyMembers = {
     id: "constanzeVillines",
     name: "Constanze Villines",
     bio: `Constanze Villines trained at SVN, Tanzprojekt, as well as the Munich Opera dance academy (Bosl Stiftung) until age eleven. She then expanded her dance training to tap, jazz, and contemporary/modern in Los Angeles, Texas, and Seattle. Constnaze has also trained in gymnastics, rhythmical gymnastics, and contact improvisation. She has danced for Brigitta Toma, Tanztheater Salome, Marlo Ariz, Sapience Dance Collective (Sara Sader & Amy Weaver), Cyrus Khambatta, Maya Soto, Alicia Mullikin, and 3 rd Shift Dance (Xaviera Vandermay), amongst others. She has had the pleasure of performing at The Munich Opera, Tanztheater Salome, Tollwood Festival, Dance Experiment Los Angeles, VE’s Standing in the Storm, Body Politics, Converge Dance Festival, The Seattle Intl. Dance Festival, and more. 
-    <br/>
+    <p>
     As a choreographer, Constanze’s work has been shown in Germany as part of the Tollwood Festival and throughout the country. Since moving to Seattle in 2009, she has worked and collaborated with different Seattle artists and since 2013 produces, together with Cyrus Khambatta, The Seattle International Dance Festival. She is the managing director of Khambatta Dance Company and since 2014 the artistic director of reflexion Dance Company. Constanze’s choreographic works have been shown throughout Seattle at Velocity Dance Center, Body Politics Festival Tacoma, The Seattle International Dance Festival, The Pocket Theater, Out on a Limb Dance Festival in Olympia, and more. Her work has been commissioned for the 2016 The Glossary at The Neptune Theater and the 2016 LitCrawl.
     `
   },
@@ -146,9 +146,9 @@ const companyMembers = {
     id: "gabeMaddox",
     name: "Gabe Maddox",
     bio: `Gabe is excited to be dancing again after spending the last 3 years making two tiny humans from scratch.
-    <br/>
+    <p>
     She studied in Northern Utah with Sandra Emile of Cache Valley Civic Ballet. In college, studying Modern Dance at Weber State University and then  made her way to the University of Utah, department of Modern Dance.
-    <br/>
+    <p>
     Gabe has been teaching dance to kids and adults in private studios for the past ten years. Her greatest purpose is to kindle a respect and passion for art, performance, and self love through the journey of kinesthetic awareness.
     `
   },
@@ -162,10 +162,10 @@ const companyMembers = {
     id: "jacquelynCorcoran",
     name: "Jacquelyn S. Corcoran",
     bio: `Jacquelyn S. Corcoran Is Co-founder of Underscore Dance Lab, an experimental dance performance company she created with her partner Shakira Rae Adams, currently based out of Seattle WA. She most recently relocated from Ohio where for the past few years she has performed as a solo artist in many showcases and with multiple choreographers in the Ohio/Kentucky area. She has taught contemporary and modern dance at Contemporary Dance Theater for the past eight years as well as performed in and co produced their showcase series Performance and Time Arts. She was also a multi scholarship recipient at both American Dance Festival and Bates Dance Festival. Jacquelyn was a founding member of MamLuft&Co. Dance in Cincinnati Ohio from 2007-2011, the city’s premier modern dance company. She holds a Bachelor of Arts in Dance from Texas Woman’s University and has had the honor of studying with prolific artists, such as Jesse Zarrit, Kathleen Hermesdorf, David Dorfman, and Larry Keigwin to name a few, in her lifetime. She is forever humbled by her experiences and the many great artists she can say helped inform her dancing body thus far.
-    <br/>
-    <br/>
+    <p>
+    <p>
     “To understand what I am saying, you have to believe that dance is something other than technique. We forget where the movements come from. They are born from life.”
-    <br/>
+    <p>
     ― Pina Bausch
     `
   },
@@ -207,13 +207,13 @@ const companyMembers = {
     id:"laurenSlater",
     name: "Lauren Slater",
     bio: `Lauren Christina Slater grew up and trained in sunny Encinitas, CA., studying dance and theater with Janice Lee, Carol Mead, Jean Isaacs, Faith Jensen-Ismay, Tom Hansen, Currie Peterson, and Sue Gilson. Beginning at age 10, she attended pre-professional training programs on scholarship at The Kirov Academy, BalletMet and Pennsylvania Ballet’s Rock School, where she was also a trainee. 
-    <br/>
+    <p>
     Obsessed with movie musicals of the 1930s-1960s, Lauren loved the expression and glamour of a performers life. The lure of LA led her to work as a professional Rave dancer, sponsored by JNCO Jeans, for almost two years. This opened up her mind of what a dance career could look like, exposing her to the worlds of break/club dance, drag and burlesque. Concurrently, Lauren graduated magna cum laude with a degree in Dance and Kinesiology from UCSB.
-    <br/>
+    <p>
     Upon graduating, she moved to Europe, where she performed works of William Forsythe with members of the Frankfort Ballet, as well as working with post-modern artist Anne Therese de Keersmaeker. Settling next in San Francisco, Lauren became a founding member of the contemporary company LEVYdance, and has also danced for Larry Kegwin, Monica Bill Barnes, Christopher Pilafian, San Diego Dance Theater, Mojalet Dance Collective, Abigail Munn, Capacitor (Jodi Lomask), and Monique Jenkinson (Fauxnique). 
-    <br/>
+    <p>
     She moved to Seattle with her husband, musician Doug Major,  in September 2017, where she’s found an artistic home working with Lily Verlaine (House of Verlaine, Verlaine and McCann Productions The Land of the Sweets) and Jerboa Dance. This is her first season with Jerboa Dance and is honored to be working with these great artists! 
-    <br/>
+    <p>
     Lauren is also a professional health coach, yoga teacher and Classical Pilates instructor. She founded HIVE Wellness Consultancy in 2018, with the mission of sharing her knowledge of the body, mind and soul.
     `
   },
@@ -277,7 +277,7 @@ const companyMembers = {
     id: "shakiraRaeAdams",
     name: "Shakira Rae Adams",
     bio: `Shakira Rae Adams is the Co-Founder of Underscore Dance Lab in partnership with Jacquelyn Corcoran. Shakira’s training resides from Ghana, West Africa where she studied with Bernard Woma. Her dance journey began at Bowling Green State University studying under Dr. Halifu Osumare, Tammy Starr and Deborah Tell, while pursuing her Bachelor in Music Education specializing in classical trumpet performance. Shakira loved to move and found such passion in allowing her soul to speak to the world when her words could not. “Dance kept me sane through my education. Dance gave me breathe and brought me to life when the end was far from sight.” Shakira couldn’t learn enough about movement, so she pursued a Master’s of Education in Sports Medicine with an emphasis on kinesiology. As she pursued a MD she found herself with less time to do what she really wanted to do. Directions shifted and she earned her Bachelor of Science in Nursing at the University of Cincinnati’s accelerated nursing program. A year ago she uprooted and moved to Seattle to continue to dive into the arts with her lovely partner. Together they began Underscore Dance Lab to have an outlet to create, explore and share their views on dance. Shakira wears many hats in life to keep her mind active and ever expanding. 
-    <br/>
+    <p>
     “I am not bored, ever! Arts have given me a way to express my inner most thoughts and feelings, an outlet to deal with the stress and a way to tell a story. No matter where times go, the arts live within me and I will continue to make a difference.”
 `
   },
@@ -285,7 +285,7 @@ const companyMembers = {
     id: "shannonAdams",
     name: "Shannon Adams",
     bio: `Shannon comes from Salt Lake City, Utah.  She is a lover of all forms of dance and has been trained in Korean folk dance, jazz, ballet, tap, and modern.  She has also studied at the EDGE Dance studio, Performing Dance Center, Broadway Dance Center, Steps on Broadway, Dancespace/Dance New Amsterdam, Joffrey Ballet School, Parson’s Dance Company Summer Program, and American Dance Festival.  Training at The School at Jacob’s Pillow Jazz Program brought the opportunity to work with such legends as Chet Walker, Patti Wilcox, Luigi, and Matt Mattox.  Mrs. Adams graduated Cum Laude in 2004 from the University of Utah with a BFA in Modern Dance. She was the recipient of two Elizabeth R. Hayes scholarships, as well as the Kennecott Scholars scholarship.  At the University of Utah, she had the fortunate opportunity to study with Abby Fiat, Donna White, Steve Koester, Brent Schneider, Tandy Beal, Jon Scoville, Kaye Richards, Pamela Geber, and Eric Handman.  Shannon was also a guest performer with Utah Ballet, and she performed in Performing Dance Company working with such choreographers as Ronald K. Brown, Doug Elkins, and David Dorfman.  
-    <br/>
+    <p>
     Shannon has a great love and passion for teaching. She has taught and choreographed for various studios and high-schools in Utah, Texas and in the Seattle area.  Outside of Shannon’s voracious appetite for all things dance, she is seen chasing her three kids, spending time with family, eating good food, people watching, and going to live music concerts.  
     `
   },
@@ -293,11 +293,11 @@ const companyMembers = {
     id: "stellaKutz",
     name: "Stella Kutz",
     bio: `Stella was born and raised in South Seattle and studied at Spectrum Dance Theater  under Dale A. Merrill.  Stella received her Bachelor of Fine Arts in Performance Choreography from the University of Nevada, Las Vegas.  She has performed internationally at the Edinburgh and Montreal Fringe Festivals.  
-    <br/>
+    <p>
     Upon graduation, Stella furthered her training with a Pilates Certification.  She has since completed a teacher training study program in yoga under Richard Freeman in Boulder, Colorado.  
-    <br/>    
+    <p>    
     Stella has performed with notable artists, such as:  Relay Dance Collective, Pat Graney, Gail Gilbert,  Kristina Dillard, Paula Peters, Rhonda Cinotto, Dance Contemporary, Jerboa Dance, and many more.
-    <br/>    
+    <p>    
     Currently, Stella is pursuing her passion for performance by creating an interactive performance and rehearsal space for like minded artists and communities.
     `
   },
@@ -376,9 +376,9 @@ const highlights = {
     name: "Emma Curtiss",
     role: "Cyr wheel",
     bio: `Emma Curtiss has been performing circus for many years now. She currently coaches at the School of Acrobatics and New Circus Arts in Seattle and is one of the founders of the IMPulse Circus Collective.
-    <br/>
+    <p>
     Always seeking out ways to revolve, orbit and glide, her focus of late has been on her Roue Cyr (Cyr wheel).
-    <br/>
+    <p>
     Her disciplines also include Aerials and Fan Juggling.
     `
   },
@@ -499,7 +499,9 @@ const shows = {
     `,
     performances: [
       {
-        when: "February 11th, 12th, and 13th 2022",
+        dates: "February 11th, 12th, and 13th 2022",
+        showtimes: [ "2/11 7:00pm", "2/11 9:00pm", "2/12 7:00pm", "2/12 9:00pm", "2/13 2:00pm"],
+        endDate: new Date(2023,2,14),
         venue: venues.yawTheater,
         bptId: 5337210,
         companyMembers: [
@@ -522,18 +524,18 @@ const shows = {
   moxie: {
     name: "Moxie",
     description: `“Moxie” – force of character, determination, or know-how
-
+    <p>
     Jerboa Dance Company will take you on an emotional escapade through time, from a 1920’s beach party to a 1950’s technological snafu and the timeless landscape inside our minds. The emcee will lead you on a journey full of dance, acrobatics, music, and more. You will be riveted by these fantastic artists as they tantalize and perform their hearts out in this evening length cabaret. 
-    
+    <p>
     If there is a concept that Jerboa embodies, moxie is it. We explore complex themes and have multiple meanings inside every work. While we always have a story to tell, we hope that it is both compelling and entertaining for our audiences. Our art is intended to be innovative and thought provoking as to inspire your own interpretation. We love when our art gets taken in a new direction with different perspectives.
     `,
     performances: [
       {
-        when: "February 14th, 15th, 21st, 22nd 2020",
+        dates: "February 14th, 15th, 21st, 22nd 2020",
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek, 
-          companyMembers.laurenDracket, 
+          companyMembers.lauranDracket, 
           companyMembers.anjaKellnerRogers,
           companyMembers.stellaKutz,
           companyMembers.gabeMaddox,
@@ -553,16 +555,16 @@ const shows = {
   reconstruct: {
     name: "Reconstruct",
     description: `Jerboa Dance's Jaime Waliczek created new work with Stella Kutz and performed with the Gray for this contemporary show.  
-
+    <p>
     RECONSTRUCT is the first enterprise of Pitch+Roll Productions, dedicated to building community and audience in the dance and art scene in Seattle. In this first installment, Jaime Waliczek of Jerboa Dance and Stella Kutz of Yaw Theater teamed up to create Notions//Forms, joined by Beth Terwilliger's <a href="https://thegraydance.com">The Gray</a>, building on the theme of reconstruction.
-    
+    <p>
     Situations can overwhelm us, and reduce us to splinters and rubble. Often times, this is a necessary tribulation, just the beginning of us coming through to be better, more actualized humans. The wound is the place where the light enters you-Rumi. 
-    
+    <p>
     Or perhaps it is the reconfiguring of ideas, the idea that with more knowledge that has been dug up, or differently organized concepts, a new picture is discovered, with more depth and intrigue than before. These ideas are explored by the companies in an evening length dance concert at Yaw Theater, in the Georgetown neighborhood of Seattle, May 31st-June 2nd.
     `,
     performances: [
       {
-        when: "May 31st - June 2nd 2019",
+        dates: "May 31st - June 2nd 2019",
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek, 
@@ -574,12 +576,12 @@ const shows = {
   embrace:{
     name: "Embrace",
     description:`Jerboa delights with another cabaret filled with entertainment and physicality. We will dazzle you with dance, music, acrobatics, circus, and burlesque. Join us on a journey from the jazz club to the apocalypse while we explore power and gender. Come embrace life in all its weirdness with these fantastic performers.
-
+    <p>
     All evening performances will be followed by a jazz and swing afterparty so stay to meet the performers and dance.
     `,
     performances: [
       {
-        when: "February 14th, 15th, 16th 2019",
+        dates: "February 14th, 15th, 16th 2019",
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -608,7 +610,7 @@ const shows = {
     `,
     performances: [
       {
-        when: "February 9th, 10th, 11th 2018",
+        dates: "February 9th, 10th, 11th 2018",
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -642,7 +644,7 @@ const shows = {
     `,
     performances: [
       {
-        when: "September 1st & 3rd, 2017 (Bumbershoot)",
+        dates: "September 1st & 3rd, 2017 (Bumbershoot)",
         venue: venues.centerHouseTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -659,7 +661,7 @@ const shows = {
         ]
       },
       {
-        when: "March 24th, 25th, 29th, & April 1st, 2017",
+        dates: "March 24th, 25th, 29th, & April 1st, 2017",
         venue: venues.centerHouseTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -676,7 +678,7 @@ const shows = {
         ]
       },
       {
-        when: "June 4th & 5th, 2010",
+        dates: "June 4th & 5th, 2010",
         venue: venues.actTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -699,7 +701,7 @@ const shows = {
    description:`Jerboa Dance returned for the second time in 2016 with another new work, Transformation, an athletic, modern exploration of human development from childhood to adulthood, dysfunction, and relationships.`,
    performances:[
      {
-         when: "Jun 24th & 25th, 2016",
+         dates: "Jun 24th & 25th, 2016",
          venue: venues.eriksonTheater,
          companyMembers: [
            companyMembers.jaimeWaliczek,
@@ -724,12 +726,12 @@ const shows = {
   luminous:{
     name:"Luminous",
     description:`After a four year hiatus, Jerboa Dance is back! Come in out of the darkness and join us for a fun evening of dance, sexiness, and a DJ’d afterparty. Be entertained by sultry cabaret, witty dialogue, spinning lights, acrobatics, drag, burlesque, and, of course, the sexier side of our modern, athletic partnering.
-
+    <p>
     VIP tickets got seating in front-row tables with wait-service during the show and celebrated Valentine’s Day in style with these exciting seats with complementary drinks and chocolates.
     `,
     performances: [
       {
-        when: "February 12th, 13th, & 14th 2016",
+        dates: "February 12th, 13th, & 14th 2016",
         venue: venues.velocityDanceCenter,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -759,7 +761,7 @@ const shows = {
     `,
     performances:[
       {
-        when: "August 20th, 2010",
+        dates: "August 20th, 2010",
         venue: venues.centerHouseTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -789,9 +791,9 @@ const shows = {
     `,
     performances: [
       {
-        when: "September 17th & 18th, 2010",
+        dates: "September 17th & 18th, 2010",
         venue: venues.actTheater,
-        cast: [
+        companyMembers: [
           companyMembers.jaimeWaliczek,
           companyMembers.christinaJohnson,
           companyMembers.sarahChampion,
@@ -806,7 +808,7 @@ const shows = {
         ]
       },
       {
-        when: "February 13th & 14th, 2009",
+        dates: "February 13th & 14th, 2009",
         venue: venues.actTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,
@@ -823,7 +825,7 @@ const shows = {
         ]
       },
       {
-        when: "November 14th, 15th, 16th, & 17th, 2007",
+        dates: "November 14th, 15th, 16th, & 17th, 2007",
         venue: venues.hudsonGuildTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek,

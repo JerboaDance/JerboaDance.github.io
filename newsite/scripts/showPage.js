@@ -1,7 +1,6 @@
 import { shows } from "/scripts/database.js";
-import { generateBrownPaperTicketsWidget } from "/scripts/brownPaperTickets.js";
 
-function generateHighlightElement(highlight) {
+function generateHighlight(highlight) {
   const highlightElement = document.createElement("li");
 
   if (highlight.url) {
@@ -32,12 +31,16 @@ function generateCompanyMembersList(performance) {
 
 function generateCastList(performance) {
   const castListElement = document.createElement("ul");
-  castListElement.setAttribute("class", "class-list");
+  castListElement.setAttribute("class", "cast-list");
 
-  performance.highlights.forEach(highlight => {
-    const highlightElement = generateHighlightElement(highlight, /*showRole*/ true);
-    castListElement.append(highlightElement);
-  })
+  // TODO add the emcee
+
+  if (performance.highlights) {
+    performance.highlights.forEach(highlight => {
+      const highlightElement = generateHighlight(highlight);
+      castListElement.append(highlightElement);
+    })
+  }
 
   const companyMembersElement = document.createElement("li");
   companyMembersElement.innerHTML ="<h3>Company</h3>";
@@ -48,37 +51,92 @@ function generateCastList(performance) {
   return castListElement;
 }
 
-function generatePerformance(parentElement, performance, isUpcoming) {
-  const datesElement = document.createElement("h2");
-  datesElement.setAttribute("class", "show-date");
-  datesElement.innerText = performance.when;
-
-  const venue = performance.venue;
+function generateVenue(venue){
   const venueElement = document.createElement("h3");
   venueElement.setAttribute("class", "venue");
   venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
+  return venueElement;
+}
 
-  // For an upcoming show
-  if (isUpcoming) {
-    let bptElement;
-    if (performance.bptId) {
-      bptElement = document.createElement("div");
-      bptElement.innerHTML = generateBrownPaperTicketsWidget(performance.bptId);
-    }
+function generateDates(date){
+  const datesElement = document.createElement("h2");
+  datesElement.setAttribute("class", "show-dates");
+  datesElement.innerText = date;
+  return datesElement;
+}
 
-    const showtimesElement = document.createElement("ul");
-    // TODO fill in show times
+function generateBrownPaperTicketsWidget(bptId) {
+  const bptElement = document.createElement("div");
+  bptElement.setAttribute("class", "tickets");
+  const widgetText = `
+    <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v671.css" /> 
+    <DIV ID="bpt_eventbody">
+        <CENTER>
+            <BR><BR>
+                Brown Paper Tickets Ticket Widget Loading...
+            <BR><BR>
+            <A HREF="https://www.brownpapertickets.com/event/${bptId}">Click Here</A> to visit the Brown Paper Tickets event page.
+        </CENTER>
+        <BR><BR>
+    </DIV>
+    <script src="https://www.brownpapertickets.com/eventwidget.js?event=${bptId}&nodescription=1&notitle=1" type="text/javascript" language="javascript"></script>
+    <script src="https://www.brownpapertickets.com/widget_v671.js?event=${bptId}" type="text/javascript" language="javascript"></script>
+  `;
   
-    const castListElement = generateCastList(performance);
-  
-    parentElement.append(
-      datesElement, 
-      venueElement, 
-      bptElement, 
-      showtimesElement,
-      castListElement
-    );
+  bptElement.innerHTML = widgetText;
+  return bptElement;
+}
+
+function generateShowtimes(showtimes) {
+  if (showtimes) {
+    const showtimesListElement = document.createElement("ul");
+    showtimesListElement.setAttribute("class", "show-times");
+    showtimes.forEach(showtime => {
+      const showtimeElement = document.createElement("li");
+      showtimeElement.innerText = showtime;
+      showtimesListElement.append(showtimeElement);
+    });
+    return showtimesListElement;
   }
+}
+
+function generateDescription(description){
+  const descriptionElement = document.createElement("p");
+  descriptionElement.innerHTML = description;
+  return descriptionElement;
+}
+
+function generateUpcomingPerformance(show) {
+  const performance = show.performances[0];
+  const datesElement = generateDates(performance.dates);
+  const venueElement = generateVenue(performance.venue);
+
+  let bptElement;
+  if (performance.bptId) {
+    bptElement = generateBrownPaperTicketsWidget(performance.bptId);
+  }
+
+  const descriptionElement = generateDescription(show.description);
+  const showtimesElement = generateShowtimes(performance.showtimes);
+  const castListElement = generateCastList(performance);
+
+  return [
+    datesElement, 
+    venueElement, 
+    bptElement, 
+    descriptionElement,
+    showtimesElement,
+    castListElement
+  ];
+}
+
+function generatePriorPerformance(priorPerformance) {
+  const priorPerformanceElement = document.createElement("li");
+  const datesElement = generateDates(priorPerformance.dates);
+  const venueElement = generateVenue(priorPerformance.venue);
+  const castListElement = generateCastList(priorPerformance);
+  priorPerformanceElement.append(datesElement, venueElement, castListElement);
+  return priorPerformanceElement;
 }
 
 const url = new URL(document.location);
@@ -92,11 +150,40 @@ if (showId && shows[showId]) {
   
   const nameElement = document.getElementById("name");
   nameElement.innerText = show.name;
-  
-  const descriptionElement = document.getElementById("showDescription");
-  descriptionElement.innerHTML = show.description;
 
-  generatePerformance(mainElement, show.performances[0], /* upcomingShow */ true);
+  if (show.performances && show.performances.length > 0){
+    const hasUpcomingPerformance = (show.performances[0].endDate > Date.now());
+    const hasPriorPerformances = !hasUpcomingPerformance || (hasUpcomingPerformance && show.performances.length > 1);
+
+    if (hasUpcomingPerformance) {
+      mainElement.append(...generateUpcomingPerformance(show));
+    } else {
+      mainElement.append(generateDescription(show.description));
+    }
+
+    if (hasPriorPerformances) {
+      const priorPerformances = document.createElement("div");
+
+      if (hasUpcomingPerformance) {
+        priorPerformances.innerHTML = "<h2>Prior Shows</h2>";
+      }
+
+      const priorPerformancesList = document.createElement("ul");
+      priorPerformancesList.setAttribute("class", "prior-performances");
+      priorPerformances.append(priorPerformancesList);
+
+      let performanceIndex = hasUpcomingPerformance ? 1 : 0;
+      while (performanceIndex < show.performances.length) {
+        const priorPerformance = generatePriorPerformance(show.performances[performanceIndex]);
+        priorPerformancesList.append(priorPerformance);
+        performanceIndex++;
+      }
+
+      mainElement.append(priorPerformances);
+    }
+  } else {
+    mainElement.innerHTML = "This show has no performances";
+  }
 } else {
   mainElement.innerHTML = "Show not found";
 }
