@@ -100,6 +100,20 @@ function generateShowtimes(showtimes) {
   }
 }
 
+function generateTicketTiers(ticketTiers) {
+  if (ticketTiers) {
+    const ticketTierListElement = document.createElement("ul");
+    ticketTierListElement.setAttribute("class", "ticket-tiers");
+
+    ticketTiers.forEach(ticketTier => {
+      const ticketTierElement = document.createElement("li");
+      ticketTierElement.innerHTML=`<h3>${ticketTier.name}</h3><p>${ticketTier.description}</p>`
+      ticketTierListElement.append(ticketTierElement);
+    })
+    return ticketTierListElement;
+  }
+}
+
 function generateDescription(description){
   const descriptionElement = document.createElement("p");
   descriptionElement.innerHTML = description;
@@ -117,6 +131,7 @@ function generateUpcomingPerformance(show) {
   }
 
   const descriptionElement = generateDescription(show.description);
+  const ticketTiersElement = generateTicketTiers(performance.ticketTiers);
   const showtimesElement = generateShowtimes(performance.showtimes);
   const castListElement = generateCastList(performance);
 
@@ -125,6 +140,7 @@ function generateUpcomingPerformance(show) {
     venueElement, 
     bptElement, 
     descriptionElement,
+    ticketTiersElement,
     showtimesElement,
     castListElement
   ];

@@ -1,4 +1,3 @@
-* add ticket price details
 * make the index page
 * make emcee/highlight page
 * make about page

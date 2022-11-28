@@ -504,6 +504,16 @@ const shows = {
         endDate: new Date(2023,2,14),
         venue: venues.yawTheater,
         bptId: 5337210,
+        ticketTiers: [
+          {
+            name: "VIP tickets $60 presale, $75 at the door",
+            description: "Front row seats, champagne, and chocolate included"
+          },
+          {
+            name: "GA tickets $25 presale, $30 at the door",
+            description: "$5 kids’ tickets for the family-friendly Sunday matinee with kid participation and a shorter program",
+          }
+        ],
         companyMembers: [
           companyMembers.jaimeWaliczek,
           companyMembers.stellaKutz,

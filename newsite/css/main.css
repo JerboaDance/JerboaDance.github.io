@@ -42,11 +42,14 @@ p, h3 {
   color: var(--text-black-color);
   padding-top: 1rem;
 }
+li {
+  list-style: none;
+}
 input, label {
   display: block;
 }
 main {
-  margin: 0em 2em 3em 2em;
+  padding: 0em 3em 3em 3em;
 }
 
 .bodyWrapper {
