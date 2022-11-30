@@ -15,8 +15,11 @@
         generateShowtimes, 
         generateCastList 
       } from "/scripts/shows.js";
+      import { generateYouTubeEmbed } from "/scripts/youTube.js"
       
       function populatePage() {
+        const mainElement = document.getElementById("main");
+        
         const nextUpcomingShow = findNextUpcomingShow();
         if (nextUpcomingShow) {
           const performance = nextUpcomingShow.performances[0];
@@ -35,10 +38,14 @@
           const ticketTiers = generateTicketTiers(performance.ticketTiers);
           const showtimes = generateShowtimes(performance.showtimes);
           const castList = generateCastList(performance);
-        
-          const mainElement = document.getElementById("main");
-          mainElement.prepend(bptWidget, link, venue, description, ticketTiers, showtimes, castList);
+
+          mainElement.append(bptWidget, link, venue, description, ticketTiers, showtimes, castList);
         }
+        
+        const teaserVideo = document.createElement("div")
+        teaserVideo.setAttribute("class", "teaser-video");
+        teaserVideo.append(generateYouTubeEmbed({ id: "GSR_h1AcrU8", aspectRatio:"16x9"}));
+        mainElement.append(teaserVideo);
       }
       populatePage();
     </script>
@@ -47,7 +54,6 @@
     <div class="bodyWrapper">
       <header id="header"></header>
       <main id="main">
-        Teaser video goes here
       </main>
       <footer id="footer"></footer>
     </div>

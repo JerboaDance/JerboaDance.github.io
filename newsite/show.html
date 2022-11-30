@@ -16,6 +16,7 @@
         checkForUpcomingPerformance, 
         checkForPriorPerformances 
       } from "/scripts/shows.js";
+      import { generateYouTubeEmbed } from "/scripts/youTube.js"
       
       function generateUpcomingPerformance(show) {
         const performance = show.performances[0];
@@ -94,6 +95,16 @@
               }
 
               mainElement.append(priorPerformances);
+            }
+
+            if (show.videos && show.videos.length > 0){
+              console.log(JSON.stringify(show.videos))
+              show.videos.forEach(video => {
+                const teaserVideo = document.createElement("div")
+                teaserVideo.setAttribute("class", "performance-clip");
+                teaserVideo.append(generateYouTubeEmbed({ id: video.id, aspectRatio:video.aspectRatio}));
+                mainElement.append(teaserVideo);
+              })
             }
           } else {
             mainElement.innerHTML = "This show has no performances";

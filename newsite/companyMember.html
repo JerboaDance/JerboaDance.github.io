@@ -13,6 +13,8 @@
         const name = document.getElementById("name");
         const role = document.getElementById("role");
         const bio = document.getElementById("bio");
+        const headshot = document.getElementById("headshot");
+        const photoCredit = document.getElementById("photoCredit");
 
         name.innerText = companyMember.name;
         bio.innerHTML = companyMember.bio
@@ -20,6 +22,24 @@
           role.innerText = companyMember.role;
         } else {
           role.hidden = true;
+        }
+
+        if (companyMember.headshot) {
+          const filename = companyMember.headshot.filename ? companyMember.headshot.filename : "default.png";
+          headshot.setAttribute("src", `/assets/companyMembers/${filename}`);
+          headshot.setAttribute("alt", companyMember.name);
+          
+          if (companyMember.headshot.photographer) {
+            const photographer = companyMember.headshot.photographer;
+            let innerHTML = "Photo credit: "
+            if (photographer.url) {
+              innerHTML += `<a href="${photographer.url}">${photographer.name}</a>`
+            } else {
+              innerHTML += photographer.name;
+            }
+
+            photoCredit.innerHTML = innerHTML;
+          }
         }
 
       } else {
@@ -32,9 +52,9 @@
     <div class="bodyWrapper">
       <header id="header"></header>
       <main id="main">
-        <div id="headshot">
-          <img src="" alt =""/>
-          <p>Photo credit</p>
+        <div class="bio-image">
+            <img id="headshot" />
+            <p id="photoCredit">
         </div>
         <div class="bio-title">
             <h1 id="name"></h1>
