@@ -1,5 +1,4 @@
 * make emcee/highlight page
-* add header images to pages
 * add video clip to pages
 * add gallery to show pages
 
@@ -7,3 +6,4 @@
 * automate validation for data file
 * automate image sizing
 * clean up template/fragment use vs just in javascript
+* test every link

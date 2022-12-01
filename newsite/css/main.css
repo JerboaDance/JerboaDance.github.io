@@ -49,7 +49,7 @@ input, label {
   display: block;
 }
 main {
-  padding: 0em 3em 3em 3em;
+  padding: 2em 3em 3em 3em;
 }
 
 
@@ -99,11 +99,11 @@ main {
   max-width: var(--content-max-width);
   min-height: 100%;
   margin: auto;
+  padding: 1em 0em 0em 0em;
 }
 
 header {
   text-align: center;
-  padding: 1em 0em;
 }
 header a {
   color: var(--text-black-color);
@@ -119,7 +119,7 @@ header h1 {
 }
 header h2 {
   font-size: 1em;
-  padding-bottom: .5em;
+  padding-bottom: 1em;
   font-family: "OpenSans";
   text-transform: uppercase;
 }
@@ -208,6 +208,9 @@ footer div {
 }
 
 
+.header-image img {
+  width: 100%;
+}
 .upcoming-performance {
   padding-bottom: 3em;
 }

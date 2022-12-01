@@ -1,85 +1,11 @@
 import { shows } from "/scripts/database.js";
 
-function generateLink(show) {
-  const link = document.createElement("a");
-  link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${shows.name}</a>`);
-  return link;
-}
-
-function generateHighlight(highlight) {
-  const highlightElement = document.createElement("li");
-
-  if (highlight.url) {
-    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${highlight.url}">${highlight.name}</a>`;
-  } else {
-    highlightElement.innerHTML = `<h3>${highlight.role}</h3> ${highlight.name}`;
-  }
-
-  return highlightElement;
-}
-
-function generateCompanyMembersList(performance) {
-  const companyMembersListElement = document.createElement("ul");
-  companyMembersListElement.setAttribute("class", "company-list");
-
-  performance.companyMembers.forEach(companyMember => {
-    const companyMemberElement = document.createElement("li");
-    if (companyMember.id) {
-      companyMemberElement.innerHTML = `<a href="/companyMember.html?companyMemberId=${companyMember.id}">${companyMember.name}</a>`;
-    } else {
-      companyMemberElement.innerText = companyMember.name;
-    }
-    companyMembersListElement.append(companyMemberElement);
-  });
-
-  return companyMembersListElement;
-}
-
-function generateCastList(performance) {
-  const castListElement = document.createElement("ul");
-  castListElement.setAttribute("class", "cast-list");
-
-  // TODO add the emcee
-
-  if (performance.highlights) {
-    performance.highlights.forEach(highlight => {
-      const highlightElement = generateHighlight(highlight);
-      castListElement.append(highlightElement);
-    })
-  }
-
-  const companyMembersElement = document.createElement("li");
-  companyMembersElement.innerHTML ="<h3>Company</h3>";
-  companyMembersElement.append(generateCompanyMembersList(performance));
-
-  castListElement.append(companyMembersElement); 
-
-  return castListElement;
-}
-
-function generateVenue(venue){
-  const venueElement = document.createElement("h3");
-  venueElement.setAttribute("class", "venue");
+function populateVenue(venueElement, venue) {
   venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
-  return venueElement;
 }
 
-function generateName(name){
-  const nameElement = document.createElement("h1");
-  nameElement.innerText = name;
-  return nameElement;
-}
 
-function generateDates(dates){
-  const datesElement = document.createElement("h2");
-  datesElement.setAttribute("class", "show-dates");
-  datesElement.innerText = dates;
-  return datesElement;
-}
-
-function generateBrownPaperTicketsWidget(bptId) {
-  const bptElement = document.createElement("div");
-  bptElement.setAttribute("class", "tickets");
+function populateBrownPaperTicketsWidget(bptElement, bptId) {
   const widgetText = `
     <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v671.css" /> 
     <DIV ID="bpt_eventbody">
@@ -96,40 +22,89 @@ function generateBrownPaperTicketsWidget(bptId) {
   `;
   
   bptElement.innerHTML = widgetText;
-  return bptElement;
 }
 
-function generateShowtimes(showtimes) {
-  if (showtimes) {
-    const showtimesListElement = document.createElement("ul");
-    showtimesListElement.setAttribute("class", "show-times");
+
+function populateTicketTiers(ticketTiersListElement, ticketTiers) {
+  if (ticketTiers) {
+    ticketTiers.forEach(ticketTier => {
+      const ticketTierElement = document.createElement("li");
+      ticketTierElement.innerHTML=`<h3>${ticketTier.name}</h3><p>${ticketTier.description}</p>`
+      ticketTiersListElement.append(ticketTierElement);
+    });
+  }
+}
+
+
+function populateShowtimes(showtimesListElement, showtimes) {
+  if(showtimes) {
     showtimes.forEach(showtime => {
       const showtimeElement = document.createElement("li");
       showtimeElement.innerText = showtime;
       showtimesListElement.append(showtimeElement);
     });
-    return showtimesListElement;
   }
 }
 
-function generateTicketTiers(ticketTiers) {
-  if (ticketTiers) {
-    const ticketTierListElement = document.createElement("ul");
-    ticketTierListElement.setAttribute("class", "ticket-tiers");
 
-    ticketTiers.forEach(ticketTier => {
-      const ticketTierElement = document.createElement("li");
-      ticketTierElement.innerHTML=`<h3>${ticketTier.name}</h3><p>${ticketTier.description}</p>`
-      ticketTierListElement.append(ticketTierElement);
+function generateHighlight(highlight) {
+  const highlightElement = document.createElement("li");
+
+  if (highlight.url) {
+    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${highlight.url}">${highlight.name}</a>`;
+  } else {
+    highlightElement.innerHTML = `<h3>${highlight.role}</h3> ${highlight.name}`;
+  }
+
+  return highlightElement;
+}
+
+function generateCompanyMembersList(companyMembers) {
+  const companyMembersElement = document.createElement("li");
+  companyMembersElement.innerHTML ="<h3>Company</h3>";
+
+  const companyMembersListElement = document.createElement("ul");
+  companyMembersListElement.setAttribute("class", "company-list");
+
+  if (companyMembers && companyMembers.length > 0) {
+    companyMembers.forEach(companyMember => {
+      const companyMemberElement = document.createElement("li");
+      if (companyMember.id) {
+        companyMemberElement.innerHTML = `<a href="/companyMember.html?companyMemberId=${companyMember.id}">${companyMember.name}</a>`;
+      } else {
+        companyMemberElement.innerText = companyMember.name;
+      }
+      companyMembersListElement.append(companyMemberElement);
+    });
+  }
+
+  companyMembersElement.append(companyMembersListElement);
+  return companyMembersElement;
+}
+
+function populateCastList(castListElement, emcee, highlights, companyMembers) {
+  if (emcee) {
+    const emceeElement = generateHighlight(emcee);
+    castListElement.append(emceeElement);
+    
+  }
+  
+  if (highlights) {
+    highlights.forEach(highlight => {
+      const highlightElement = generateHighlight(highlight);
+      castListElement.append(highlightElement);
     })
-    return ticketTierListElement;
   }
+
+  const companyMembersElement = generateCompanyMembersList(companyMembers);
+  castListElement.append(companyMembersElement);
 }
 
-function generateDescription(description){
-  const descriptionElement = document.createElement("p");
-  descriptionElement.innerHTML = description;
-  return descriptionElement;
+
+function generateLink(show) {
+  const link = document.createElement("a");
+  link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${shows.name}</a>`);
+  return link;
 }
 
 function checkForUpcomingPerformance(show) {
@@ -163,14 +138,11 @@ function findNextUpcomingShow() {
 
 export {
   generateLink,
-  generateName,
-  generateDates, 
-  generateVenue,
-  generateBrownPaperTicketsWidget,
-  generateDescription, 
-  generateTicketTiers,
-  generateShowtimes,
-  generateCastList,
+  populateVenue,
+  populateBrownPaperTicketsWidget,
+  populateTicketTiers,
+  populateShowtimes,
+  populateCastList,
   checkForUpcomingPerformance, 
   checkForPriorPerformances,
   findNextUpcomingShow
