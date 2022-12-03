@@ -1,27 +1,40 @@
 import { shows } from "/scripts/database.js";
 
+function populateHeaderImage(headerImageElement, show){
+  if (show.headerImage && show.headerImage.filename) {
+    headerImage.setAttribute("src", `/assets/shows/${show.id}/${show.headerImage.filename}`)
+    headerImage.setAttribute("alt", `Header image for ${show.name}`);
+  } else {
+    headerImage.hidden = true;
+  }
+}
+
 function populateVenue(venueElement, venue) {
   venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
 }
 
 
 function populateBrownPaperTicketsWidget(bptElement, bptId) {
-  const widgetText = `
-    <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v671.css" /> 
-    <DIV ID="bpt_eventbody">
-        <CENTER>
-            <BR><BR>
-                Brown Paper Tickets Ticket Widget Loading...
-            <BR><BR>
-            <A HREF="https://www.brownpapertickets.com/event/${bptId}">Click Here</A> to visit the Brown Paper Tickets event page.
-        </CENTER>
-        <BR><BR>
-    </DIV>
-    <script src="https://www.brownpapertickets.com/eventwidget.js?event=${bptId}&nodescription=1&notitle=1" type="text/javascript" language="javascript"></script>
-    <script src="https://www.brownpapertickets.com/widget_v671.js?event=${bptId}" type="text/javascript" language="javascript"></script>
-  `;
-  
-  bptElement.innerHTML = widgetText;
+  if (bptId) {
+    const widgetText = `
+      <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v671.css" /> 
+      <DIV ID="bpt_eventbody">
+          <CENTER>
+              <BR><BR>
+                  Brown Paper Tickets Ticket Widget Loading...
+              <BR><BR>
+              <A HREF="https://www.brownpapertickets.com/event/${bptId}">Click Here</A> to visit the Brown Paper Tickets event page.
+          </CENTER>
+          <BR><BR>
+      </DIV>
+      <script src="https://www.brownpapertickets.com/eventwidget.js?event=${bptId}&nodescription=1&notitle=1" type="text/javascript" language="javascript"></script>
+      <script src="https://www.brownpapertickets.com/widget_v671.js?event=${bptId}" type="text/javascript" language="javascript"></script>
+    `;
+    
+    bptElement.innerHTML = widgetText;
+  } else {
+    bptElement.hidden = true;
+  }
 }
 
 
@@ -138,6 +151,7 @@ function findNextUpcomingShow() {
 
 export {
   generateLink,
+  populateHeaderImage,
   populateVenue,
   populateBrownPaperTicketsWidget,
   populateTicketTiers,

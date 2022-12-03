@@ -5,6 +5,7 @@
     <script type="module">
       import { shows } from "/scripts/database.js";
       import {
+        populateHeaderImage,
         populateVenue,
         populateBrownPaperTicketsWidget,
         populateTicketTiers,
@@ -78,8 +79,7 @@
           const show = shows[showId];
 
           const headerImage = document.getElementById("headerImage");
-          headerImage.setAttribute("src", `/assets/shows/${showId}/header.small.jpg`)
-          headerImage.setAttribute("alt", `Header image for ${show.name}`);
+          populateHeaderImage(headerImage, show);
           
           const nameElement = document.getElementById("name");
           nameElement.innerText = show.name;

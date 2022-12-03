@@ -272,11 +272,11 @@ const companyMembers = {
   kristenKissel: {
     name: "Kristen Kissel"
   },
-  lauranDracket:{
-    id: "lauranDracket",
+  lauranDrackett:{
+    id: "lauranDrackett",
     name: "Lauran Drackett",
     headshot: {
-      filename:"LauranDracket.jpg",
+      filename:"LauranDrackett.jpg",
       photographer: photographers.warrenWoo
     },
     bio: `Lauran is a dancer and aerialist based in Seattle, WA. A graduate of Northwestern University’s Dance program, Lauran has trained with Aerial Dance Chicago (ADC), Actors Gymnasium, Diavolo Dance Theatre and the Paul Taylor Dance Company. From 2009 – 2011 Lauran was a dancer, choreographer, and assistant teacher with ADC and served on the board in 2016. From 2011 – 2015 Lauran performed with Innervation Dance Cooperative, J Lindsay Brown, among others in the Chicago area. Since 2016, she has worked with The Cabiri, a company that uses dance, aerial arts, and theatrical performance to bring the mythologies of extinct and endangered cultures to the community. 
@@ -596,13 +596,63 @@ const highlights = {
     name: "Brandon Milner",
     role: "Musician"
   },
-  GypsyLeo: {
+  gypsyLeo: {
     name: "Gypsy Leo",
     role: "Burlesque"
   },
+  lizaZurlinden: {
+    name: "Liza Zurlinden",
+    role: "Violinist"
+  },
+  nikoLeo: {
+    name: "Niko Leo",
+    role: "Magician"
+  }
 };
 
 const shows = {
+  unhinge:{
+    id:"unhinge",
+    name: "Unhinge",
+    description:`Mark your calendars for Jerboa’s next show, Unhinge, coming in February 2023. Unhinge will be hosted by our fabulous emcee, Brenna Duffitt, and feature cyr wheel, a magician, live violin, along with our quintessential athletic dance. We are back to our partnering antics and will be exploring the ways in which we are all labeled and put into boxes that are too small for the entirety of who we are as humans. Come enjoy this entertaining jaunt through serious to absurd and take a break from your regularly scheduled life. We cannot wait to see you!`,
+    headerImage: {
+      filename:"unhinge.jpg"
+    },
+    performances:[
+      {
+        dates: "February 3rd, 4th, 10th, and 11th 2023",
+        showtimes: [ "2/3 7:00pm", "2/4 3:00pm", "2/4 7:00pm", "2/10 7:00pm", "2/11 7:00pm"],
+        startDate: new Date(2023, 2, 3),
+        endDate: new Date(2023, 2, 11),
+        venue: venues.yawTheater,
+        ticketTiers: [
+          {
+            name: "VIP tickets $60 presale, $75 at the door",
+            description: "Front row seats, champagne, and chocolate included"
+          },
+          {
+            name: "GA tickets $25 presale, $30 at the door",
+            description: "$5 kids’ tickets for the family-friendly Saturday 2/4 matinee with kid participation",
+          }
+        ],
+        emcee: emcees.brennaDuffitt,
+        highlights: [
+          highlights.jaimeWaliczek,
+          highlights.emmaCurtiss,
+          highlights.nikoLeo,
+          highlights.lizaZurlinden
+        ],
+        companyMembers: [
+          companyMembers.jaimeWaliczek, 
+          companyMembers.seanCalavan, 
+          companyMembers.lauranDrackett,
+          companyMembers.stellaKutz, 
+          companyMembers.constanzeVillines, 
+          companyMembers.warrenWoo
+        ]
+      }
+    ]
+  },
   delirium: {
     id: "delirium",
     name: "Delirium",
@@ -612,12 +662,15 @@ const shows = {
     <p>
     If you would like to attend, but are unable to afford the ticket price, please let us know. Jerboa Dance wants to keep the arts accessible for as many people as possible.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "February 11th, 12th, and 13th 2022",
         showtimes: [ "2/11 7:00pm", "2/11 9:00pm", "2/12 7:00pm", "2/12 9:00pm", "2/13 2:00pm"],
-        startDate: new Date(2023, 2, 11),
-        endDate: new Date(2023, 2, 13),
+        startDate: new Date(2022, 2, 11),
+        endDate: new Date(2022, 2, 13),
         venue: venues.yawTheater,
         bptId: 5337210,
         ticketTiers: [
@@ -656,6 +709,9 @@ const shows = {
     <p>
     If there is a concept that Jerboa embodies, moxie is it. We explore complex themes and have multiple meanings inside every work. While we always have a story to tell, we hope that it is both compelling and entertaining for our audiences. Our art is intended to be innovative and thought provoking as to inspire your own interpretation. We love when our art gets taken in a new direction with different perspectives.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "February 14th, 15th, 21st, 22nd 2020",
@@ -692,6 +748,9 @@ const shows = {
     <p>
     Or perhaps it is the reconfiguring of ideas, the idea that with more knowledge that has been dug up, or differently organized concepts, a new picture is discovered, with more depth and intrigue than before. These ideas are explored by the companies in an evening length dance concert at Yaw Theater, in the Georgetown neighborhood of Seattle, May 31st-June 2nd.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "May 31st - June 2nd 2019",
@@ -712,6 +771,9 @@ const shows = {
     <p>
     All evening performances will be followed by a jazz and swing afterparty so stay to meet the performers and dance.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "February 14th, 15th, 16th 2019",
@@ -744,6 +806,9 @@ const shows = {
     name: "Animal Nature",
     description: `Jerboa Dance presented an evening of revelry and sensuality, journeying from political to mystical. Acts featured Jerboa’s signature athletic and emotional style. Special guests included live music, circus arts, burlesque, and more. Friday and Saturday evening shows were followed by live DJs.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "February 9th, 10th, 11th 2018",
@@ -769,7 +834,7 @@ const shows = {
           highlights.christinaJohnson,
           highlights.emmaCurtiss,
           highlights.brandonMilner,
-          highlights.GypsyLeo,
+          highlights.gypsyLeo,
           highlights.andrewScott,
           highlights.ajRogers
         ]
@@ -781,6 +846,9 @@ const shows = {
     name: "continuum",
     description:`<i>continuum</i> is an exploration the complexities of human relationships and the patterns we fall into, both good and bad. As is Jerboa Dance’s style, it is an acrobatic, energetic work relying on raw emotion and the strong technical background of the dancers to draw in the audience. Rather than a story with a clear beginning and end, continuum is a window into the moments of our lives.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     videos: [
       {
         id: "4CucKooBXLM",
@@ -851,6 +919,9 @@ const shows = {
     id: "transformation",
     name: "Transformation",
     description:`Jerboa Dance returned for the second time in 2016 with another new work, Transformation, an athletic, modern exploration of human development from childhood to adulthood, dysfunction, and relationships.`,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances:[
      {
          dates: "Jun 24th & 25th, 2016",
@@ -884,6 +955,9 @@ const shows = {
     <p>
     VIP tickets got seating in front-row tables with wait-service during the show and celebrated Valentine’s Day in style with these exciting seats with complementary drinks and chocolates.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "February 12th, 13th, & 14th 2016",
@@ -917,6 +991,9 @@ const shows = {
     name: "Genderally Speaking",
     description: `Jerboa Dance stepped outside its standard modern dance repertoire to bring you something sexier. Genderally Speaking was filled with naughty ballerinas, muscled acrobats, sultry temptresses, divalicious queens, and bawdy burlesque by none other than fantastic <a href="http://randirascal.com/">Randi Rascal</a>!
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances:[
       {
         dates: "August 20th, 2010",
@@ -950,6 +1027,9 @@ const shows = {
     name: "Back From the Brink",
     description: `This acrobatic, energetic modern dance ballet takes audiences on a gripping journey into the human psyche. Conceived around the classic stages of grief, Act I begins after a traumatic event leads the dancers to reflect on their lives. Act II moves into the discovery of how to push forward, build new relationships, find community, and hope.
     `,
+    headerImage: {
+      filename:"header.small.jpg"
+    },
     performances: [
       {
         dates: "September 17th & 18th, 2010",

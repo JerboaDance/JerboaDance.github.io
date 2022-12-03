@@ -6,6 +6,7 @@
       import { 
         findNextUpcomingShow,
         generateLink,
+        populateHeaderImage,
         populateVenue,
         populateBrownPaperTicketsWidget,
         populateTicketTiers,
@@ -18,6 +19,9 @@
         const upcomingPerformance = show.performances[0];
         const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = upcomingPerformance;
 
+        const headerImage = document.getElementById("headerImage");
+        populateHeaderImage(headerImage, show);
+        
         const bptElement = document.getElementById("upcomingBptWidget");
         populateBrownPaperTicketsWidget(bptElement, bptId);
 
@@ -65,6 +69,7 @@
   <body>
     <div class="bodyWrapper">
       <header id="header"></header>
+      <div class="header-image"><img id="headerImage" /></div>
       <main id="main">
         <div id="upcomingPerformance">
           <div id="upcomingBptWidget" class="tickets"></div>
