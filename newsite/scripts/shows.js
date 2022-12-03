@@ -60,12 +60,19 @@ function populateShowtimes(showtimesListElement, showtimes) {
 }
 
 
-function generateHighlight(highlight) {
+function generateHighlight(highlight, isEmcee) {
   const highlightElement = document.createElement("li");
 
   if (highlight.url) {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${highlight.url}">${highlight.name}</a>`;
-  } else {
+  } else if (highlight.bio) {
+    if (isEmcee) {
+      highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="/castMember.html?emceeId=${highlight.id}">${highlight.name}</a>`;
+    } else {
+      highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="/castMember.html?highlightId=${highlight.id}">${highlight.name}</a>`;
+    }
+  }
+  else {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> ${highlight.name}`;
   }
 
@@ -83,7 +90,7 @@ function generateCompanyMembersList(companyMembers) {
     companyMembers.forEach(companyMember => {
       const companyMemberElement = document.createElement("li");
       if (companyMember.id) {
-        companyMemberElement.innerHTML = `<a href="/companyMember.html?companyMemberId=${companyMember.id}">${companyMember.name}</a>`;
+        companyMemberElement.innerHTML = `<a href="/castMember.html?companyMemberId=${companyMember.id}">${companyMember.name}</a>`;
       } else {
         companyMemberElement.innerText = companyMember.name;
       }
@@ -97,7 +104,7 @@ function generateCompanyMembersList(companyMembers) {
 
 function populateCastList(castListElement, emcee, highlights, companyMembers) {
   if (emcee) {
-    const emceeElement = generateHighlight(emcee);
+    const emceeElement = generateHighlight(emcee, /*isEmcee*/ true);
     castListElement.append(emceeElement);
     
   }

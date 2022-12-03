@@ -1,4 +1,3 @@
-* make emcee/highlight page
 * add video clip to pages
 * add gallery to show pages
 * test every link

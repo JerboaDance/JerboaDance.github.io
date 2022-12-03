@@ -1,30 +1,36 @@
 const venues = {
   eriksonTheater: {
+    id:"eriksonTheater",
     name: "Erikson Theater",
     city: "Seattle",
     url: "https://theatres.seattlecentral.edu/erickson-theatre"
   },
   yawTheater: {
+    id:"yawTheater",
     name: "Yaw Theater",
     city: "Seattle",
     url: "http://www.yawtheater.com/"
 },
   velocityDanceCenter: {
+    id:"velocityDanceCenter",
     name: "Velocity Dance Center",
     city: "Seattle",
     url: "http://velocitydancecenter.org/"
 },
   centerHouseTheater: {
+    id:"centerHouseTheater",
     name: "Center House Theater",
     city: "Seattle",
     url: "http://www.seattlecenter.com/locations/detail.aspx?id=62"
   },
   actTheater: {
+    id:"actTheater",
     name: "ACT Theater",
     city: "Seattle",
     url: "http://www.acttheatre.org/"
   },
   hudsonGuildTheater: {
+    id:"hudsonGuildTheater",
     name: "Hudson Guild Theater",
     city: "New York",
     url: "http://hudsonguild.org/space-rentals/"
@@ -33,9 +39,11 @@ const venues = {
 
 const photographers = {
   jesusChapaMalacara: {
+    id: "jesusChapaMalacara",
     name: "Jesus Chapa-Malacara"
   },
   warrenWoo: {
+    id: "warrenWoo",
     name: "Warren Woo",
     url: "http://www.warren-woo.com/"
   }
@@ -332,10 +340,7 @@ const companyMembers = {
     },
   pamelaTurpin: {
     id: "pamelaTurpin",
-    name: "Pamela Turpin",
-    headshot: {
-      filename:"PamelaTurpin.jpg"
-    },
+    name: "Pamela Turpin"
   },
   pamVlach: {
     id: "pamVlach",
@@ -441,64 +446,83 @@ const companyMembers = {
 
 const emcees = {
   seanCalavan: {
+    id: "seanCalavan",
     name: "Sean Calavan",
     role: "Master of Ceremonies",
-    url: "/performer.html?performerId=seanCalavan"
+    url: "/castMember.html?companyMemberId=seanCalavan"
   },
   steveDolan:{
+    id: "steveDolan",
     name: "Steve Dolan",
     role: "Master of Ceremonies"
   },
   jjBrychell: {
+    id: "jjBrychell",
     name: "JJ Brychell",
     role: "Master of Ceremonies"
   },
   thomasPhelan: {
+    id: "thomasPhelan",
     name: "Thomas Phelan",
     role: "Master of Ceremonies",
-    url: "/performer.html?performerId=thomasPhelan"
+    url: "/castMember.html?companyMemberId=thomasPhelan"
   },
   dustinGuyJackson: {
+    id: "dustinGuyJackson",
     name: "Dustin Guy Jackson",
     role: "Master of Ceremonies"
   },
   brennaDuffitt: {
+    id: "brennaDuffitt",
     name: "Brenna Duffitt",
     role: "Master of Ceremonies",
+    headshot: {
+      filename:"BrennaDuffitt.jpg"
+    },
     bio: `Brenna grew up in Klamath Falls, OR, where she first developed her interest in theater and acting. While her formal education at Oregon Institute of Technology was focused on engineering, she appeared on stage in many plays and musicals, and has been featured in multiple indie films. More recently, she's been a successful live streamer, hosted multiple online shows, including being the regular host of Power Builds, and does voice acting work. Brenna is excited to be back on stage for her first appearance with Jerboa Dance.`
   },
 }
 
 const highlights = {
   jaimeWaliczek: {
+    id: "jaimeWaliczek",
     name: "Jaime Waliczek",
     role: "Choreographer",
-    url: "/performer.html?performerId=jaimeWaliczek"
+    url: "/castMember.html?companyMemberId=jaimeWaliczek"
   },
   splinterDance: {
+    id: "splinterDance",
     name: "Splinter Dance",
     role: "Dance company",
   },
   parisOriginal: {
+    id: "parisOriginal",
     name: "Paris Original",
     role: "Boylesque"
   },
   sarahSchmidt: {
+    id: "sarahSchmidt",
     name: "Sarah Schmidt",
     role: "Musician"
   },
   jenWagner: {
+    id: "jenWagner",
     name: "Jen Wagner",
     role: "Musician"
   },
   seanCalavanDragQueen: {
+    id: "seanCalavanDragQueen",
     name: "Sean Calavan",
     role: "Drag Queen",
-    url: "/performer.html?performerId=seanCalavan"
+    url: "/castMember.html?companyMemberId=seanCalavan"
   },
   emmaCurtiss: {
+    id: "emmaCurtiss",
     name: "Emma Curtiss",
     role: "Cyr wheel",
+    headshot: {
+      filename:"EmmaCurtiss.jpg"
+    },
     bio: `Emma Curtiss has been performing circus for many years now. She currently coaches at the School of Acrobatics and New Circus Arts in Seattle and is one of the founders of the IMPulse Circus Collective.
     <p>
     Always seeking out ways to revolve, orbit and glide, her focus of late has been on her Roue Cyr (Cyr wheel).
@@ -507,104 +531,129 @@ const highlights = {
     `
   },
   taePhoenix: {
+    id: "taePhoenix",
     name: "Tae Phoenix",
     role: "Musician",
     url: "https://taephoenix.com/"
   },
   andreasFetz:{
+    id: "andreasFetz",
     name: "Andreas Fetz",
     role: "Arm Balancer",
-    url: "/company/AndreasFetz.html"
+    url: "/castMember.html?companyMemberId=andreasFetz"
   },
   scottoMoore:{
+    id: "scottoMoore",
     name: "Scotto Moore",
     role: "Comedian",
     url: "http://scotto.org/"
   },
   randiRascal: {
+    id: "randiRascal",
     name: "Randi Rascal",
     role: "Burlesque",
     url: "http://randirascal.com"
   },
   harmonyGwinn: {
+    id: "harmonyGwinn",
     name: "Harmony Gwinn",
     role: "Flow Artist",
     url: "https://www.facebook.com/HaHaHarmonyy"
   },
   andrewScott: {
+    id: "andrewScott",
     name: "Andrew Scott",
     role: "Drag Queen",
     url: "https://www.facebook.com/andrew.scott.90813236"
   },
   jenniferElder: {
+    id: "jenniferElder",
     name: "Jennifer Elder",
     role: "Dancer",
-    url: "/company/JenniferElder.html"
+    url: "/castMember.html?companyMemberId=jenniferElder"
   },
   nellWaliczek: {
+    id: "nellWaliczek",
     name: "Nell Waliczek",
     role: "Poetry Reading"
   },
   katieSawicki: {
+    id: "katieSawicki",
     name: "Katie Sawicki",
     role: "Choreographer and Baton Twirler",
+    headshot: {
+      filename:"KatieSawicki.jpg"
+    },
     bio: `Katie studied ballet and modern dance at NC School of the Arts, American Dance Festival, Princeton Ballet School, and the Hungarian National Ballet Academy. After performing with Princeton Ballet II and American Repertory Ballet Katie retired from performing and taught ballet, jazz, tap and gymnastics for several years before moving to Seattle.  She has performed in Seattle with Arc Dance Productions, XODO, Eastside Moving Company, and others.
     `
   },
   marcVonHolzen: {
+    id: "marcVonHolzen",
     name: "Marc von Holzen",
     role: "Afterparty DJ",
     url: "http://www.soundcloud.com/marcvh"
   },
   ajRogers: {
+    id: "ajRogers",
     name: "AJ Rogers",
     role: "Acrobat",
     url: "http://www.omculture.com/wallingford-class-descriptions"
   },
   hannahDuffy: {
+    id: "hannahDuffy",
     name: "Hannah Duffy",
     role: "Musician",
     url: "https://www.facebook.com/hannahduffymusic"
   },
   noellePrice: {
+    id: "noellePrice",
     name: "Noelle Price",
     role: "Spoken Word",
     url: "https://www.pricearts.co/copy-of-about"
   },
   tomTomThePhenomenon: {
+    id: "tomTomThePhenomenon",
     name: "TomTom The Phenomenon",
     role: "Burlesque"
   },
   jessicaGlein: {
+    id: "jessicaGlein",
     name: "Jessica Glein",
     role: "Pole Performer"
   },
   theLoveShowNYC:{
+    id: "theLoveShowNYC",
     name: "The Love Show NYC",
     role: "Guest Choreography",
     url: "http://www.theloveshownyc.com/"
   },
   sebastianLangeAndMajaZavaljevski: {
+    id: "sebastianLangeAndMajaZavaljevski",
     name: "Sebastian Lange and Maja Zavaljevski",
     role: "Musicians"
   },
   christinaJohnson: {
+    id: "christinaJohnson",
     name: "Christina Johnson",
     role: "Burlesque"
   },
   brandonMilner: {
+    id: "brandonMilner",
     name: "Brandon Milner",
     role: "Musician"
   },
   gypsyLeo: {
+    id: "gypsyLeo",
     name: "Gypsy Leo",
     role: "Burlesque"
   },
   lizaZurlinden: {
+    id: "lizaZurlinden",
     name: "Liza Zurlinden",
     role: "Violinist"
   },
   nikoLeo: {
+    id: "nikoLeo",
     name: "Niko Leo",
     role: "Magician"
   }
@@ -720,7 +769,7 @@ const shows = {
         venue: venues.yawTheater,
         companyMembers: [
           companyMembers.jaimeWaliczek, 
-          companyMembers.lauranDracket, 
+          companyMembers.lauranDrackett, 
           companyMembers.anjaKellnerRogers,
           companyMembers.stellaKutz,
           companyMembers.gabeMaddox,
@@ -1094,5 +1143,7 @@ const shows = {
 
 export {
   shows,
-  companyMembers
+  companyMembers,
+  highlights,
+  emcees
 }
