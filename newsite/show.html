@@ -1,5 +1,7 @@
 <html>
   <head>
+    <meta http-equiv='content-language' content='en-US'>
+    <link rel="icon" type="image/png" href="/assets/logos/logo-white.png" />
     <link rel="stylesheet" href="/css/main.css"/>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
@@ -77,6 +79,9 @@
         // check for valid show
         if (showId && shows[showId]) {
           const show = shows[showId];
+          
+          const title = document.querySelector('title');
+          title.innerText = `Jerboa Dance - ${show.name}`;
 
           const headerImage = document.getElementById("headerImage");
           populateHeaderImage(headerImage, show);

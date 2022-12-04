@@ -1,6 +1,9 @@
 <html>
   <head>
+    <meta http-equiv='content-language' content='en-US'>
+    <link rel="icon" type="image/png" href="/assets/logos/logo-white.png" />
     <link rel="stylesheet" href="/css/main.css"/>
+    <title></title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { companyMembers, emcees, highlights} from "/scripts/database.js";
@@ -24,11 +27,14 @@
 
       // check for valid cast member
       if (castMember) {        
+        const title = document.querySelector('title');
         const name = document.getElementById("name");
         const role = document.getElementById("role");
         const bio = document.getElementById("bio");
         const headshot = document.getElementById("headshot");
         const photoCredit = document.getElementById("photoCredit");
+
+        title.innerText = `Jerboa Dance - ${castMember.name}`;
 
         name.innerText = castMember.name;
         
