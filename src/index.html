@@ -6,8 +6,9 @@
     <title>Jerboa Dance - Home</title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
+      import { shows } from "/scripts/database.js";
       import { 
-        findNextUpcomingShow,
+        findCurrentShow,
         generateLink,
         populateHeaderImage,
         populateVenue,
@@ -18,47 +19,47 @@
       } from "/scripts/shows.js";
       import { generateYouTubeEmbed } from "/scripts/youTube.js"
       
-      function populateUpcomingPerformance(show) {
-        const upcomingPerformance = show.performances[0];
-        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = upcomingPerformance;
+      function populateCurrentPerformance(show) {
+        const currentPerformance = show.performances[0];
+        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
 
         const headerImage = document.getElementById("headerImage");
         populateHeaderImage(headerImage, show);
         
-        const bptElement = document.getElementById("upcomingBptWidget");
+        const bptElement = document.getElementById("currentBptWidget");
         populateBrownPaperTicketsWidget(bptElement, bptId);
 
         const nameElement = document.getElementById("name");
         nameElement.innerText = show.name;
 
-        const datesElement = document.getElementById("upcomingDates");
+        const datesElement = document.getElementById("currentDates");
         datesElement.innerText = dates;
 
-        const venueElement = document.getElementById("upcomingVenue");
+        const venueElement = document.getElementById("currentVenue");
         populateVenue(venueElement, venue);
 
-        const descriptionElement = document.getElementById("upcomingDescription");
+        const descriptionElement = document.getElementById("currentDescription");
         descriptionElement.innerHTML = show.description;
 
-        const ticketTierListElement = document.getElementById("upcomingTicketTiers");
+        const ticketTierListElement = document.getElementById("currentTicketTiers");
         populateTicketTiers(ticketTierListElement, ticketTiers);
 
-        const showtimesListElement = document.getElementById("upcomingShowtimes")
+        const showtimesListElement = document.getElementById("currentShowtimes")
         populateShowtimes(showtimesListElement, showtimes);
 
-        const castListElement = document.getElementById("upcomingCastList");
+        const castListElement = document.getElementById("currentCastList");
         populateCastList(castListElement, emcee, highlights, companyMembers);
       }
 
       function populatePage() {
         const mainElement = document.getElementById("main");
         
-        const nextUpcomingShow = findNextUpcomingShow();
-        if (nextUpcomingShow) {
-          populateUpcomingPerformance(nextUpcomingShow);
+        const currentShow = findCurrentShow(shows);
+        if (currentShow) {
+          populateCurrentPerformance(currentShow);
         } else {
-          const upcomingPerformanceElement = document.getElementById("upcomingPerformance");
-          upcomingPerformanceElement.hidden = true;
+          const currentPerformanceElement = document.getElementById("currentPerformance");
+          currentPerformanceElement.hidden = true;
           
           const headerImage = document.getElementById("headerImage");
           headerImage.setAttribute("src", `/assets/defaultIndexHeader.jpg`);
@@ -77,15 +78,15 @@
       <header id="header"></header>
       <div class="header-image"><img id="headerImage" /></div>
       <main id="main">
-        <div id="upcomingPerformance">
-          <div id="upcomingBptWidget" class="tickets"></div>
+        <div id="currentPerformance">
+          <div id="currentBptWidget" class="tickets"></div>
           <h1 id="name"></h1>
-          <h2 id="upcomingDates" class="show-dates"></h2>
-          <h3 class="venue"><a id="upcomingVenue"></a></h3>
-          <p id="upcomingDescription"></p>
-          <ul id="upcomingTicketTiers" class="ticket-tiers"></ul>
-          <ul id="upcomingShowtimes" class="show-times"></ul>
-          <ul id="upcomingCastList" class="cast-list"></ul>
+          <h2 id="currentDates" class="show-dates"></h2>
+          <h3 class="venue"><a id="currentVenue"></a></h3>
+          <p id="currentDescription"></p>
+          <ul id="currentTicketTiers" class="ticket-tiers"></ul>
+          <ul id="currentShowtimes" class="show-times"></ul>
+          <ul id="currentCastList" class="cast-list"></ul>
         </div>
       </main>
       <footer id="footer"></footer>

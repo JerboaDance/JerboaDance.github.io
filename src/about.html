@@ -7,26 +7,14 @@
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { shows } from "/scripts/database.js";
+      import { findCurrentShow } from "/scripts/shows.js";
 
       async function populateCurrentCompanyMembers(){        
         const bioPreviewFragment = await (await fetch('/fragments/bioPreview.html')).text();
-
-        let latestShow;
-        Object.keys(shows).forEach(showId => {
-          const show = shows[showId];
-          if (show.performances && show.performances.length > 0) {
-            if (!latestShow) {
-              latestShow = show;
-            } else {
-              if  (latestShow.performances[0].startDate < show.performances[0].startDate) {
-                latestShow = show;
-              }
-            }
-          }
-        });
-
         const bioListElement = document.getElementById("bioList");
-        const currentCompanyMembers = latestShow.performances[0].companyMembers;
+
+        const currentShow = findCurrentShow(shows);
+        const currentCompanyMembers = currentShow.performances[0].companyMembers;
         currentCompanyMembers.forEach(companyMember => {
           let bioElement = document.createElement('template');
           bioElement.innerHTML = eval('`'+bioPreviewFragment+'`');

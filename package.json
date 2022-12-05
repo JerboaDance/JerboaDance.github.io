@@ -1,0 +1,25 @@
+{
+  "name": "jerboadance.github.io",
+  "version": "3.0.0",
+  "description": "The website for Jerboa Dance",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "npx http-server src",
+    "sitemap": "node tools/generateSitemap.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JerboaDance/JerboaDance.github.io.git"
+  },
+  "author": "Nell Waliczek <nell@waliczek.dev> (https://nell.dev/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JerboaDance/JerboaDance.github.io/issues"
+  },
+  "homepage": "https://github.com/JerboaDance/JerboaDance.github.io#readme",
+  "devDependencies": {
+    "sitemap": "^7.1.1",
+    "xml-formatter": "^2.6.1"
+  }
+}

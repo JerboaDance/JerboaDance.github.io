@@ -211,10 +211,10 @@ footer div {
 .header-image img {
   width: 100%;
 }
-.upcoming-performance {
+.current-performance {
   padding-bottom: 3em;
 }
-.upcoming-performance h1, .upcoming-performance h2 {
+.current-performance h1, .current-performance h2 {
   display: inline;
   padding-right: .5em;
 }

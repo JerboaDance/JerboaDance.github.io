@@ -14,45 +14,45 @@
         populateTicketTiers,
         populateShowtimes,
         populateCastList,
-        checkForUpcomingPerformance, 
+        checkForCurrentPerformance, 
         checkForPriorPerformances 
       } from "/scripts/shows.js";
       import { generateYouTubeEmbed } from "/scripts/youTube.js"
       
 
-      function populateUpcomingPerformance(show) {
-        const upcomingPerformance = show.performances[0];
-        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = upcomingPerformance;
+      function populateCurrentPerformance(show) {
+        const currentPerformance = show.performances[0];
+        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
 
-        const datesElement = document.getElementById("upcomingDates");
+        const datesElement = document.getElementById("currentDates");
         datesElement.innerText = dates;
 
-        const venueElement = document.getElementById("upcomingVenue");
+        const venueElement = document.getElementById("currentVenue");
         populateVenue(venueElement, venue);
 
-        const bptElement = document.getElementById("upcomingBptWidget");
+        const bptElement = document.getElementById("currentBptWidget");
         populateBrownPaperTicketsWidget(bptElement, bptId);
 
-        const descriptionElement = document.getElementById("upcomingDescription");
+        const descriptionElement = document.getElementById("currentDescription");
         descriptionElement.innerHTML = show.description;
 
-        const ticketTierListElement = document.getElementById("upcomingTicketTiers");
+        const ticketTierListElement = document.getElementById("currentTicketTiers");
         populateTicketTiers(ticketTierListElement, ticketTiers);
 
-        const showtimesListElement = document.getElementById("upcomingShowtimes")
+        const showtimesListElement = document.getElementById("currentShowtimes")
         populateShowtimes(showtimesListElement, showtimes);
 
-        const castListElement = document.getElementById("upcomingCastList");
+        const castListElement = document.getElementById("currentCastList");
         populateCastList(castListElement, emcee, highlights, companyMembers);
       }
 
       function populatePriorPerformances(priorPerformancesList, show) {
         const template = document.getElementById("priorPerformanceTemplate");
 
-        const hasUpcomingPerformance = checkForUpcomingPerformance(show);
+        const hasCurrentPerformance = checkForCurrentPerformance(show);
         const hasPriorPerformances = checkForPriorPerformances(show);
         
-        let performanceIndex = hasUpcomingPerformance ? 1 : 0;
+        let performanceIndex = hasCurrentPerformance ? 1 : 0;
         while (performanceIndex < show.performances.length) {
           const { dates, venue, emcee, highlights, companyMembers } = show.performances[performanceIndex];
           const priorPerformanceElement = template.content.firstElementChild.cloneNode(true);
@@ -149,21 +149,21 @@
           nameElement.innerText = show.name;
 
           if (show.performances && show.performances.length > 0){
-            const hasUpcomingPerformance = checkForUpcomingPerformance(show);
+            const hasCurrentPerformance = checkForCurrentPerformance(show);
             const hasPriorPerformances = checkForPriorPerformances(show);
 
-            const upcomingPerformanceElement = document.getElementById("upcomingPerformance");
-            if (hasUpcomingPerformance) {
-              populateUpcomingPerformance(show);
+            const currentPerformanceElement = document.getElementById("currentPerformance");
+            if (hasCurrentPerformance) {
+              populateCurrentPerformance(show);
             } else {
-              upcomingPerformanceElement.hidden = true;
+              currentPerformanceElement.hidden = true;
               const descriptionElement = document.getElementById("priorPerformancesDescription");
               descriptionElement.innerHTML = show.description;
             }
 
             if (hasPriorPerformances) {
 
-              if (hasUpcomingPerformance) {
+              if (hasCurrentPerformance) {
                 const priorPerformancesHeadingElement = document.getElementById("priorPerformancesHeading");
                 priorPerformancesHeadingElement.hidden = false;
               }
@@ -208,14 +208,14 @@
       <main id="main">
         <h1 id="name"></h1>
 
-        <div id="upcomingPerformance">
-          <h2 id="upcomingDates" class="show-dates"></h2>
-          <h3 class="venue"><a id="upcomingVenue"></a></h3>
-          <div id="upcomingBptWidget" class="tickets"></div>
-          <p id="upcomingDescription"></p>
-          <ul id="upcomingTicketTiers" class="ticket-tiers"></ul>
-          <ul id="upcomingShowtimes" class="show-times"></ul>
-          <ul id="upcomingCastList" class="cast-list"></ul>
+        <div id="currentPerformance">
+          <h2 id="currentDates" class="show-dates"></h2>
+          <h3 class="venue"><a id="currentVenue"></a></h3>
+          <div id="currentBptWidget" class="tickets"></div>
+          <p id="currentDescription"></p>
+          <ul id="currentTicketTiers" class="ticket-tiers"></ul>
+          <ul id="currentShowtimes" class="show-times"></ul>
+          <ul id="currentCastList" class="cast-list"></ul>
         </div>
 
         <div id="priorPerformances">

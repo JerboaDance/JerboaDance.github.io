@@ -1,5 +1,5 @@
 import { shows } from "/scripts/database.js";
-import { findNextUpcomingShow } from "/scripts/shows.js";
+import { findCurrentShow } from "/scripts/shows.js";
 
 function addGoogleAnalytics() {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -32,10 +32,10 @@ async function populateHeader() {
         showsSubmenu.append(menuItem);
     });
 
-    const nextUpcomingShow = findNextUpcomingShow();
-    if (nextUpcomingShow) {
-        const upcomingShowElement = document.getElementById("upcomingShow");
-        upcomingShowElement.innerHTML = `<a href="/show.html?showId=${nextUpcomingShow.id}">${nextUpcomingShow.name}</a>`;
+    const currentShow = findCurrentShow(shows);
+    if (currentShow) {
+        const currentShowElement = document.getElementById("currentShow");
+        currentShowElement.innerHTML = `<a href="/show.html?showId=${currentShow.id}">${currentShow.name}</a>`;
     } else {
         // TODO donate?
     }

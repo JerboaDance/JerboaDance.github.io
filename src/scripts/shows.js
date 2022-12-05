@@ -1,5 +1,3 @@
-import { shows } from "/scripts/database.js";
-
 function populateHeaderImage(headerImageElement, show){
   if (show.headerImage && show.headerImage.filename) {
     headerImage.setAttribute("src", `/assets/shows/${show.id}/${show.headerImage.filename}`)
@@ -122,37 +120,37 @@ function populateCastList(castListElement, emcee, highlights, companyMembers) {
 
 function generateLink(show) {
   const link = document.createElement("a");
-  link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${shows.name}</a>`);
+  link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${show.name}</a>`);
   return link;
 }
 
-function checkForUpcomingPerformance(show) {
+function checkForCurrentPerformance(show) {
   return show.performances 
     && show.performances.length > 0 
     && show.performances[0].endDate > Date.now();
 }
 
 function checkForPriorPerformances(show) {
-  const hasUpcomingPerformance = checkForUpcomingPerformance(show);
-  return !hasUpcomingPerformance || (hasUpcomingPerformance && show.performances.length > 1);
+  const hasCurrentPerformance = checkForCurrentPerformance(show);
+  return !hasCurrentPerformance || (hasCurrentPerformance && show.performances.length > 1);
 }
 
-function findNextUpcomingShow() {
-  let nextUpcomingShow;
+function findCurrentShow(shows) {
+  let nextCurrentShow;
   Object.keys(shows).forEach(showId => {
     const show = shows[showId];
-    if (checkForUpcomingPerformance(show)) {
-      if (!nextUpcomingShow) {
-        nextUpcomingShow = show;
+    if (checkForCurrentPerformance(show)) {
+      if (!nextCurrentShow) {
+        nextCurrentShow = show;
       } else {
-        const nextUpcomingPerformance = nextUpcomingShow.performances[0];
-        if  (nextUpcomingPerformance.startDate > show.performances[0].startDate) {
-          nextUpcomingShow = show;
+        const nextCurrentPerformance = nextCurrentShow.performances[0];
+        if  (nextCurrentPerformance.startDate > show.performances[0].startDate) {
+          nextCurrentShow = show;
         }
       }
     }
   });
-  return nextUpcomingShow;
+  return nextCurrentShow;
 }
 
 export {
@@ -163,7 +161,7 @@ export {
   populateTicketTiers,
   populateShowtimes,
   populateCastList,
-  checkForUpcomingPerformance, 
+  checkForCurrentPerformance, 
   checkForPriorPerformances,
-  findNextUpcomingShow
+  findCurrentShow
 }
