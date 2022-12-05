@@ -1,8 +1,0 @@
-<li>
-    <a href={{person.url}}><h2>{{ person.name }}</h2>
-    {% if person.role != "Dancer" %}
-    <h3>{{person.role}}</h3>
-    {% endif %}
-    </a>
-    <div class="description">{{ person.content | truncate: 200 }}</div>
-</li>
