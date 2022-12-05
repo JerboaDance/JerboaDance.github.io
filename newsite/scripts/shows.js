@@ -120,7 +120,6 @@ function populateCastList(castListElement, emcee, highlights, companyMembers) {
   castListElement.append(companyMembersElement);
 }
 
-
 function generateLink(show) {
   const link = document.createElement("a");
   link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${shows.name}</a>`);

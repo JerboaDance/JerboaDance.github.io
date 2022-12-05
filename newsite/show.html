@@ -3,6 +3,7 @@
     <meta http-equiv='content-language' content='en-US'>
     <link rel="icon" type="image/png" href="/assets/logos/logo-white.png" />
     <link rel="stylesheet" href="/css/main.css"/>
+    <title></title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { shows } from "/scripts/database.js";
@@ -70,6 +71,64 @@
         }
       }
       
+      function populatePhotoGallery(photoGalleryElement, showId, photos) {
+        if (photos?.length > 0) {
+          const modal = document.getElementById("modal");
+          const fullsizeImage = document.getElementById("fullsizeImage");
+          const closeButton = document.getElementById("close");
+          const photoCredit = document.getElementById("photoCredit");
+          modal.onclick = function(event) {
+            if (event.target === modal || event.target === closeButton) {
+              modal.style.display = "none";
+              photoCredit.innerHTML = "";
+            }
+          }
+
+          const showSlide = (photoIndex) => {
+            const photo = photos[photoIndex];
+
+            modal.style.display = "block";
+            fullsizeImage.src = `/assets/shows/${showId}/${photo.filename}`;
+            fullsizeImage.setAttribute('photoIndex', photoIndex);
+
+            if (photo.photographer?.url) {
+              photoCredit.innerHTML = `Photograph by <a href=${photo.photographer.url}>${photo.photographer.name}</a>`;
+            } else if (photo.photographer) {
+              photoCredit.innerText = `Photograph by ${photo.photographer.name}`;
+            }
+          }
+
+          for (let photoIndex = 0; photoIndex < photos.length; photoIndex++) {
+            const imageElement = document.createElement("img");
+            imageElement.src = `/assets/shows/${showId}/${photos[photoIndex].thumbnailFilename}`;
+            imageElement.loading = "lazy"; // TODO - this doesn't seem to work because of the flexbox layout; find an alternate solution? 
+            imageElement.className = "photo-gallery-thumbnail";
+            imageElement.onclick = showSlide.bind(this, [photoIndex]);
+            photoGalleryElement.append(imageElement);
+          }
+          
+          const previousButton = document.getElementById("previousPhoto");
+          previousButton.onclick = (event) => {
+            const photoIndex = parseInt(fullsizeImage.getAttribute("photoIndex"));
+            let previousPhotoIndex = photoIndex - 1;
+            previousPhotoIndex = (previousPhotoIndex < 0) ? photos.length - 1 : previousPhotoIndex;
+            showSlide(previousPhotoIndex);
+            event.cancelBubble = true;
+          }
+          
+          const nextButton = document.getElementById("nextPhoto");
+          nextButton.onclick = (event) => {
+            const photoIndex = parseInt(fullsizeImage.getAttribute("photoIndex"));
+            let nextPhotoIndex = photoIndex + 1;
+            nextPhotoIndex = (nextPhotoIndex >= photos.length) ? 0 : nextPhotoIndex;
+            showSlide(nextPhotoIndex);
+            event.cancelBubble = true;
+          }
+        } else {
+          photoGalleryElement.hidden = true;
+        }
+      }
+
       function populatePage() {
         const url = new URL(document.location);
         const showId = url.searchParams.get("showId");
@@ -113,6 +172,7 @@
               populatePriorPerformances(priorPerformanceList, show);
             }
 
+            /*
             if (show.videos && show.videos.length > 0){
               console.log(JSON.stringify(show.videos))
               show.videos.forEach(video => {
@@ -122,6 +182,13 @@
                 mainElement.append(teaserVideo);
               })
             }
+            */
+
+            if (show.photos?.length > 0) {
+              const photoGalleryElement = document.getElementById("photoGallery");
+              populatePhotoGallery(photoGalleryElement, show.id, show.photos);
+            }
+
           } else {
             mainElement.innerHTML = "This show has no performances";
           }
@@ -166,6 +233,17 @@
         </div>
 
         <div id="showVideos"></div>
+
+        <div id="photoGallery" class="photo-gallery">
+          <!-- The Modal -->
+          <div id="modal" class="modal">
+            <span id="closeButton" class="modal-close">&times;</span>
+            <span id="previousPhoto" class="modal-prev-photo">&#10094;</span>
+            <span id="nextPhoto" class="modal-next-photo">&#10095;</span>
+            <img id="fullsizeImage" class="modal-content" />
+            <div id="photoCredit" class="modal-photo-credit"></div>
+          </div>
+        </div>
 
       </main>
       <footer id="footer"></footer>

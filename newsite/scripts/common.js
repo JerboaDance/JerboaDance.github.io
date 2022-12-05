@@ -19,29 +19,26 @@ function addTwitterUniversalTag() {
     twq('track','PageView');
 }
 
-function populateHeader() {
-    fetch('/fragments/header.html')
-    .then(res => res.text())
-    .then(headerContent => {
-        let header = document.getElementById("header");
-        header.innerHTML = headerContent;
+async function populateHeader() {
+    const headerContent = await (await fetch('/fragments/header.html')).text();
+    let header = document.getElementById("header");
+    header.innerHTML = headerContent;
 
 
-        let showsSubmenu = document.getElementById("showsSubmenu");
-        Object.keys(shows).forEach(key => {
-            const menuItem = document.createElement("li");
-            menuItem.innerHTML =`<a href="/show.html?showId=${key}">${shows[key].name}</a>`;
-            showsSubmenu.append(menuItem);
-        });
+    let showsSubmenu = document.getElementById("showsSubmenu");
+    Object.keys(shows).forEach(key => {
+        const menuItem = document.createElement("li");
+        menuItem.innerHTML =`<a href="/show.html?showId=${key}">${shows[key].name}</a>`;
+        showsSubmenu.append(menuItem);
+    });
 
-        const nextUpcomingShow = findNextUpcomingShow();
-        if (nextUpcomingShow) {
-            const upcomingShowElement = document.getElementById("upcomingShow");
-            upcomingShowElement.innerHTML = `<a href="/show.html?showId=${nextUpcomingShow.id}">${nextUpcomingShow.name}</a>`;
-        } else {
-            // TODO donate?
-        }
-    })
+    const nextUpcomingShow = findNextUpcomingShow();
+    if (nextUpcomingShow) {
+        const upcomingShowElement = document.getElementById("upcomingShow");
+        upcomingShowElement.innerHTML = `<a href="/show.html?showId=${nextUpcomingShow.id}">${nextUpcomingShow.name}</a>`;
+    } else {
+        // TODO donate?
+    }
 }
 
 async function populateFooter() {
@@ -52,5 +49,5 @@ async function populateFooter() {
 
 populateHeader();
 populateFooter();
-addGoogleAnalytics();
-addTwitterUniversalTag();
+// addGoogleAnalytics();
+// addTwitterUniversalTag();

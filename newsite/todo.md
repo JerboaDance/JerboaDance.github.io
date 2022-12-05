@@ -1,6 +1,6 @@
 * add video clip to pages
-* add gallery to show pages
 * test every link
+* check CSS on mobile layout
 
 * figure out how jaime can make changes and preview them
 * automate validation for data file
