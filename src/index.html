@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta http-equiv='content-language' content='en-US'>
+    <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg" />
+    <link rel="stylesheet" href="/css/main.css"/>
+    <title>Jerboa Dance - Home</title>
+    <script src="/scripts/common.js" type="module"></script>
+    <script type="module">
+      import { shows } from "/scripts/database.js";
+      import { 
+        findCurrentShow,
+        generateLink,
+        populateHeaderImage,
+        populateVenue,
+        populateBrownPaperTicketsWidget,
+        populateTicketTiers,
+        populateShowtimes,
+        populateCastList,
+      } from "/scripts/shows.js";
+      import { generateYouTubeEmbed } from "/scripts/youTube.js"
+      
+      function populateCurrentPerformance(show) {
+        const currentPerformance = show.performances[0];
+        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
+
+        const headerImage = document.getElementById("headerImage");
+        populateHeaderImage(headerImage, show);
+        
+        const bptElement = document.getElementById("currentBptWidget");
+        populateBrownPaperTicketsWidget(bptElement, bptId);
+
+        const nameElement = document.getElementById("name");
+        nameElement.innerText = show.name;
+
+        const datesElement = document.getElementById("currentDates");
+        datesElement.innerText = dates;
+
+        const venueElement = document.getElementById("currentVenue");
+        populateVenue(venueElement, venue);
+
+        const descriptionElement = document.getElementById("currentDescription");
+        descriptionElement.innerHTML = show.description;
+
+        const ticketTierListElement = document.getElementById("currentTicketTiers");
+        populateTicketTiers(ticketTierListElement, ticketTiers);
+
+        const showtimesListElement = document.getElementById("currentShowtimes")
+        populateShowtimes(showtimesListElement, showtimes);
+
+        const castListElement = document.getElementById("currentCastList");
+        populateCastList(castListElement, emcee, highlights, companyMembers);
+      }
+
+      function populatePage() {
+        const mainElement = document.getElementById("main");
+        
+        const currentShow = findCurrentShow(shows);
+        if (currentShow) {
+          populateCurrentPerformance(currentShow);
+        } else {
+          const currentPerformanceElement = document.getElementById("currentPerformance");
+          currentPerformanceElement.hidden = true;
+          
+          const headerImage = document.getElementById("headerImage");
+          headerImage.setAttribute("src", `/assets/defaultIndexHeader.jpg`);
+        }
+
+        /* 
+        const teaserVideo = document.createElement("div")
+        teaserVideo.setAttribute("class", "teaser-video");
+        teaserVideo.append(generateYouTubeEmbed({ id: "GSR_h1AcrU8", aspectRatio:"16x9"}));
+        mainElement.append(teaserVideo); 
+        */
+      }
+      populatePage();
+    </script>
+  </head>
+  <body>
+    <div class="bodyWrapper">
+      <header id="header"></header>
+      <div class="header-image"><img id="headerImage" /></div>
+      <main id="main">
+        <div id="currentPerformance">
+          <div id="currentBptWidget" class="tickets"></div>
+          <h1 id="name"></h1>
+          <h2 id="currentDates" class="show-dates"></h2>
+          <h3 class="venue"><a id="currentVenue"></a></h3>
+          <p id="currentDescription"></p>
+          <ul id="currentTicketTiers" class="ticket-tiers"></ul>
+          <ul id="currentShowtimes" class="show-times"></ul>
+          <ul id="currentCastList" class="cast-list"></ul>
+        </div>
+      </main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>

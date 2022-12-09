@@ -1,0 +1,252 @@
+<html>
+  <head>
+    <meta http-equiv='content-language' content='en-US'>
+    <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg" />
+    <link rel="stylesheet" href="/css/main.css"/>
+    <title></title>
+    <script src="/scripts/common.js" type="module"></script>
+    <script type="module">
+      import { shows } from "/scripts/database.js";
+      import {
+        populateHeaderImage,
+        populateVenue,
+        populateBrownPaperTicketsWidget,
+        populateTicketTiers,
+        populateShowtimes,
+        populateCastList,
+        checkForCurrentPerformance, 
+        checkForPriorPerformances 
+      } from "/scripts/shows.js";
+      import { generateYouTubeEmbed } from "/scripts/youTube.js"
+      
+
+      function populateCurrentPerformance(show) {
+        const currentPerformance = show.performances[0];
+        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
+
+        const datesElement = document.getElementById("currentDates");
+        datesElement.innerText = dates;
+
+        const venueElement = document.getElementById("currentVenue");
+        populateVenue(venueElement, venue);
+
+        const bptElement = document.getElementById("currentBptWidget");
+        populateBrownPaperTicketsWidget(bptElement, bptId);
+
+        const descriptionElement = document.getElementById("currentDescription");
+        descriptionElement.innerHTML = show.description;
+
+        const ticketTierListElement = document.getElementById("currentTicketTiers");
+        populateTicketTiers(ticketTierListElement, ticketTiers);
+
+        const showtimesListElement = document.getElementById("currentShowtimes")
+        populateShowtimes(showtimesListElement, showtimes);
+
+        const castListElement = document.getElementById("currentCastList");
+        populateCastList(castListElement, emcee, highlights, companyMembers);
+      }
+
+      function populatePriorPerformances(priorPerformancesList, show) {
+        const template = document.getElementById("priorPerformanceTemplate");
+
+        const hasCurrentPerformance = checkForCurrentPerformance(show);
+        const hasPriorPerformances = checkForPriorPerformances(show);
+        
+        let performanceIndex = hasCurrentPerformance ? 1 : 0;
+        while (performanceIndex < show.performances.length) {
+          const { dates, venue, emcee, highlights, companyMembers } = show.performances[performanceIndex];
+          const priorPerformanceElement = template.content.firstElementChild.cloneNode(true);
+          priorPerformancesList.append(priorPerformanceElement);
+
+          const datesElement = priorPerformanceElement.querySelector(".show-dates")
+          datesElement.innerText = dates;
+
+          const venueElement = priorPerformanceElement.querySelector('a[name="venue"]')
+          populateVenue(venueElement, venue);
+
+          const castListElement = priorPerformanceElement.querySelector(".cast-list")
+          populateCastList(castListElement, emcee, highlights, companyMembers);
+          
+          performanceIndex++;
+        }
+      }
+      
+      function populatePhotoGallery(photoGalleryElement, showId, photos) {
+        if (photos?.length > 0) {
+          const modal = document.getElementById("modal");
+          const fullsizeImage = document.getElementById("fullsizeImage");
+          const closeButton = document.getElementById("close");
+          const photoCredit = document.getElementById("photoCredit");
+          modal.onclick = function(event) {
+            if (event.target === modal || event.target === closeButton) {
+              modal.style.display = "none";
+              photoCredit.innerHTML = "";
+            }
+          }
+
+          const showSlide = (photoIndex) => {
+            const photo = photos[photoIndex];
+
+            modal.style.display = "block";
+            fullsizeImage.src = `/assets/shows/${showId}/${photo.filename}`;
+            fullsizeImage.setAttribute('photoIndex', photoIndex);
+
+            if (photo.photographer?.url) {
+              photoCredit.innerHTML = `Photograph by <a href=${photo.photographer.url}>${photo.photographer.name}</a>`;
+            } else if (photo.photographer) {
+              photoCredit.innerText = `Photograph by ${photo.photographer.name}`;
+            }
+          }
+
+          for (let photoIndex = 0; photoIndex < photos.length; photoIndex++) {
+            const imageElement = document.createElement("img");
+            imageElement.src = `/assets/shows/${showId}/${photos[photoIndex].thumbnailFilename}`;
+            imageElement.loading = "lazy"; // TODO - this doesn't seem to work because of the flexbox layout; find an alternate solution? 
+            imageElement.className = "photo-gallery-thumbnail";
+            imageElement.onclick = showSlide.bind(this, [photoIndex]);
+            photoGalleryElement.append(imageElement);
+          }
+          
+          const previousButton = document.getElementById("previousPhoto");
+          previousButton.onclick = (event) => {
+            const photoIndex = parseInt(fullsizeImage.getAttribute("photoIndex"));
+            let previousPhotoIndex = photoIndex - 1;
+            previousPhotoIndex = (previousPhotoIndex < 0) ? photos.length - 1 : previousPhotoIndex;
+            showSlide(previousPhotoIndex);
+            event.cancelBubble = true;
+          }
+          
+          const nextButton = document.getElementById("nextPhoto");
+          nextButton.onclick = (event) => {
+            const photoIndex = parseInt(fullsizeImage.getAttribute("photoIndex"));
+            let nextPhotoIndex = photoIndex + 1;
+            nextPhotoIndex = (nextPhotoIndex >= photos.length) ? 0 : nextPhotoIndex;
+            showSlide(nextPhotoIndex);
+            event.cancelBubble = true;
+          }
+        } else {
+          photoGalleryElement.hidden = true;
+        }
+      }
+
+      function populatePage() {
+        const url = new URL(document.location);
+        const showId = url.searchParams.get("showId");
+
+        const mainElement = document.getElementById("main");
+
+        // check for valid show
+        if (showId && shows[showId]) {
+          const show = shows[showId];
+          
+          const title = document.querySelector('title');
+          title.innerText = `Jerboa Dance - ${show.name}`;
+
+          const headerImage = document.getElementById("headerImage");
+          populateHeaderImage(headerImage, show);
+          
+          const nameElement = document.getElementById("name");
+          nameElement.innerText = show.name;
+
+          if (show.performances && show.performances.length > 0){
+            const hasCurrentPerformance = checkForCurrentPerformance(show);
+            const hasPriorPerformances = checkForPriorPerformances(show);
+
+            const currentPerformanceElement = document.getElementById("currentPerformance");
+            if (hasCurrentPerformance) {
+              populateCurrentPerformance(show);
+            } else {
+              currentPerformanceElement.hidden = true;
+              const descriptionElement = document.getElementById("priorPerformancesDescription");
+              descriptionElement.innerHTML = show.description;
+            }
+
+            if (hasPriorPerformances) {
+
+              if (hasCurrentPerformance) {
+                const priorPerformancesHeadingElement = document.getElementById("priorPerformancesHeading");
+                priorPerformancesHeadingElement.hidden = false;
+              }
+              
+              const priorPerformanceList = document.getElementById("priorPerformancesList")
+              populatePriorPerformances(priorPerformanceList, show);
+            }
+
+            /*
+            if (show.videos && show.videos.length > 0){
+              console.log(JSON.stringify(show.videos))
+              show.videos.forEach(video => {
+                const teaserVideo = document.createElement("div")
+                teaserVideo.setAttribute("class", "performance-clip");
+                teaserVideo.append(generateYouTubeEmbed({ id: video.id, aspectRatio:video.aspectRatio}));
+                mainElement.append(teaserVideo);
+              })
+            }
+            */
+
+            if (show.photos?.length > 0) {
+              const photoGalleryElement = document.getElementById("photoGallery");
+              populatePhotoGallery(photoGalleryElement, show.id, show.photos);
+            }
+
+          } else {
+            mainElement.innerHTML = "This show has no performances";
+          }
+        } else {
+          mainElement.innerHTML = "Show not found";
+        }
+      }
+
+      populatePage();
+    </script>
+
+  </head>
+  <body>
+    <div class="bodyWrapper">
+      <header id="header"></header>
+      <div class="header-image"><img id="headerImage" /></div>
+      <main id="main">
+        <h1 id="name"></h1>
+
+        <div id="currentPerformance">
+          <h2 id="currentDates" class="show-dates"></h2>
+          <h3 class="venue"><a id="currentVenue"></a></h3>
+          <div id="currentBptWidget" class="tickets"></div>
+          <p id="currentDescription"></p>
+          <ul id="currentTicketTiers" class="ticket-tiers"></ul>
+          <ul id="currentShowtimes" class="show-times"></ul>
+          <ul id="currentCastList" class="cast-list"></ul>
+        </div>
+
+        <div id="priorPerformances">
+          <p id="priorPerformancesDescription"></p>
+          <h2 id="priorPerformancesHeading" hidden>Prior Performances</h2>
+          <ul id="priorPerformancesList">
+            <template id="priorPerformanceTemplate">
+              <li>
+                <h2 class="show-dates"></h2>
+                <h3 class="venue"><a name="venue"></a></h3>
+                <ul class="cast-list"></ul>
+              </li>
+            </template>
+          </ul>
+        </div>
+
+        <div id="showVideos"></div>
+
+        <div id="photoGallery" class="photo-gallery">
+          <!-- The Modal -->
+          <div id="modal" class="modal">
+            <span id="closeButton" class="modal-close">&times;</span>
+            <span id="previousPhoto" class="modal-prev-photo">&#10094;</span>
+            <span id="nextPhoto" class="modal-next-photo">&#10095;</span>
+            <img id="fullsizeImage" class="modal-content" />
+            <div id="photoCredit" class="modal-photo-credit"></div>
+          </div>
+        </div>
+
+      </main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
+</html>
