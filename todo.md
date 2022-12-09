@@ -1,6 +1,3 @@
-* fix font sizes for mobile
-* reenable tracking
-
 * add video clip to pages (or put something on the index page)
 * figure out how jaime can make changes and preview them
 * automate validation for data file
