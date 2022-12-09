@@ -33,11 +33,11 @@ async function populateHeader() {
     });
 
     const currentShow = findCurrentShow(shows);
+    const currentShowElement = document.getElementById("currentShow");
     if (currentShow) {
-        const currentShowElement = document.getElementById("currentShow");
         currentShowElement.innerHTML = `<a href="/show.html?showId=${currentShow.id}">${currentShow.name}</a>`;
     } else {
-        // TODO donate?
+        currentShowElement.innerHTML = `<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7G65H8ZWEKR74" target="_blank" rel="nofollow">Donate</a>`;
     }
 }
 
@@ -49,5 +49,5 @@ async function populateFooter() {
 
 populateHeader();
 populateFooter();
-// addGoogleAnalytics();
-// addTwitterUniversalTag();
+addGoogleAnalytics();
+addTwitterUniversalTag();

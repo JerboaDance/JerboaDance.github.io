@@ -17,19 +17,30 @@ function populateBrownPaperTicketsWidget(bptElement, bptId) {
     const widgetText = `
       <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v671.css" /> 
       <DIV ID="bpt_eventbody">
-          <CENTER>
-              <BR><BR>
-                  Brown Paper Tickets Ticket Widget Loading...
-              <BR><BR>
-              <A HREF="https://www.brownpapertickets.com/event/${bptId}">Click Here</A> to visit the Brown Paper Tickets event page.
-          </CENTER>
+        <CENTER>
           <BR><BR>
+          Brown Paper Tickets Ticket Widget Loading...
+          <BR><BR>
+          <A HREF="https://www.brownpapertickets.com/event/${bptId}">Click Here</A> to visit the Brown Paper Tickets event page.
+        </CENTER>
+        <BR><BR>
       </DIV>
-      <script src="https://www.brownpapertickets.com/eventwidget.js?event=${bptId}&nodescription=1&notitle=1" type="text/javascript" language="javascript"></script>
-      <script src="https://www.brownpapertickets.com/widget_v671.js?event=${bptId}" type="text/javascript" language="javascript"></script>
     `;
-    
     bptElement.innerHTML = widgetText;
+
+    const head = document.querySelector('head');
+
+    const script1 = document.createElement("script");
+    script1.src = `https://www.brownpapertickets.com/eventwidget.js?event=${bptId}&nodescription=1&notitle=1`;
+    script1.type="text/javascript";
+    script1.language="javascript";
+    head.append(script1);
+    
+    const script2 = document.createElement("script");
+    script2.src = `https://www.brownpapertickets.com/widget_v671.js?event=${bptId}`;
+    script2.type="text/javascript";
+    script2.language="javascript";
+    head.append(script2);
   } else {
     bptElement.hidden = true;
   }

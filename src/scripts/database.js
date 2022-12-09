@@ -674,6 +674,7 @@ const shows = {
         startDate: new Date(2023, 2, 3),
         endDate: new Date(2023, 2, 11),
         venue: venues.yawTheater,
+        bptId: 5664115,
         ticketTiers: [
           {
             name: "VIP tickets $60 presale, $75 at the door",
