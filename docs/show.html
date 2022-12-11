@@ -14,14 +14,14 @@
         populateTicketTiers,
         populateShowtimes,
         populateCastList,
-        checkForCurrentPerformance, 
-        checkForPriorPerformances 
+        findCurrentPerformanceOfShow,
+        checkForPriorPerformances
       } from "/scripts/shows.js";
       import { generateYouTubeEmbed } from "/scripts/youTube.js"
+      import { getShowImageUrl } from "/scripts/urls.js"
       
 
-      function populateCurrentPerformance(show) {
-        const currentPerformance = show.performances[0];
+      function populateCurrentPerformance(show, currentPerformance) {
         const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
 
         const datesElement = document.getElementById("currentDates");
@@ -46,36 +46,31 @@
         populateCastList(castListElement, emcee, highlights, companyMembers);
       }
 
-      function populatePriorPerformances(priorPerformancesList, show) {
+      function populatePriorPerformances(priorPerformanceListElement, show) {
         const template = document.getElementById("priorPerformanceTemplate");
+        show.performances?.forEach(performance => {
+          if (performance.endDate < Date.now()) {
+            const { dates, venue, emcee, highlights, companyMembers } = performance;
+            const priorPerformanceElement = template.content.firstElementChild.cloneNode(true);
+            priorPerformanceListElement.append(priorPerformanceElement);
 
-        const hasCurrentPerformance = checkForCurrentPerformance(show);
-        const hasPriorPerformances = checkForPriorPerformances(show);
-        
-        let performanceIndex = hasCurrentPerformance ? 1 : 0;
-        while (performanceIndex < show.performances.length) {
-          const { dates, venue, emcee, highlights, companyMembers } = show.performances[performanceIndex];
-          const priorPerformanceElement = template.content.firstElementChild.cloneNode(true);
-          priorPerformancesList.append(priorPerformanceElement);
+            const datesElement = priorPerformanceElement.querySelector(".show-dates")
+            datesElement.innerText = dates;
 
-          const datesElement = priorPerformanceElement.querySelector(".show-dates")
-          datesElement.innerText = dates;
+            const venueElement = priorPerformanceElement.querySelector('a[name="venue"]')
+            populateVenue(venueElement, venue);
 
-          const venueElement = priorPerformanceElement.querySelector('a[name="venue"]')
-          populateVenue(venueElement, venue);
-
-          const castListElement = priorPerformanceElement.querySelector(".cast-list")
-          populateCastList(castListElement, emcee, highlights, companyMembers);
-          
-          performanceIndex++;
-        }
+            const castListElement = priorPerformanceElement.querySelector(".cast-list")
+            populateCastList(castListElement, emcee, highlights, companyMembers);
+          }
+        });
       }
       
-      function populatePhotoGallery(photoGalleryElement, showId, photos) {
-        if (photos?.length > 0) {
+      function populatePhotoGallery(photoGalleryElement, show) {
+        if (show.photos?.length > 0) {
           const modal = document.getElementById("modal");
           const fullsizeImage = document.getElementById("fullsizeImage");
-          const closeButton = document.getElementById("close");
+          const closeButton = document.getElementById("closeButton");
           const photoCredit = document.getElementById("photoCredit");
           modal.onclick = function(event) {
             if (event.target === modal || event.target === closeButton) {
@@ -85,10 +80,10 @@
           }
 
           const showSlide = (photoIndex) => {
-            const photo = photos[photoIndex];
+            const photo = show.photos[photoIndex];
 
             modal.style.display = "block";
-            fullsizeImage.src = `/assets/shows/${showId}/${photo.filename}`;
+            fullsizeImage.src = getShowImageUrl(show, show.photos[photoIndex].filename);
             fullsizeImage.setAttribute('photoIndex', photoIndex);
 
             if (photo.photographer?.url) {
@@ -98,9 +93,9 @@
             }
           }
 
-          for (let photoIndex = 0; photoIndex < photos.length; photoIndex++) {
+          for (let photoIndex = 0; photoIndex < show.photos.length; photoIndex++) {
             const imageElement = document.createElement("img");
-            imageElement.src = `/assets/shows/${showId}/${photos[photoIndex].thumbnailFilename}`;
+            imageElement.src = getShowImageUrl(show, show.photos[photoIndex].thumbnailFilename);
             imageElement.loading = "lazy"; // TODO - this doesn't seem to work because of the flexbox layout; find an alternate solution? 
             imageElement.className = "photo-gallery-thumbnail";
             imageElement.onclick = showSlide.bind(this, [photoIndex]);
@@ -111,7 +106,7 @@
           previousButton.onclick = (event) => {
             const photoIndex = parseInt(fullsizeImage.getAttribute("photoIndex"));
             let previousPhotoIndex = photoIndex - 1;
-            previousPhotoIndex = (previousPhotoIndex < 0) ? photos.length - 1 : previousPhotoIndex;
+            previousPhotoIndex = (previousPhotoIndex < 0) ? show.photos.length - 1 : previousPhotoIndex;
             showSlide(previousPhotoIndex);
             event.cancelBubble = true;
           }
@@ -120,7 +115,7 @@
           nextButton.onclick = (event) => {
             const photoIndex = parseInt(fullsizeImage.getAttribute("photoIndex"));
             let nextPhotoIndex = photoIndex + 1;
-            nextPhotoIndex = (nextPhotoIndex >= photos.length) ? 0 : nextPhotoIndex;
+            nextPhotoIndex = (nextPhotoIndex >= show.photos.length) ? 0 : nextPhotoIndex;
             showSlide(nextPhotoIndex);
             event.cancelBubble = true;
           }
@@ -148,13 +143,13 @@
           const nameElement = document.getElementById("name");
           nameElement.innerText = show.name;
 
-          if (show.performances && show.performances.length > 0){
-            const hasCurrentPerformance = checkForCurrentPerformance(show);
+          if (show.performances?.length > 0){
+            const currentPerformance = findCurrentPerformanceOfShow(show);
             const hasPriorPerformances = checkForPriorPerformances(show);
 
             const currentPerformanceElement = document.getElementById("currentPerformance");
-            if (hasCurrentPerformance) {
-              populateCurrentPerformance(show);
+            if (currentPerformance) {
+              populateCurrentPerformance(show, currentPerformance);
             } else {
               currentPerformanceElement.hidden = true;
               const descriptionElement = document.getElementById("priorPerformancesDescription");
@@ -163,13 +158,13 @@
 
             if (hasPriorPerformances) {
 
-              if (hasCurrentPerformance) {
+              if (currentPerformance) {
                 const priorPerformancesHeadingElement = document.getElementById("priorPerformancesHeading");
                 priorPerformancesHeadingElement.hidden = false;
               }
               
-              const priorPerformanceList = document.getElementById("priorPerformancesList")
-              populatePriorPerformances(priorPerformanceList, show);
+              const priorPerformanceListElement = document.getElementById("priorPerformancesList")
+              populatePriorPerformances(priorPerformanceListElement, show);
             }
 
             /*
@@ -186,7 +181,7 @@
 
             if (show.photos?.length > 0) {
               const photoGalleryElement = document.getElementById("photoGallery");
-              populatePhotoGallery(photoGalleryElement, show.id, show.photos);
+              populatePhotoGallery(photoGalleryElement, show);
             }
 
           } else {

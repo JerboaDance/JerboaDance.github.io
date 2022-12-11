@@ -4,8 +4,8 @@
   "description": "The website for Jerboa Dance",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npx http-server src",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "serve": "npx http-server docs",
     "sitemap": "node tools/generateSitemap.js"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/JerboaDance/JerboaDance.github.io#readme",
   "devDependencies": {
+    "jest": "^29.3.1",
     "sitemap": "^7.1.1",
     "xml-formatter": "^2.6.1"
   }

@@ -6,15 +6,15 @@
     <title>Jerboa Dance - About</title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
-      import { shows } from "/scripts/database.js";
+      import { shows, companyMembers } from "/scripts/database.js";
       import { findCurrentShow } from "/scripts/shows.js";
 
       async function populateCurrentCompanyMembers(){        
         const bioPreviewFragment = await (await fetch('/fragments/bioPreview.html')).text();
         const bioListElement = document.getElementById("bioList");
 
-        const currentShow = findCurrentShow(shows);
-        const currentCompanyMembers = currentShow.performances[0].companyMembers;
+        const {currentShow, currentPerformance} = findCurrentShow(shows);
+        const currentCompanyMembers = (currentPerformance?.companyMembers) ? (currentPerformance?.companyMembers) : [companyMembers.jaimeWaliczek];
         currentCompanyMembers.forEach(companyMember => {
           let bioElement = document.createElement('template');
           bioElement.innerHTML = eval('`'+bioPreviewFragment+'`');

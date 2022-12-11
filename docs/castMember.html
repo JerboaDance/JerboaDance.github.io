@@ -6,17 +6,21 @@
     <title></title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
-      import { companyMembers, emcees, highlights} from "/scripts/database.js";
+      import { companyMembers, highlights} from "/scripts/database.js";
+      import { getHeadshotImageUrl } from "/scripts/urls.js";
       const url = new URL(document.location);
       let castMember;
 
       const companyMemberId = url.searchParams.get("companyMemberId");
       if (companyMemberId) {
         castMember = companyMembers[companyMemberId];
+        if (castMember?.suppressPage) {
+          castMember = null;
+        }
       } else {
         const emceeId = url.searchParams.get("emceeId");
         if (emceeId) {
-          castMember = emcees[emceeId];
+          castMember = highlights[emceeId];
         } else {
           const highlightId = url.searchParams.get("highlightId");
           if (highlightId) {
@@ -51,7 +55,7 @@
         }
 
         const filename = castMember.headshot?.filename ? castMember.headshot.filename : "default.png";
-        headshot.setAttribute("src", `/assets/headshots/${filename}`);
+        headshot.setAttribute("src", `${getHeadshotImageUrl(filename)}`);
         headshot.setAttribute("alt", `Photograph of ${castMember.name}`);
         
         if (castMember.headshot?.photographer) {
