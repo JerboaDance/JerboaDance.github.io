@@ -59,11 +59,11 @@ const companyMembers = {
     bio: `Adam is very excited to be performing with this amazing group of dancers in Jerboa.  He hails from the University of Alabama where he trained in theater and dance.  Adam has performed across the nation and around the world, most recently coming off the national tour of Urban Cowboy the Musical.  He has also performed throughout the city, including the world premier of Nutcracker: Rated R at the Theater for the New City, as well as the role of Jack in The Naked Dead Elephant… at the Cherry Lane Theater.  Some of  his favorite roles include Bernardo in West Side Story, Anthony Martini in One Flew Over the Cuckoo’s Nest, and Rosencrantz in Shakespearear’s Hamlet.  He would like to extend a special thank you to family and friends for all of their love, guidance, and support and for being there with him every step of the way.
     `
   },
-  alexandriaSipe: {
-    id: "alexandriaSipe",
-    name: "Alexandria Sipe",
+  alexandraSipe: {
+    id: "alexandraSipe",
+    name: "Alexandra Sipe",
     headshot: {
-      filename:"AlexandriaSipe.jpg",
+      filename:"AlexandraSipe.jpg",
       photographer: photographers.warrenWoo
     },
     bio: `Alexandra Sipe found movement at University of Idaho, where she quickly got wrapped up in ballet, contemporary dance, and yoga. She spent her college career touring with Dancers, Drummers, Dreamers and traveling to train at American Dance Festival. Sipe is currently a freelance dance artist and has performed for Bridge Project, Converge, and Seattle International Dance Festival as well as in shows in New York City, Portland, and Washington DC.
@@ -220,7 +220,7 @@ const companyMembers = {
     id: "hannaLeeSakakibara",
     name: "Hanna-Lee Sakakibara",
     headshot: {
-      filename:"HannaLeeSakakibara.jpg"
+      filename:"Hanna-LeeSakakibara.jpg"
     },
     bio: `Hanna-Lee was born and raised in Jerusalem, Israel, to a Japanese father and Australian Mother. She began dancing at the age of 4. Graduating from high school she decided to pursue her dance career and moved to NY to study at the Alvin Ailey Dance School. She is currently represented by MSA dancers and choreographers agency, and recently received her artist visa to continue and dance in the U.S.
     `
@@ -278,6 +278,8 @@ const companyMembers = {
     `
   },
   kristenKissel: {
+    id: "kristenKissel",
+    suppressPage: true,
     name: "Kristen Kissel"
   },
   lauranDrackett:{
@@ -444,12 +446,12 @@ const companyMembers = {
   },
 };
 
-const emcees = {
+const highlights = {
   seanCalavan: {
     id: "seanCalavan",
     name: "Sean Calavan",
     role: "Master of Ceremonies",
-    url: "/castMember.html?companyMemberId=seanCalavan"
+    useCompanyMemberPage: true
   },
   steveDolan:{
     id: "steveDolan",
@@ -465,7 +467,7 @@ const emcees = {
     id: "thomasPhelan",
     name: "Thomas Phelan",
     role: "Master of Ceremonies",
-    url: "/castMember.html?companyMemberId=thomasPhelan"
+    useCompanyMemberPage: true
   },
   dustinGuyJackson: {
     id: "dustinGuyJackson",
@@ -481,14 +483,11 @@ const emcees = {
     },
     bio: `Brenna grew up in Klamath Falls, OR, where she first developed her interest in theater and acting. While her formal education at Oregon Institute of Technology was focused on engineering, she appeared on stage in many plays and musicals, and has been featured in multiple indie films. More recently, she's been a successful live streamer, hosted multiple online shows, including being the regular host of Power Builds, and does voice acting work. Brenna is excited to be back on stage for her first appearance with Jerboa Dance.`
   },
-}
-
-const highlights = {
   jaimeWaliczek: {
     id: "jaimeWaliczek",
     name: "Jaime Waliczek",
     role: "Choreographer",
-    url: "/castMember.html?companyMemberId=jaimeWaliczek"
+    useCompanyMemberPage: true
   },
   splinterDance: {
     id: "splinterDance",
@@ -514,7 +513,7 @@ const highlights = {
     id: "seanCalavanDragQueen",
     name: "Sean Calavan",
     role: "Drag Queen",
-    url: "/castMember.html?companyMemberId=seanCalavan"
+    useCompanyMemberPage: true
   },
   emmaCurtiss: {
     id: "emmaCurtiss",
@@ -540,7 +539,7 @@ const highlights = {
     id: "andreasFetz",
     name: "Andreas Fetz",
     role: "Arm Balancer",
-    url: "/castMember.html?companyMemberId=andreasFetz"
+    useCompanyMemberPage: true
   },
   scottoMoore:{
     id: "scottoMoore",
@@ -570,7 +569,7 @@ const highlights = {
     id: "jenniferElder",
     name: "Jennifer Elder",
     role: "Dancer",
-    url: "/castMember.html?companyMemberId=jenniferElder"
+    useCompanyMemberPage: true
   },
   nellWaliczek: {
     id: "nellWaliczek",
@@ -685,7 +684,7 @@ const shows = {
             description: "$5 kids’ tickets for the family-friendly Saturday 2/4 matinee with kid participation",
           }
         ],
-        emcee: emcees.brennaDuffitt,
+        emcee: highlights.brennaDuffitt,
         highlights: [
           highlights.jaimeWaliczek,
           highlights.emmaCurtiss,
@@ -741,7 +740,7 @@ const shows = {
           companyMembers.angelaSchmidt,
           companyMembers.seanCalavan
         ],
-        emcee: emcees.brennaDuffitt,
+        emcee: highlights.brennaDuffitt,
         highlights: [
           highlights.jaimeWaliczek,
           highlights.emmaCurtiss,
@@ -765,6 +764,7 @@ const shows = {
     performances: [
       {
         dates: "February 14th, 15th, 21st, 22nd 2020",
+        legacy: true,
         startDate: new Date(2020, 2, 14),
         endDate: new Date(2020, 2, 22),
         venue: venues.yawTheater,
@@ -778,7 +778,7 @@ const shows = {
           companyMembers.constanzeVillines,
           companyMembers.warrenWoo 
         ],
-        emcee: emcees.seanCalavan,
+        emcee: highlights.seanCalavan,
         highlights: [
           highlights.jaimeWaliczek,
           highlights.emmaCurtiss,
@@ -804,6 +804,7 @@ const shows = {
     performances: [
       {
         dates: "May 31st - June 2nd 2019",
+        legacy: true,
         startDate: new Date(2019, 5, 31),
         endDate: new Date(2019, 6, 2),
         venue: venues.yawTheater,
@@ -815,7 +816,7 @@ const shows = {
     ]
   },
   embrace:{
-    id: 'reconstruct',
+    id: 'embrace',
     name: "Embrace",
     description:`Jerboa delights with another cabaret filled with entertainment and physicality. We will dazzle you with dance, music, acrobatics, circus, and burlesque. Join us on a journey from the jazz club to the apocalypse while we explore power and gender. Come embrace life in all its weirdness with these fantastic performers.
     <p>
@@ -827,6 +828,7 @@ const shows = {
     performances: [
       {
         dates: "February 14th, 15th, 16th 2019",
+        legacy: true,
         startDate: new Date(2019, 2, 14),
         endDate: new Date(2019, 2, 16),
         venue: venues.yawTheater,
@@ -836,10 +838,10 @@ const shows = {
           companyMembers.stellaKutz,
           companyMembers.constanzeVillines,
           companyMembers.chelseaReinschmidt,
-          companyMembers.alexandriaSipe,
+          companyMembers.alexandraSipe,
           companyMembers.warrenWoo
         ],
-        emcee: emcees.thomasPhelan,
+        emcee: highlights.thomasPhelan,
         highlights: [
           highlights.jaimeWaliczek,
           highlights.ajRogers,
@@ -862,6 +864,7 @@ const shows = {
     performances: [
       {
         dates: "February 9th, 10th, 11th 2018",
+        legacy: true,
         startDate: new Date(2018, 2, 9),
         endDate: new Date(2018, 2, 11),
         venue: venues.yawTheater,
@@ -876,7 +879,7 @@ const shows = {
           companyMembers.constanzeVillines,
           companyMembers.alexUng
         ],
-        emcee: emcees.dustinGuyJackson,
+        emcee: highlights.dustinGuyJackson,
         highlights: [
           highlights.jaimeWaliczek,
           highlights.theLoveShowNYC,
@@ -957,6 +960,7 @@ const shows = {
     performances: [
       {
         dates: "September 1st & 3rd, 2017 (Bumbershoot)",
+        legacy: true,
         startDate: new Date(2017, 9, 1),
         endDate: new Date(2017, 9, 3),
         venue: venues.centerHouseTheater,
@@ -976,6 +980,7 @@ const shows = {
       },
       {
         dates: "March 24th, 25th, 29th, & April 1st, 2017",
+        legacy: true,
         startDate: new Date(2017, 3, 24),
         endDate: new Date(2017, 4, 1),
         venue: venues.centerHouseTheater,
@@ -995,6 +1000,7 @@ const shows = {
       },
       {
         dates: "June 4th & 5th, 2010",
+        legacy: true,
         startDate: new Date(2010, 6, 4),
         endDate: new Date(2010, 6, 5),
         venue: venues.actTheater,
@@ -1156,6 +1162,7 @@ const shows = {
     performances:[
      {
          dates: "Jun 24th & 25th, 2016",
+         legacy: true,
          startDate: new Date(2016, 6, 24),
          endDate: new Date(2016, 6, 25),
          venue: venues.eriksonTheater,
@@ -1192,6 +1199,7 @@ const shows = {
     performances: [
       {
         dates: "February 12th, 13th, & 14th 2016",
+        legacy: true,
         startDate: new Date(2016, 2, 12),
         endDate: new Date(2016, 2, 14),
         venue: venues.velocityDanceCenter,
@@ -1204,7 +1212,7 @@ const shows = {
           companyMembers.renadoTozer,
           companyMembers.jenniferElder
         ],
-        emcees: emcees.steveDolan,
+        emcees: highlights.steveDolan,
         highlights:[
           highlights.jaimeWaliczek,
           highlights.andreasFetz,
@@ -1228,6 +1236,7 @@ const shows = {
     performances:[
       {
         dates: "August 20th, 2010",
+        legacy: true,
         startDate: new Date(2010, 8, 20),
         endDate: new Date(2010, 8, 20),
         venue: venues.centerHouseTheater,
@@ -1241,7 +1250,7 @@ const shows = {
           companyMembers.renadoTozer,
           companyMembers.kristenKissel,
         ],
-        emcee: emcees.jjBrychell,
+        emcee: highlights.jjBrychell,
         highlights: [
           highlights.jaimeWaliczek,
           highlights.randiRascal,
@@ -1281,6 +1290,7 @@ const shows = {
     performances: [
       {
         dates: "September 17th & 18th, 2010",
+        legacy: true,
         startDate: new Date(2010, 9, 17),
         endDate: new Date(2010, 9, 18),
         venue: venues.actTheater,
@@ -1300,6 +1310,7 @@ const shows = {
       },
       {
         dates: "February 13th & 14th, 2009",
+        legacy: true,
         startDate: new Date(2009, 2, 13),
         endDate: new Date(2009, 2, 14),
         venue: venues.actTheater,
@@ -1319,6 +1330,7 @@ const shows = {
       },
       {
         dates: "November 14th, 15th, 16th, & 17th, 2007",
+        legacy: true,
         startDate: new Date(2007, 11, 14),
         endDate: new Date(2007, 11, 17),
         venue: venues.hudsonGuildTheater,
@@ -1341,8 +1353,9 @@ const shows = {
 };
 
 export {
-  shows,
+  venues,
+  photographers,
   companyMembers,
   highlights,
-  emcees
+  shows
 }

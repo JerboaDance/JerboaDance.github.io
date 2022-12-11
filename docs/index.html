@@ -19,18 +19,17 @@
       } from "/scripts/shows.js";
       import { generateYouTubeEmbed } from "/scripts/youTube.js"
       
-      function populateCurrentPerformance(show) {
-        const currentPerformance = show.performances[0];
+      function populateCurrentPerformance(currentShow, currentPerformance) {
         const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
 
         const headerImage = document.getElementById("headerImage");
-        populateHeaderImage(headerImage, show);
+        populateHeaderImage(headerImage, currentShow);
         
         const bptElement = document.getElementById("currentBptWidget");
         populateBrownPaperTicketsWidget(bptElement, bptId);
 
         const nameElement = document.getElementById("name");
-        nameElement.innerText = show.name;
+        nameElement.innerText = currentShow.name;
 
         const datesElement = document.getElementById("currentDates");
         datesElement.innerText = dates;
@@ -39,7 +38,7 @@
         populateVenue(venueElement, venue);
 
         const descriptionElement = document.getElementById("currentDescription");
-        descriptionElement.innerHTML = show.description;
+        descriptionElement.innerHTML = currentShow.description;
 
         const ticketTierListElement = document.getElementById("currentTicketTiers");
         populateTicketTiers(ticketTierListElement, ticketTiers);
@@ -54,15 +53,15 @@
       function populatePage() {
         const mainElement = document.getElementById("main");
         
-        const currentShow = findCurrentShow(shows);
-        if (currentShow) {
-          populateCurrentPerformance(currentShow);
+        const {currentShow, currentPerformance} = findCurrentShow(shows);
+        if (currentPerformance) {
+          populateCurrentPerformance(currentShow, currentPerformance);
         } else {
           const currentPerformanceElement = document.getElementById("currentPerformance");
           currentPerformanceElement.hidden = true;
           
           const headerImage = document.getElementById("headerImage");
-          headerImage.setAttribute("src", `/assets/defaultIndexHeader.jpg`);
+          headerImage.src = `/assets/defaultIndexHeader.jpg`;
         }
 
         /* 

@@ -1,9 +1,11 @@
+import { getShowImageUrl, getCompanyMemberBioUrl, getHighlightBioUrl } from './urls.js';
+
 function populateHeaderImage(headerImageElement, show){
-  if (show.headerImage && show.headerImage.filename) {
-    headerImage.setAttribute("src", `/assets/shows/${show.id}/${show.headerImage.filename}`)
-    headerImage.setAttribute("alt", `Header image for ${show.name}`);
+  if (show.headerImage?.filename) {
+    headerImageElement.setAttribute("src", getShowImageUrl(show, show.headerImage.filename));
+    headerImageElement.setAttribute("alt", `Header image for ${show.name}`);
   } else {
-    headerImage.hidden = true;
+    headerImageElement.hidden = true;
   }
 }
 
@@ -69,19 +71,16 @@ function populateShowtimes(showtimesListElement, showtimes) {
 }
 
 
-function generateHighlight(highlight, isEmcee) {
+function generateHighlight(highlight) {
   const highlightElement = document.createElement("li");
 
   if (highlight.url) {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${highlight.url}">${highlight.name}</a>`;
+  } else if (highlight.useCompanyMemberPage) {
+    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getCompanyMemberBioUrl(highlight)}">${highlight.name}</a>`;
   } else if (highlight.bio) {
-    if (isEmcee) {
-      highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="/castMember.html?emceeId=${highlight.id}">${highlight.name}</a>`;
-    } else {
-      highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="/castMember.html?highlightId=${highlight.id}">${highlight.name}</a>`;
-    }
-  }
-  else {
+    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getHighlightBioUrl(highlight)}">${highlight.name}</a>`;
+  } else {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> ${highlight.name}`;
   }
 
@@ -98,8 +97,8 @@ function generateCompanyMembersList(companyMembers) {
   if (companyMembers && companyMembers.length > 0) {
     companyMembers.forEach(companyMember => {
       const companyMemberElement = document.createElement("li");
-      if (companyMember.id) {
-        companyMemberElement.innerHTML = `<a href="/castMember.html?companyMemberId=${companyMember.id}">${companyMember.name}</a>`;
+      if (!companyMember.suppressPage) {
+        companyMemberElement.innerHTML = `<a href="${getCompanyMemberBioUrl(companyMember)}">${companyMember.name}</a>`;
       } else {
         companyMemberElement.innerText = companyMember.name;
       }
@@ -113,9 +112,8 @@ function generateCompanyMembersList(companyMembers) {
 
 function populateCastList(castListElement, emcee, highlights, companyMembers) {
   if (emcee) {
-    const emceeElement = generateHighlight(emcee, /*isEmcee*/ true);
+    const emceeElement = generateHighlight(emcee);
     castListElement.append(emceeElement);
-    
   }
   
   if (highlights) {
@@ -131,37 +129,40 @@ function populateCastList(castListElement, emcee, highlights, companyMembers) {
 
 function generateLink(show) {
   const link = document.createElement("a");
-  link.setAttribute("href", `<a href="/show.html?showId=${show.id}">${show.name}</a>`);
+  link.setAttribute("href", `<a href="${getShowUrl(show)}">${show.name}</a>`);
   return link;
 }
 
-function checkForCurrentPerformance(show) {
-  return show.performances 
-    && show.performances.length > 0 
-    && show.performances[0].endDate > Date.now();
-}
-
-function checkForPriorPerformances(show) {
-  const hasCurrentPerformance = checkForCurrentPerformance(show);
-  return !hasCurrentPerformance || (hasCurrentPerformance && show.performances.length > 1);
+function findCurrentPerformanceOfShow(show) {
+  let currentPerformance = null;
+  if (show?.performances?.length > 0 && show.performances[0].endDate > Date.now()) {
+    currentPerformance = show.performances[0];
+  }
+  return currentPerformance;
 }
 
 function findCurrentShow(shows) {
-  let nextCurrentShow;
+  let currentShow;
+  let currentPerformance;
   Object.keys(shows).forEach(showId => {
     const show = shows[showId];
-    if (checkForCurrentPerformance(show)) {
-      if (!nextCurrentShow) {
-        nextCurrentShow = show;
-      } else {
-        const nextCurrentPerformance = nextCurrentShow.performances[0];
-        if  (nextCurrentPerformance.startDate > show.performances[0].startDate) {
-          nextCurrentShow = show;
-        }
+    const performance = findCurrentPerformanceOfShow(show);
+    if (performance) {
+      if (!currentShow) {
+        currentShow = show;
+        currentPerformance = performance;
+      } else if  (performance.startDate < currentPerformance.startDate) {
+        currentShow = show;
+        currentPerformance = performance;
       }
     }
   });
-  return nextCurrentShow;
+  return {currentShow, currentPerformance};
+}
+
+function checkForPriorPerformances(show) {
+  const currentPerformance = findCurrentPerformanceOfShow(show);
+  return (!currentPerformance && show.performances.length > 0) || (!!currentPerformance && show.performances.length > 1);
 }
 
 export {
@@ -172,7 +173,7 @@ export {
   populateTicketTiers,
   populateShowtimes,
   populateCastList,
-  checkForCurrentPerformance, 
+  findCurrentPerformanceOfShow, 
+  findCurrentShow,
   checkForPriorPerformances,
-  findCurrentShow
 }

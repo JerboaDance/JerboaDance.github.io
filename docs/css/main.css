@@ -149,7 +149,7 @@ nav li {
 nav a {
   color: var(--light-gray-color);
 }
-nav li:hover a, li:active a {
+nav li:hover a, nav li:active a {
   color: var(--text-black-color);
 }
 nav li ul {    
@@ -159,7 +159,7 @@ nav li ul {
   width: auto;
   z-index: 10;
 }
-nav li:hover ul, li:active ul {
+nav li:hover ul, nav li:active ul {
   display: block;
   background-color: var(--purple-color);
   position: absolute;
@@ -167,14 +167,14 @@ nav li:hover ul, li:active ul {
   padding-bottom: .7em;
   left: 0;
 }
-nav li:hover li, li:active li {
+nav li:hover li, nav li:active li {
   display: block;
   padding-top: 0.5rem;
 }
-nav li:hover li a, li:active li a {
+nav li:hover li a, nav li:active li a {
   color: var(--light-gray-color);
 }
-nav li:hover a:hover, li:active a:hover {
+nav li:hover a:hover, nav li:active a:hover {
   color: var(--text-black-color);
 }
 
@@ -335,6 +335,7 @@ footer div {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
+  overflow: hidden;
 }
 .bio-preview div p {
   display: inline;

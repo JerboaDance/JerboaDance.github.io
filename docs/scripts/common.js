@@ -1,5 +1,6 @@
 import { shows } from "/scripts/database.js";
 import { findCurrentShow } from "/scripts/shows.js";
+import {getShowUrl} from '/scripts/urls.js';
 
 function addGoogleAnalytics() {
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -10,6 +11,7 @@ function addGoogleAnalytics() {
     ga('create', '{{ site.google_analytics }}', 'auto');
     ga('send', 'pageview');
 }
+
 function addTwitterUniversalTag() {
     !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
     },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
@@ -26,16 +28,17 @@ async function populateHeader() {
 
 
     let showsSubmenu = document.getElementById("showsSubmenu");
-    Object.keys(shows).forEach(key => {
+    Object.keys(shows).forEach(showId => {
         const menuItem = document.createElement("li");
-        menuItem.innerHTML =`<a href="/show.html?showId=${key}">${shows[key].name}</a>`;
+        const show = shows[showId];
+        menuItem.innerHTML =`<a href="${getShowUrl(show)}">${show.name}</a>`;
         showsSubmenu.append(menuItem);
     });
 
-    const currentShow = findCurrentShow(shows);
+    const {currentShow} = findCurrentShow(shows);
     const currentShowElement = document.getElementById("currentShow");
     if (currentShow) {
-        currentShowElement.innerHTML = `<a href="/show.html?showId=${currentShow.id}">${currentShow.name}</a>`;
+        currentShowElement.innerHTML = `<a href="${getShowUrl(currentShow)}">${currentShow.name}</a>`;
     } else {
         currentShowElement.innerHTML = `<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=7G65H8ZWEKR74" target="_blank" rel="nofollow">Donate</a>`;
     }
