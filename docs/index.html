@@ -9,7 +9,6 @@
       import { shows } from "/scripts/database.js";
       import { 
         findCurrentShow,
-        generateLink,
         populateHeaderImage,
         populateVenue,
         populateBrownPaperTicketsWidget,
@@ -17,7 +16,7 @@
         populateShowtimes,
         populateCastList,
       } from "/scripts/shows.js";
-      import { generateYouTubeEmbed } from "/scripts/youTube.js"
+      import generateYouTubeEmbed from "/scripts/youTube.js"
       
       function populateCurrentPerformance(currentShow, currentPerformance) {
         const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;

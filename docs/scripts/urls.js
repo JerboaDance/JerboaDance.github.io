@@ -28,5 +28,5 @@ export {
   getShowImageUrl,
   getShowUrl,
   getCompanyMemberBioUrl,
-  getHighlightBioUrl
-}
+  getHighlightBioUrl,
+};
