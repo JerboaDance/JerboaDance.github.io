@@ -669,7 +669,7 @@ const shows = {
     performances: [
       {
         dates: 'February 3rd, 4th, 10th, and 11th 2023',
-        showtimes: ['2/3 7:00pm', '2/4 3:00pm', '2/4 7:00pm', '2/10 7:00pm', '2/11 7:00pm'],
+        showtimes: ['2/3 7:30pm', '2/4 3:00pm', '2/4 7:30pm', '2/10 7:30pm', '2/11 7:30pm'],
         startDate: new Date(2023, 2, 3),
         endDate: new Date(2023, 2, 11),
         venue: venues.yawTheater,
