@@ -650,11 +650,23 @@ const highlights = {
     id: 'lizaZurlinden',
     name: 'Liza Zurlinden',
     role: 'Violinist',
+    headshot: {
+      filename: 'LizaZurlinden.jpg',
+    },
+    bio: `Violinist LIZA ZURLINDEN, a native of San Francisco, enjoys a career rich with chamber music, orchestral playing and teaching.  Ms. Zurlinden has been a longtime member of the New Century Chamber Orchestra in San Francisco, and is a former member of the grammy-nominated chamber orchestra, A Far Cry, in Boston. She has performed with Orchestra of St. Luke’s in New York, Boston Modern Orchestra Project, the IRIS Orchestra, the Pacific Northwest Ballet and the Seattle Symphony, and has enjoyed local collaborations with Byron Schenkman and Friends, Spectrum Dance, the Kokopelli Quintet, the North Corner Chamber Orchestra, and various outreach concerts with Seattle Symphony musicians.  Ms. Zurlinden holds degrees from the University of Michigan, Rice University and SUNY Purchase.
+    `,
   },
   nikoLeo: {
     id: 'nikoLeo',
     name: 'Niko Leo',
     role: 'Magician',
+    headshot: {
+      filename: 'NikoLeo.jpg',
+    },
+    bio: `In January of 2012, Niko Leo set out on a three month experiment to learn how to perform street magic in New Orleans, Louisiana. Eight years, seven cross-country motorcycle tours, and two trips around the world later, he saw the outlawing of crowd building put his performance career and traveling lifestyle on hiatus due to the COVID-19 pandemic. In this post-plague debut performance we’ll see how three years without magic will leave a magician absolutely unhinged.
+     <p>
+     Instagram <a href="https://www.instagram.com/magicianonamotorcycle/">@magicianonamotorcycle</a>
+   `,
   },
 };
 
@@ -682,6 +694,10 @@ const shows = {
           {
             name: 'GA tickets $25 presale, $30 at the door',
             description: '$5 kids’ tickets for the family-friendly Saturday 2/4 matinee with kid participation',
+          },
+          {
+            name: 'Live stream tickets $15',
+            description: 'Link will be sent out before the event via email',
           },
         ],
         emcee: highlights.brennaDuffitt,
