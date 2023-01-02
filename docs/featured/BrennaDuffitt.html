@@ -14,7 +14,7 @@
       const pagePaths = url.pathname.split("/");
       const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
       if (companyMemberId) {
-        castMember = highlights[emceeId];
+        castMember = highlights[companyMemberId];
       }
 
       // check for valid cast member
