@@ -1,36 +1,36 @@
 const venues = {
-  eriksonTheater: {
-    id: 'eriksonTheater',
+  eriksontheater: {
+    id: 'eriksontheater',
     name: 'Erikson Theater',
     city: 'Seattle',
     url: 'https://theatres.seattlecentral.edu/erickson-theatre',
   },
-  yawTheater: {
-    id: 'yawTheater',
+  yawtheater: {
+    id: 'yawtheater',
     name: 'Yaw Theater',
     city: 'Seattle',
     url: 'http://www.yawtheater.com/',
   },
-  velocityDanceCenter: {
-    id: 'velocityDanceCenter',
+  velocitydancecenter: {
+    id: 'velocitydancecenter',
     name: 'Velocity Dance Center',
     city: 'Seattle',
     url: 'http://velocitydancecenter.org/',
   },
-  centerHouseTheater: {
-    id: 'centerHouseTheater',
+  centerhousetheater: {
+    id: 'centerhousetheater',
     name: 'Center House Theater',
     city: 'Seattle',
     url: 'http://www.seattlecenter.com/locations/detail.aspx?id=62',
   },
-  actTheater: {
-    id: 'actTheater',
+  acttheater: {
+    id: 'acttheater',
     name: 'ACT Theater',
     city: 'Seattle',
     url: 'http://www.acttheatre.org/',
   },
-  hudsonGuildTheater: {
-    id: 'hudsonGuildTheater',
+  hudsonguildtheater: {
+    id: 'hudsonguildtheater',
     name: 'Hudson Guild Theater',
     city: 'New York',
     url: 'http://hudsonguild.org/space-rentals/',
@@ -38,20 +38,20 @@ const venues = {
 };
 
 const photographers = {
-  jesusChapaMalacara: {
-    id: 'jesusChapaMalacara',
+  jesuschapamalacara: {
+    id: 'jesuschapamalacara',
     name: 'Jesus Chapa-Malacara',
   },
-  warrenWoo: {
-    id: 'warrenWoo',
+  warrenwoo: {
+    id: 'warrenwoo',
     name: 'Warren Woo',
     url: 'http://www.warren-woo.com/',
   },
 };
 
 const companyMembers = {
-  adamPellegrine: {
-    id: 'adamPellegrine',
+  adampellegrine: {
+    id: 'adampellegrine',
     name: 'Adam Pellegrine',
     headshot: {
       filename: 'AdamPellegrine.jpg',
@@ -59,20 +59,20 @@ const companyMembers = {
     bio: `Adam is very excited to be performing with this amazing group of dancers in Jerboa.  He hails from the University of Alabama where he trained in theater and dance.  Adam has performed across the nation and around the world, most recently coming off the national tour of Urban Cowboy the Musical.  He has also performed throughout the city, including the world premier of Nutcracker: Rated R at the Theater for the New City, as well as the role of Jack in The Naked Dead Elephant… at the Cherry Lane Theater.  Some of  his favorite roles include Bernardo in West Side Story, Anthony Martini in One Flew Over the Cuckoo’s Nest, and Rosencrantz in Shakespearear’s Hamlet.  He would like to extend a special thank you to family and friends for all of their love, guidance, and support and for being there with him every step of the way.
     `,
   },
-  alexandraSipe: {
-    id: 'alexandraSipe',
+  alexandrasipe: {
+    id: 'alexandrasipe',
     name: 'Alexandra Sipe',
     headshot: {
       filename: 'AlexandraSipe.jpg',
-      photographer: photographers.warrenWoo,
+      photographer: photographers.warrenwoo,
     },
     bio: `Alexandra Sipe found movement at University of Idaho, where she quickly got wrapped up in ballet, contemporary dance, and yoga. She spent her college career touring with Dancers, Drummers, Dreamers and traveling to train at American Dance Festival. Sipe is currently a freelance dance artist and has performed for Bridge Project, Converge, and Seattle International Dance Festival as well as in shows in New York City, Portland, and Washington DC.
     <p>
     Alexandra teaches bungee fitness and yoga. While not dancing or upside down, Sipe enjoys writing spy novels and hanging out with her cat, Dude.
     `,
   },
-  alexUng: {
-    id: 'alexUng',
+  alexung: {
+    id: 'alexung',
     name: 'Alex Ung',
     headshot: {
       filename: 'AlexUng.jpg',
@@ -80,12 +80,12 @@ const companyMembers = {
     bio: `In his second year with JERBOA Dance, Alex Ung is giddy to be in his first burlesque show. A hip hop dancer turned contemporary/modern, Alex started his career in college as a hip hop teacher/choreographer. Now his styles vary from crew-style hip hop to contemporary jazz to Broadway and Musical Theatre, and even contemporary ballet. He’s taught at Pacific Northwest Ballet School, Seattle Children’s Theatre, Bainbridge Ballet, Northwest School of Dance, and Momentum Dance. He’s made award-winning choreography for Bainbridge Ballet Competition Dance Team and also choreographed for Olympic Performance Group. On stage, Alex has performed with Peaches Christ Productions, Seattle Musical Theatre, Bainbridge Performing Arts, Olympic Ballet Theatre, Olympic Performance Group, Seattle PRIDE Mainstage, and Pacific MusicWorks, among other dance and theater companies. He spends his free time rock climbing, biking, and backpacking (as mountains and ocean are not native to this Iowan), while also finding time to teach and substitute at PNB School and Seattle Children’s Theatre, and creating with his amazing JERBOA Dance comrades.
     `,
   },
-  andreasFetz: {
-    id: 'andreasFetz',
+  andreasfetz: {
+    id: 'andreasfetz',
     name: 'Andreas Fetz',
   },
-  andresLopez: {
-    id: 'andresLopez',
+  andreslopez: {
+    id: 'andreslopez',
     name: 'Andr&eacute;s Lopez',
     headshot: {
       filename: 'AndresLopez.jpg',
@@ -94,8 +94,8 @@ const companyMembers = {
     He has spent a summer in Cuba studying Video Dance with Silvina Szperling, and a year in Brazil taking studied in fashion photography. He’s been part of dance collectives in Medellin allowing him to travel with contemporary dance companies. Andr&eacute;s is very excited to be making his Seattle dance debut 
     `,
   },
-  angelaSchmidt: {
-    id: 'angelaSchmidt',
+  angelaschmidt: {
+    id: 'angelaschmidt',
     name: 'Angela Schmidt',
     headshot: {
       filename: 'AngelaSchmidt.jpg',
@@ -105,8 +105,8 @@ const companyMembers = {
     Angela took a break from ballet to attend the University of Michigan. Upon moving to New York, she rekindled her love for dance and performed with the Albano Ballet Company, Jersey City Ballet, and appeared in Valentina Kozlova's International Ballet Competition. Upon moving to Seattle she has performed with Concord dance collective, Julie Tobiasson's Ballet Bird, and Dance Conservatory Seattle. She is thrilled to be performing with Jerboa and contributing to the Seattle dance scene.     
     `,
   },
-  anjaKellnerRogers: {
-    id: 'anjaKellnerRogers',
+  anjakellnerrogers: {
+    id: 'anjakellnerrogers',
     name: 'Anja Kellner-Rogers',
     bio: `Anja Kellner-Rogers is a dance artist and yoga teacher based in Seattle, WA. Anja grew up in upstate New York, where she began dancing at the age of 4. Throughout her adolescence she trained with various establishments including Broadway Dance Center, Steps on Broadway, NYU Tisch School of the Arts and Giordano Jazz Dance Chicago. Anja attended SUNY Brockport as a dance major where she had the privilege of studying and performing under the direction of artists Bill Evans, David Dorfman, Suzanne Oliver and Juanita Suarez. She went on to graduate summa cum laude from Ithaca College with degrees in Exercise Science and Dance. 
     <p>
@@ -115,8 +115,8 @@ const companyMembers = {
     When Anja isn’t dancing, she spends most of her time teaching yoga and leading teacher trainings at The Grinning Yogi, as well as showering her one eyed dog with endless love and affection. 
     `,
   },
-  bridgetGunning: {
-    id: 'bridgetGunning',
+  bridgetgunning: {
+    id: 'bridgetgunning',
     name: 'Bridget Gunning',
     headshot: {
       filename: 'BridgetGunning.jpg',
@@ -124,18 +124,18 @@ const companyMembers = {
     bio: `Bridget Gunning is an artist, mover, improviser, aerialist and and practitioner based out of Seattle, WA. Bridget brings over 15 years of professional experience as a solo and group performer . Her interest lies in the intersection of circus arts, dance, theater and somatic movement techniques. Hailing from Tucson, AZ, Bridget spent her youth in the pool as a competitive swimmer. She held the Arizona State Record for the 25-yard backstroke when she was 8-years-old. Outside of the pool, she always sang songs and danced dances to entertain family and friends. She decided to get out of the pool and onto the stage where she could use her body to express and create art. She began her formal ballet training at the age of 16. She made up for lost time in the dance world with classical training at The Academy of Ballet in Tucson, AZ. She danced in many ballets and theater productions and was active in her artistic and academic communities as a performer and choreographer. This creative and physical practice translated well into the circus arts. She began her aerial studies in 2001 under the instruction of Nanette Robinson and Nathan Dryden of ZUZI! Dance Company. Here she began her love with aerial through the low flying trapeze and Skinner Releasing Technique. Bridget came to Seattle in 2006 to seek more Skinner Releasing training as well as to connect with other artists and make a career as a performer. She worked as a free lance dancer with choreographers across the Northwest including Manifold Motion, Dancing People Company, Acorn Dance, Lingo Dance Company, Dayna Hanson and The Asterisk Project to name a few. She is showcased weekly at The Pink Door, where she is the resident Trapeze Artist. Her work includes Seattle’s Original Girl Gang: The Aerialistas, Lo-Fi Arts Festival, Seattle Erotic Arts Festival, Emerald City Trapeze Arts, ticktock dance, On The Boards’ 12-Minutes Max, COCA, Aloft Aerial Arts, Animate Objects Physical Theater, Stimulate Dance and Madame Rex Entertainment. Bridget is a Certified Yoga Teacher and Personal Trainer. She holds a BA from the University of Arizona where she studied dance, sociology and psychology. Bridget is in her second year of teacher training in Open Source Forms with Stephanie Skura. Bridget runs her own studio and performance company Apex Aerial Arts in Seattle. She is really, really, super excited to premier as a performer with Jerboa Dance!
     `,
   },
-  chelseaReinschmidt: {
-    id: 'chelseaReinschmidt',
+  chelseareinschmidt: {
+    id: 'chelseareinschmidt',
     name: 'Chelsea Reinschmidt',
     headshot: {
       filename: 'ChelseaReinschmidt.jpg',
-      photographer: photographers.warrenWoo,
+      photographer: photographers.warrenwoo,
     },
     bio: `Chelsea took their first ballet class at the age of 3 but didn’t like the pink shoes or the standing still thing. However, their love of movement started young and they spent the bulk of their youth competing in the Texas junior olympic women’s  gymnastics program. In their 20s, they discovered AcroYoga and partner acrobatics and briefly toured with a local circus troupe in Chicago. In 2012, they began modern dance as well as tap, jazz, ballet and hip hop at eXit Space school of dance where they currently dance. They are excited to perform with Jerboa where they get a chance to combine their love of both dance and acrobatics. 
     `,
   },
-  christinaJohnson: {
-    id: 'christinaJohnson',
+  christinajohnson: {
+    id: 'christinajohnson',
     name: 'Christina Johnson',
     headshot: {
       filename: 'ChristinaJohnson.jpg',
@@ -143,8 +143,8 @@ const companyMembers = {
     bio: `Christina Johnson fell in love with dance back in the 1990s.  She was dancing in Portland, OR with BodyVox, Bent, and Kinetic Images dance companies and entertaining the idea of being a “dancer”.  She moved to Seattle where she co-founded Jerboa Dance, and has dedicated her professional life to the arts ever since.  Her time in Seattle was spent learning and performing with many prominent companies and choreographers, including: Cheronne Wong, BetterBiscuit, XODO, Alethea Adsitt, Fusion, and Seattle Jazz. After finding success in Seattle and to continue her growth as an artist, she moved across the country. Having joined the New York dance scene in 2005, Christina is proud to have been on stage with The Love Show, Shir Dance Theater, Eva Dean Dance, Anahid Sofian Dance Company, Gilgamesh Theater, Witches in Bikinis, & independentdancemaker/Kara Tatelbaum.
     `,
   },
-  christopherEMontoya: {
-    id: 'christopherEMontoya',
+  christopheremontoya: {
+    id: 'christopheremontoya',
     name: 'Christopher E. Montoya',
     headshot: {
       filename: 'ChristopherEMontoya.jpg',
@@ -156,8 +156,8 @@ const companyMembers = {
     After graduate school, Mr. Montoya began working with Spectrum Dance Theater as the Ballet Division Head, which then turned into the School Director. For the last few years he has been teaching open class for Dance Fremont, and was recently enjoying his role as the Managing Director of Dance Fremont. He would like to further develop his studies of ballet history and looks forward to teaching future generations of dancers at <a href="https://www.danceconservatoryseattle.com/">DANCE CONSERVATORY Seattle</a>.
     `,
   },
-  constanzeVillines: {
-    id: 'constanzeVillines',
+  constanzevillines: {
+    id: 'constanzevillines',
     name: 'Constanze Villines',
     headshot: {
       filename: 'ConstanzeVillines.jpg',
@@ -167,8 +167,8 @@ const companyMembers = {
     As a choreographer, Constanze’s work has been shown in Germany as part of the Tollwood Festival and throughout the country. Since moving to Seattle in 2009, she has worked and collaborated with different Seattle artists and since 2013 produces, together with Cyrus Khambatta, The Seattle International Dance Festival. She is the managing director of Khambatta Dance Company and since 2014 the artistic director of reflexion Dance Company. Constanze’s choreographic works have been shown throughout Seattle at Velocity Dance Center, Body Politics Festival Tacoma, The Seattle International Dance Festival, The Pocket Theater, Out on a Limb Dance Festival in Olympia, and more. Her work has been commissioned for the 2016 The Glossary at The Neptune Theater and the 2016 LitCrawl.
     `,
   },
-  davidLorenceSchleiffers: {
-    id: 'davidLorenceSchleiffers',
+  davidlorenceschleiffers: {
+    id: 'davidlorenceschleiffers',
     name: 'David Lorence Schleiffers',
     headshot: {
       filename: 'DavidLorenceSchleiffers.jpg',
@@ -176,8 +176,8 @@ const companyMembers = {
     bio: `David stumbled upon a career in dance after being cast as a chorus boy in the musical 42nd Street in 2005. Since then, he has studied with 5th Avenue Theatre, Dance This…, Bill Evans, Hannah C. Wiley and Catherine Cabeen. He was recently a part of the Young Choreographers Lab with Amy O’Neil, a six-week workshop sponsored by the Seattle Theatre Group where he trained with choreographers such as Anne Green Gilbert, Donald Bryd, and Mark Haim. Currently, he is  working towards a BA in Dance at the University of Washington.  His work, Watermark, Part 1, will be showcased at the American College Dance Festival, which will be held in Utah this March. Locally, he has danced with Redd Legg Dance Company and Chamber Dance Company.
     `,
   },
-  elizabethBurwell: {
-    id: 'elizabethBurwell',
+  elizabethburwell: {
+    id: 'elizabethburwell',
     name: 'Elizabeth Burwell',
     headshot: {
       filename: 'ElizabethBurwell.jpg',
@@ -185,8 +185,8 @@ const companyMembers = {
     bio: `After graduating from Birmingham-Southern College with a degree in French and dance, Elizabeth moved to New York to pursue a career in dance. She’s danced with such notables as Saba Dance Theater, Kenny Larson and Beth Soll. She also appeared in Lois Greenfield’s Breaking Bounds calendar. Elizabeth and her husband, Clay, own High Performance NYC, a private personal training facility in New York. There, she works as a personal trainer fusing her dance training with various other techniques such as Pilates and Kettlebells to help her clients get fit. She feels very lucky to have two careers that she loves. Speaking of love, she recently got a Doberman puppy named Zulu.
     `,
   },
-  ericVlach: {
-    id: 'ericVlach',
+  ericvlach: {
+    id: 'ericvlach',
     name: 'Eric Vlach',
     headshot: {
       filename: 'EricVlach.jpg',
@@ -194,8 +194,8 @@ const companyMembers = {
     bio: `Eric Vlach, originally from Portland, Oregon, graduated from NYU’s Tisch School of the Arts in 2005 with a B.F.A. in dance. As a freelance dancer and digital designer, he manages to satisfy both his artistic and techno-geek appetites. This season, in addition to Jerboa Dance, Eric is working with Lydia Johnson Dance and Eglevsky Ballet.
     `,
   },
-  finnCronin: {
-    id: 'finnCronin',
+  finncronin: {
+    id: 'finncronin',
     name: 'Finn Cronin',
     headshot: {
       filename: 'FinnCronin.jpg',
@@ -203,8 +203,8 @@ const companyMembers = {
     bio: `Ms. Cronin received her formal training at L’Academie de Danse Classique Princesse Grace in Monte Carlo, Blue Lake Fine Arts, and Ballet Iowa. In 1996 she attended Idyllwild Arts Academy in California, where she found her focus in modern dance. In 1998, she returned to Germany to travel and gather inspiration while working toward her degree in European studies. She has danced for Tanzforum Aki Kato, Complete in Motion, and was a guest artist for a season at the Mannheim Nationaltheater in Germany. Since moving to Seattle in 2005, she has danced with The Seattle Opera, Bumbershoot, and was chosen as one of Seattle’s up and coming choreographers for NEXT fest NW. Ms.Cronin has also choreographed for Social Living Productions and is one of the founding members of Splinter Dance Company.
     `,
   },
-  gabeMaddox: {
-    id: 'gabeMaddox',
+  gabemaddox: {
+    id: 'gabemaddox',
     name: 'Gabe Maddox',
     headshot: {
       filename: 'GabeMaddox.jpg',
@@ -216,8 +216,8 @@ const companyMembers = {
     Gabe has been teaching dance to kids and adults in private studios for the past ten years. Her greatest purpose is to kindle a respect and passion for art, performance, and self love through the journey of kinesthetic awareness.
     `,
   },
-  hannaLeeSakakibara: {
-    id: 'hannaLeeSakakibara',
+  hannaleesakakibara: {
+    id: 'hannaleesakakibara',
     name: 'Hanna-Lee Sakakibara',
     headshot: {
       filename: 'Hanna-LeeSakakibara.jpg',
@@ -225,8 +225,8 @@ const companyMembers = {
     bio: `Hanna-Lee was born and raised in Jerusalem, Israel, to a Japanese father and Australian Mother. She began dancing at the age of 4. Graduating from high school she decided to pursue her dance career and moved to NY to study at the Alvin Ailey Dance School. She is currently represented by MSA dancers and choreographers agency, and recently received her artist visa to continue and dance in the U.S.
     `,
   },
-  jacquelynCorcoran: {
-    id: 'jacquelynCorcoran',
+  jacquelyncorcoran: {
+    id: 'jacquelyncorcoran',
     name: 'Jacquelyn S. Corcoran',
     headshot: {
       filename: 'JacquelynCorcoran.jpg',
@@ -239,19 +239,19 @@ const companyMembers = {
     ― Pina Bausch
     `,
   },
-  jaimeWaliczek: {
-    id: 'jaimeWaliczek',
+  jaimewaliczek: {
+    id: 'jaimewaliczek',
     name: 'Jaime Waliczek',
     role: 'Artistic Director',
     headshot: {
       filename: 'JaimeWaliczek.jpg',
-      photographer: photographers.warrenWoo,
+      photographer: photographers.warrenwoo,
     },
     bio: `Jaime Waliczek is a choreographer, dancer, and acrobat from Chicago. After moving to Seattle as an adult, she began choreographing for the Eastside Moving Company while performing works by Deborah Wolf, Wade Madsen, among others. Founding Jerboa Dance in 2003, Jaime has continued as artistic director and choreographer. Along with Jerboa, Jaime has performed with many local companies including DASS Dance and the Seattle Opera. While producing Back from the Brink for Jerboa Dance in NYC, she also danced with Angela Harriell’s company, The Love Show. In addition to her work with Jerboa Dance, Jaime’s choreography has been presented at festivals including the DUMBO festival, the Cool NY festival, DNA Works in Progress, the Guild dance company, Around the World in 80 Sips, and Trip and Fall. Her background in competitive gymnastics and as a yoga instructor inform her movement and choreography. Jaime’s favorite things are her 2 adorable children and moving with the wonderful artists in Seattle.
     `,
   },
-  jenniferElder: {
-    id: 'jenniferElder',
+  jenniferelder: {
+    id: 'jenniferelder',
     name: 'Jennifer Elder',
     headshot: {
       filename: 'JenniferElder.jpg',
@@ -259,8 +259,8 @@ const companyMembers = {
     bio: `Jennifer Elder discovered her love of dance at the age of 12 after gymnastics, baton twirling, tennis, horseback riding, track and field and swimming didn’t quite work out. A native of the Pacific Northwest, Jen received her dance training at the Southwest Washington Dance Center in Ballet and Modern where she was a member of the Southwest Washington Ballet Ensemble and Blacken Tan Dance. She later went on to earn her BFA in Modern Dance graduating Cum Laude from the University of Utah. While attending the U of U, she danced for the department’s Performing Dance Company, performing original works by Abby Fiat, Eric Handman, and Brent Schneider. Since moving to Seattle in 2008, Jen has made her own work, which has appeared in the BOOST Dance Festival, Northwest Dance Festival, and TAKE pause. Jen has had the honor to dance for local Seattle artists and companies such as Marlo Martin, Michele Miller/Catapult, Khambatta Dance Company, DASSdance, Whibey Island Dance Theater, Jerboa Dance Company, Redd Legg Dance, and Northwest Dance Syndrome. Currently, Jen is proud to be a continuing member of Badmarmar Dance under the direction of Marlo Martin.
     `,
   },
-  julieSmith: {
-    id: 'julieSmith',
+  juliesmith: {
+    id: 'juliesmith',
     name: 'Julie Smith',
     headshot: {
       filename: 'JulieSmith.jpg',
@@ -268,8 +268,8 @@ const companyMembers = {
     bio: `Julie is so excited to be performing with Jerboa Dance! She holds a BFA in acting and trained at the Martha Graham School of dance. Julie danced with her Graham teacher’s modern company, Coyote Dancers, for two NYC seasons and soon landed her first Off Broadway show. She went on to perform in many regional theatres, for Disney, and went on the road with national tours of Gigi and CanCan. Her favorite roles include; “Val”, in the European tour of A Chorus Line, and most recently, the 1st cover for the leading lady, “Stephanie”, in the Broadway tour of Saturday Night Fever. Julie now is also pursuing acting in Film and TV! She has a small recurring part on One Life to Live, and played her first supporting role in an indie feature film last year.
     `,
   },
-  karenGrady: {
-    id: 'karenGrady',
+  karengrady: {
+    id: 'karengrady',
     name: 'Karen Grady',
     headshot: {
       filename: 'KarenGrady.jpg',
@@ -277,23 +277,23 @@ const companyMembers = {
     bio: `Karen Grady is a lover of life, a dancer, a performer, a choreographer, a fitness instructor, a dance educator, and a mother. She teaches contemporary dance technique, ballet, modern, yoga, creative movement, GYROTONIC® and choreography to students of all ages. Originally from Colorado, Karen moved to Seattle in 2002 to expand her experiences as a performing artist and to study at Cornish College of the Arts. Karen graduated from Cornish in 2006 with a B.F.A. in dance and received an outstanding artist award at graduation. Karen started dancing with Jerboa Dance in 2002, she enjoys the work of Jamie Waliczek because of its dynamic variety and creativity! She now spends most of her days at her Gyrotonic studio in Bellevue Washington.
     `,
   },
-  kristenKissel: {
-    id: 'kristenKissel',
+  kristenkissel: {
+    id: 'kristenkissel',
     suppressPage: true,
     name: 'Kristen Kissel',
   },
-  lauranDrackett: {
-    id: 'lauranDrackett',
+  laurandrackett: {
+    id: 'laurandrackett',
     name: 'Lauran Drackett',
     headshot: {
       filename: 'LauranDrackett.jpg',
-      photographer: photographers.warrenWoo,
+      photographer: photographers.warrenwoo,
     },
     bio: `Lauran is a dancer and aerialist based in Seattle, WA. A graduate of Northwestern University’s Dance program, Lauran has trained with Aerial Dance Chicago (ADC), Actors Gymnasium, Diavolo Dance Theatre and the Paul Taylor Dance Company. From 2009 – 2011 Lauran was a dancer, choreographer, and assistant teacher with ADC and served on the board in 2016. From 2011 – 2015 Lauran performed with Innervation Dance Cooperative, J Lindsay Brown, among others in the Chicago area. Since 2016, she has worked with The Cabiri, a company that uses dance, aerial arts, and theatrical performance to bring the mythologies of extinct and endangered cultures to the community. 
     `,
   },
-  laurenSlater: {
-    id: 'laurenSlater',
+  laurenslater: {
+    id: 'laurenslater',
     name: 'Lauren Slater',
     headshot: {
       filename: 'LaurenSlater.jpg',
@@ -309,12 +309,12 @@ const companyMembers = {
     Lauren is also a professional health coach, yoga teacher and Classical Pilates instructor. She founded HIVE Wellness Consultancy in 2018, with the mission of sharing her knowledge of the body, mind and soul.
     `,
   },
-  meganCourtney: {
-    id: 'meganCourtney',
+  megancourtney: {
+    id: 'megancourtney',
     name: 'Megan Courtney',
   },
-  meghanShepard: {
-    id: 'meghanShepard',
+  meghanshepard: {
+    id: 'meghanshepard',
     name: 'Meghan Shepard',
     headshot: {
       filename: 'MeghanShepard.jpg',
@@ -322,8 +322,8 @@ const companyMembers = {
     bio: `Even though Meghan Shepard took her first dance class at age 3, she really began her career at 16.  Spending 3 years in LA, she expanded her training and experience by working with multiple choreographers. Returning to Portland, Meghan performed locally and went on her first tour with  Extreme Dance Co. Meghan then moved to Seattle to further pursue dance. In 2007, she graduated Magna Cum Laude from Cornish College of the Arts where she performed with many prominent choreographers. Meghan continues to dance in Seattle, and has been dancing with Jerboa Dance since 2008. She is thrilled to be dancing again in the company’s new season.
     `,
   },
-  morganHoughton: {
-    id: 'morganHoughton',
+  morganhoughton: {
+    id: 'morganhoughton',
     name: 'Morgan Houghton',
     headshot: {
       filename: 'MorganHoughton.jpg',
@@ -331,8 +331,8 @@ const companyMembers = {
     bio: `Born in Seattle WA Morgan began dancing during High School. First taking Jazz at a local studio he began thoroughly enjoying himself. Martial arts, sports and stunt work with friends propelled him to continue dancing in college where he eventually came to realize that he truly had a passion for dance. As one who has always loved movement in so many various forms, Morgan continues to dance and pounce on any opportunities to do more stunt work, photo shoots and anything that inspires movement, drives the soul and allows Morgan to play. He would like to thank his parents for their unending support throughout his life and their encouragement with whatever drove him at the time. He would also like to thank all the dance instructors over the years that continued to inspire and challenge him. Without these people and many more Morgan would not be where he is today.
     `,
   },
-  noaSagie: {
-    id: 'noaSagie',
+  noasagie: {
+    id: 'noasagie',
     name: 'Noa Sagie',
     headshot: {
       filename: 'NoaSagie.jpg',
@@ -340,12 +340,12 @@ const companyMembers = {
     bio: `Noa Sagie was born and raised in Kfar Bialik, Israel. She graduated from the “Reut” school of the arts and trained with the “Haia Tzur School For Contemporary Dance” until the age of 18. After completion of her studies she was recruited to the IDF, Israeli Defense Force, where she proudly served for over two years in the Intelligence Force. At the age of 21, she moved to NYC after being accepted to the Alvin Ailey Dance School. While still in school, she received the LCU Foundation scholarship. After finishing her studies with honors and receiving her work permit, she currently resides in New York choreographing and dancing in different projects. Her recent works were presented at the Citigroup Theater at the Joan Weill Center for Dance in 2006 and 2007.
     `,
   },
-  pamelaTurpin: {
-    id: 'pamelaTurpin',
+  pamelaturpin: {
+    id: 'pamelaturpin',
     name: 'Pamela Turpin',
   },
-  pamVlach: {
-    id: 'pamVlach',
+  pamvlach: {
+    id: 'pamvlach',
     name: 'Pam Vlach',
     headshot: {
       filename: 'PamVlach.jpg',
@@ -353,8 +353,8 @@ const companyMembers = {
     bio: `Pam Vlach moved to Seattle in 2002 to attend the UW and received her BA in Communication in 2006.  She has spent time in New York studying lyrical and jazz under the direction of Suzi Taylor and Joe Lanteri at Steps on Broadway. Additionally, she studied tap under the direction of Roxane Butterfly in the summer of 2005 and performed choreography by Sonia Dawkins and Savion Glover in Dance this…! at the Seattle Paramount Theatre. Recent credits include Excerpts From the Soul of a Woman (2008), Black Nativity at Seattle’s Intiman Theatre (2007), Macy’s Thanksgiving Day Parade (2007), Masters of Lindy Hop and Tap at the Century Ballroom (2007), Young Scrooge in A Tap Dance Christmas Carol (2005), and En L’Air (2005, 2006, 2008). Pam was a founding member of the Solesound Tap Company.  Recent choreography credits include a music video for Nordstrom showcasing their spring line in March of 2007.
     `,
   },
-  rachelKoshiol: {
-    id: 'rachelKoshiol',
+  rachelkoshiol: {
+    id: 'rachelkoshiol',
     name: 'Rachel Koshiol',
     headshot: {
       filename: 'RachelKoshiol.jpg',
@@ -362,8 +362,8 @@ const companyMembers = {
     bio: `Rachel Koshiol started dance classes at the age of 4 and has been moving ever since. While growing up in Minnesota, Rachel danced competitively at Hopkins Dance Center while spending her summers training at MDT and Ballet Arts. During the summer of 2004, Rachel attended American Ballet Theatre’s summer intensive program in Detroit, MI. During college, she paused her dance career to focus on studies but felt called to return immediately after graduation. For two seasons, she competed at an adult level, and during the winter of 2014, she preformed with the Minnesota Dance Collaborative for their opening season of “HoliDaydream”. Since moving to Seattle, Rachel has worked with choreographers including Alicia Mullikin, Marlo Ariz, Maya Soto and Maxie Jamal. She continues to preform in a diverse mix productions, most recently for USC Event’s “Paradiso Festival”. Rachel craves unique styles that blur lines of standard genres and push her physical and mental boundaries. She is excited to continue her exploration with Jerboa Dance.
     `,
   },
-  renadoTozer: {
-    id: 'renadoTozer',
+  renadotozer: {
+    id: 'renadotozer',
     name: 'Renado Tozer',
     headshot: {
       filename: 'RenadoTozer.jpg',
@@ -371,8 +371,8 @@ const companyMembers = {
     bio: `Renado Tozer is thrilled for his fourth season with Jerboa Dance Company. He has been involved with dance and movement theatre for over 15 years. Although never a competitive dancer, he was a national competitive gymnast for near 12 years (coach for 5 years), and has been trained in ballet, jazz, modern and lyrical at Pam’s School of Dance in Toledo, Ia., at the University of the Arts summer camp in Philadelphia, Pa., The Edge in LA, and Webster Conservatory/University in St. Louis, Mo.(where he attended college for musical theatre). Professionally, he has been involved in a very diverse variety of productions including; BumperShoot with Movement Theatre in Seattle, Wa., Miss Continental in Chicago, Ill., Webster University Dance BFA, and after a short hiatus due to injuries, he bounced back in to joining Diversity Dance Company, turned Splinter Dance Company. Currently he is working with Issaquah Dance Theatre as a hip hop teacher, New Vision Dance Company out of Issaquah and One Degree/Flash Mob out of Seattle.
     `,
   },
-  sarahChampion: {
-    id: 'sarahChampion',
+  sarahchampion: {
+    id: 'sarahchampion',
     name: 'Sarah Champion',
     headshot: {
       filename: 'SarahChampion.jpg',
@@ -380,8 +380,8 @@ const companyMembers = {
     bio: `Sarah Champion has been a performer her entire life. She is classically trained in ballet, jazz, modern, hip hop, lyrical and is an internationally award winning ballroom and latin performer. Sarah is the co-founder and former artistic director of After Midnight Cabaret and has performed with various local dance and performance based companies for many years. Sarah is excited to be on stage again with Jerboa Dance.
     `,
   },
-  seanCalavan: {
-    id: 'seanCalavan',
+  seancalavan: {
+    id: 'seancalavan',
     name: 'Sean Calavan',
     headshot: {
       filename: 'SeanCalavan.jpg',
@@ -389,8 +389,8 @@ const companyMembers = {
     bio: `Sean grew up and trained at local studios in Riverside County, California under the teachings of Julie A. Rhoton, Keri LeGrand, Adam Parson and Cory Finn among others.  In 1999, he received the Dance With the Force award from the LADF convention/competition and spent the summer training at EDGE Performing Arts Center in Hollywood, CA.  After graduating high school, he spent 9 years performing on ships for Holland America Line in shows created by John Charron, Patti Colombo and Tommy Tune getting the opportunity to work directly with each of them.  Sean has also performed in musicals for The Lawrence Welk Resort and The Village Theatre as well as danced for JADD Co. in Los Angeles, CA.  Since moving to Seattle in late 2009, Sean has had the pleasure of performing with Jerboa Dance including at Seattle Fringe Festival and Bumbershoot.  Sean thanks his husband, family and friends for their continued support.
     `,
   },
-  shakiraRaeAdams: {
-    id: 'shakiraRaeAdams',
+  shakiraraeadams: {
+    id: 'shakiraraeadams',
     name: 'Shakira Rae Adams',
     headshot: {
       filename: 'ShakiraRaeAdams.jpg',
@@ -400,8 +400,8 @@ const companyMembers = {
     “I am not bored, ever! Arts have given me a way to express my inner most thoughts and feelings, an outlet to deal with the stress and a way to tell a story. No matter where times go, the arts live within me and I will continue to make a difference.”
 `,
   },
-  shannonAdams: {
-    id: 'shannonAdams',
+  shannonadams: {
+    id: 'shannonadams',
     name: 'Shannon Adams',
     headshot: {
       filename: 'ShannonAdams.jpg',
@@ -411,8 +411,8 @@ const companyMembers = {
     Shannon has a great love and passion for teaching. She has taught and choreographed for various studios and high-schools in Utah, Texas and in the Seattle area.  Outside of Shannon’s voracious appetite for all things dance, she is seen chasing her three kids, spending time with family, eating good food, people watching, and going to live music concerts.  
     `,
   },
-  stellaKutz: {
-    id: 'stellaKutz',
+  stellakutz: {
+    id: 'stellakutz',
     name: 'Stella Kutz',
     headshot: {
       filename: 'StellaKutz.jpg',
@@ -426,8 +426,8 @@ const companyMembers = {
     Currently, Stella is pursuing her passion for performance by creating an interactive performance and rehearsal space for like minded artists and communities.
     `,
   },
-  thomasPhelan: {
-    id: 'thomasPhelan',
+  thomasphelan: {
+    id: 'thomasphelan',
     name: 'Thomas Phelan',
     headshot: {
       filename: 'ThomasPhelan.jpg',
@@ -435,8 +435,8 @@ const companyMembers = {
     bio: `Thomas Phelan grew up in Fort Collins, CO. It was there at Colorado State University he earned his BFA in performing arts. After graduation Thomas danced and taught at Alaska Dance Theatre before moving to Seattle where he currently lives and works. His Seattle performance credits include Whim W’him, Coriolis Dance, House of Verlaine, The Cabiri, Alana O Rogers, The Robbie Turner Revue, Khambatta Dance Company, and The Can Can. Thomas has a passion for teaching and shares experience and creates within realms of ballet, contemporary dance, gymnastics, diving, acrobatics, aerial arts, burlesque, and prides himself on being able to survive entry level hip hop classes.
     `,
   },
-  warrenWoo: {
-    id: 'warrenWoo',
+  warrenwoo: {
+    id: 'warrenwoo',
     name: 'Warren Woo',
     headshot: {
       filename: 'WarrenWoo.jpg',
@@ -447,35 +447,35 @@ const companyMembers = {
 };
 
 const highlights = {
-  seanCalavan: {
-    id: 'seanCalavan',
+  seancalavan: {
+    id: 'seancalavan',
     name: 'Sean Calavan',
     role: 'Master of Ceremonies',
     useCompanyMemberPage: true,
   },
-  steveDolan: {
-    id: 'steveDolan',
+  stevedolan: {
+    id: 'stevedolan',
     name: 'Steve Dolan',
     role: 'Master of Ceremonies',
   },
-  jjBrychell: {
-    id: 'jjBrychell',
+  jjbrychell: {
+    id: 'jjbrychell',
     name: 'JJ Brychell',
     role: 'Master of Ceremonies',
   },
-  thomasPhelan: {
-    id: 'thomasPhelan',
+  thomasphelan: {
+    id: 'thomasphelan',
     name: 'Thomas Phelan',
     role: 'Master of Ceremonies',
     useCompanyMemberPage: true,
   },
-  dustinGuyJackson: {
-    id: 'dustinGuyJackson',
+  dustinguyjackson: {
+    id: 'dustinguyjackson',
     name: 'Dustin Guy Jackson',
     role: 'Master of Ceremonies',
   },
-  brennaDuffitt: {
-    id: 'brennaDuffitt',
+  brennaduffitt: {
+    id: 'brennaduffitt',
     name: 'Brenna Duffitt',
     role: 'Master of Ceremonies',
     headshot: {
@@ -483,24 +483,24 @@ const highlights = {
     },
     bio: 'Brenna grew up in Klamath Falls, OR, where she first developed her interest in theater and acting. While her formal education at Oregon Institute of Technology was focused on engineering, she appeared on stage in many plays and musicals, and has been featured in multiple indie films. More recently, she\'s been a successful live streamer, hosted multiple online shows, including being the regular host of Power Builds, and does voice acting work. Brenna is excited to be back on stage for her first appearance with Jerboa Dance.',
   },
-  jaimeWaliczek: {
-    id: 'jaimeWaliczek',
+  jaimewaliczek: {
+    id: 'jaimewaliczek',
     name: 'Jaime Waliczek',
     role: 'Choreographer',
     useCompanyMemberPage: true,
   },
-  splinterDance: {
-    id: 'splinterDance',
+  splinterdance: {
+    id: 'splinterdance',
     name: 'Splinter Dance',
     role: 'Dance company',
   },
-  parisOriginal: {
-    id: 'parisOriginal',
+  parisoriginal: {
+    id: 'parisoriginal',
     name: 'Paris Original',
     role: 'Boylesque',
   },
-  sarahSchmidt: {
-    id: 'sarahSchmidt',
+  sarahschmidt: {
+    id: 'sarahschmidt',
     name: 'Sarah Schmidt',
     role: 'Musician',
   },
@@ -509,14 +509,14 @@ const highlights = {
     name: 'Jen Wagner',
     role: 'Musician',
   },
-  seanCalavanDragQueen: {
-    id: 'seanCalavanDragQueen',
+  seancalavanDragQueen: {
+    id: 'seancalavanDragQueen',
     name: 'Sean Calavan',
     role: 'Drag Queen',
     useCompanyMemberPage: true,
   },
-  emmaCurtiss: {
-    id: 'emmaCurtiss',
+  emmacurtiss: {
+    id: 'emmacurtiss',
     name: 'Emma Curtiss',
     role: 'Cyr wheel',
     headshot: {
@@ -529,55 +529,55 @@ const highlights = {
     Her disciplines also include Aerials and Fan Juggling.
     `,
   },
-  taePhoenix: {
-    id: 'taePhoenix',
+  taephoenix: {
+    id: 'taephoenix',
     name: 'Tae Phoenix',
     role: 'Musician',
     url: 'https://taephoenix.com/',
   },
-  andreasFetz: {
-    id: 'andreasFetz',
+  andreasfetz: {
+    id: 'andreasfetz',
     name: 'Andreas Fetz',
     role: 'Arm Balancer',
     useCompanyMemberPage: true,
   },
-  scottoMoore: {
-    id: 'scottoMoore',
+  scottomoore: {
+    id: 'scottomoore',
     name: 'Scotto Moore',
     role: 'Comedian',
     url: 'http://scotto.org/',
   },
-  randiRascal: {
-    id: 'randiRascal',
+  randirascal: {
+    id: 'randirascal',
     name: 'Randi Rascal',
     role: 'Burlesque',
     url: 'http://randirascal.com',
   },
-  harmonyGwinn: {
-    id: 'harmonyGwinn',
+  harmonygwinn: {
+    id: 'harmonygwinn',
     name: 'Harmony Gwinn',
     role: 'Flow Artist',
     url: 'https://www.facebook.com/HaHaHarmonyy',
   },
-  andrewScott: {
-    id: 'andrewScott',
+  andrewscott: {
+    id: 'andrewscott',
     name: 'Andrew Scott',
     role: 'Drag Queen',
     url: 'https://www.facebook.com/andrew.scott.90813236',
   },
-  jenniferElder: {
-    id: 'jenniferElder',
+  jenniferelder: {
+    id: 'jenniferelder',
     name: 'Jennifer Elder',
     role: 'Dancer',
     useCompanyMemberPage: true,
   },
-  nellWaliczek: {
-    id: 'nellWaliczek',
+  nellwaliczek: {
+    id: 'nellwaliczek',
     name: 'Nell Waliczek',
     role: 'Poetry Reading',
   },
-  katieSawicki: {
-    id: 'katieSawicki',
+  katiesawicki: {
+    id: 'katiesawicki',
     name: 'Katie Sawicki',
     role: 'Choreographer and Baton Twirler',
     headshot: {
@@ -586,68 +586,68 @@ const highlights = {
     bio: `Katie studied ballet and modern dance at NC School of the Arts, American Dance Festival, Princeton Ballet School, and the Hungarian National Ballet Academy. After performing with Princeton Ballet II and American Repertory Ballet Katie retired from performing and taught ballet, jazz, tap and gymnastics for several years before moving to Seattle.  She has performed in Seattle with Arc Dance Productions, XODO, Eastside Moving Company, and others.
     `,
   },
-  marcVonHolzen: {
-    id: 'marcVonHolzen',
+  marcvonholzen: {
+    id: 'marcvonholzen',
     name: 'Marc von Holzen',
     role: 'Afterparty DJ',
     url: 'http://www.soundcloud.com/marcvh',
   },
-  ajRogers: {
-    id: 'ajRogers',
+  ajrogers: {
+    id: 'ajrogers',
     name: 'AJ Rogers',
     role: 'Acrobat',
     url: 'http://www.omculture.com/wallingford-class-descriptions',
   },
-  hannahDuffy: {
-    id: 'hannahDuffy',
+  hannahduffy: {
+    id: 'hannahduffy',
     name: 'Hannah Duffy',
     role: 'Musician',
     url: 'https://www.facebook.com/hannahduffymusic',
   },
-  noellePrice: {
-    id: 'noellePrice',
+  noelleprice: {
+    id: 'noelleprice',
     name: 'Noelle Price',
     role: 'Spoken Word',
     url: 'https://www.pricearts.co/copy-of-about',
   },
-  tomTomThePhenomenon: {
-    id: 'tomTomThePhenomenon',
+  tomtomthephenomenon: {
+    id: 'tomtomthephenomenon',
     name: 'TomTom The Phenomenon',
     role: 'Burlesque',
   },
-  jessicaGlein: {
-    id: 'jessicaGlein',
+  jessicaglein: {
+    id: 'jessicaglein',
     name: 'Jessica Glein',
     role: 'Pole Performer',
   },
-  theLoveShowNYC: {
-    id: 'theLoveShowNYC',
+  theloveshownyc: {
+    id: 'theloveshownyc',
     name: 'The Love Show NYC',
     role: 'Guest Choreography',
     url: 'http://www.theloveshownyc.com/',
   },
-  sebastianLangeAndMajaZavaljevski: {
-    id: 'sebastianLangeAndMajaZavaljevski',
+  sebastianlangeandmajazavaljevski: {
+    id: 'sebastianlangeandmajazavaljevski',
     name: 'Sebastian Lange and Maja Zavaljevski',
     role: 'Musicians',
   },
-  christinaJohnson: {
-    id: 'christinaJohnson',
+  christinajohnson: {
+    id: 'christinajohnson',
     name: 'Christina Johnson',
     role: 'Burlesque',
   },
-  brandonMilner: {
-    id: 'brandonMilner',
+  brandonmilner: {
+    id: 'brandonmilner',
     name: 'Brandon Milner',
     role: 'Musician',
   },
-  gypsyLeo: {
-    id: 'gypsyLeo',
+  gypsyleo: {
+    id: 'gypsyleo',
     name: 'Gypsy Leo',
     role: 'Burlesque',
   },
-  lizaZurlinden: {
-    id: 'lizaZurlinden',
+  lizazurlinden: {
+    id: 'lizazurlinden',
     name: 'Liza Zurlinden',
     role: 'Violinist',
     headshot: {
@@ -656,8 +656,8 @@ const highlights = {
     bio: `Violinist LIZA ZURLINDEN, a native of San Francisco, enjoys a career rich with chamber music, orchestral playing and teaching.  Ms. Zurlinden has been a longtime member of the New Century Chamber Orchestra in San Francisco, and is a former member of the grammy-nominated chamber orchestra, A Far Cry, in Boston. She has performed with Orchestra of St. Luke’s in New York, Boston Modern Orchestra Project, the IRIS Orchestra, the Pacific Northwest Ballet and the Seattle Symphony, and has enjoyed local collaborations with Byron Schenkman and Friends, Spectrum Dance, the Kokopelli Quintet, the North Corner Chamber Orchestra, and various outreach concerts with Seattle Symphony musicians.  Ms. Zurlinden holds degrees from the University of Michigan, Rice University and SUNY Purchase.
     `,
   },
-  nikoLeo: {
-    id: 'nikoLeo',
+  nikoleo: {
+    id: 'nikoleo',
     name: 'Niko Leo',
     role: 'Magician',
     headshot: {
@@ -684,7 +684,7 @@ const shows = {
         showtimes: ['2/3 7:30pm', '2/4 3:00pm', '2/4 7:30pm', '2/10 7:30pm', '2/11 7:30pm'],
         startDate: new Date(2023, 2, 3),
         endDate: new Date(2023, 2, 11),
-        venue: venues.yawTheater,
+        venue: venues.yawtheater,
         bptId: 5664115,
         ticketTiers: [
           {
@@ -700,20 +700,20 @@ const shows = {
             description: 'Link will be sent out before the event via email',
           },
         ],
-        emcee: highlights.brennaDuffitt,
+        emcee: highlights.brennaduffitt,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.emmaCurtiss,
-          highlights.nikoLeo,
-          highlights.lizaZurlinden,
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+          highlights.nikoleo,
+          highlights.lizazurlinden,
         ],
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.seanCalavan,
-          companyMembers.lauranDrackett,
-          companyMembers.stellaKutz,
-          companyMembers.constanzeVillines,
-          companyMembers.warrenWoo,
+          companyMembers.jaimewaliczek,
+          companyMembers.seancalavan,
+          companyMembers.laurandrackett,
+          companyMembers.stellakutz,
+          companyMembers.constanzevillines,
+          companyMembers.warrenwoo,
         ],
       },
     ],
@@ -736,7 +736,7 @@ const shows = {
         showtimes: ['2/11 7:00pm', '2/11 9:00pm', '2/12 7:00pm', '2/12 9:00pm', '2/13 2:00pm'],
         startDate: new Date(2022, 2, 11),
         endDate: new Date(2022, 2, 13),
-        venue: venues.yawTheater,
+        venue: venues.yawtheater,
         bptId: 5337210,
         ticketTiers: [
           {
@@ -749,18 +749,18 @@ const shows = {
           },
         ],
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.stellaKutz,
-          companyMembers.warrenWoo,
-          companyMembers.christopherEMontoya,
-          companyMembers.angelaSchmidt,
-          companyMembers.seanCalavan,
+          companyMembers.jaimewaliczek,
+          companyMembers.stellakutz,
+          companyMembers.warrenwoo,
+          companyMembers.christopheremontoya,
+          companyMembers.angelaschmidt,
+          companyMembers.seancalavan,
         ],
-        emcee: highlights.brennaDuffitt,
+        emcee: highlights.brennaduffitt,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.emmaCurtiss,
-          highlights.jessicaGlein,
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+          highlights.jessicaglein,
         ],
       },
     ],
@@ -783,22 +783,22 @@ const shows = {
         legacy: true,
         startDate: new Date(2020, 2, 14),
         endDate: new Date(2020, 2, 22),
-        venue: venues.yawTheater,
+        venue: venues.yawtheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.lauranDrackett,
-          companyMembers.anjaKellnerRogers,
-          companyMembers.stellaKutz,
-          companyMembers.gabeMaddox,
-          companyMembers.laurenSlater,
-          companyMembers.constanzeVillines,
-          companyMembers.warrenWoo,
+          companyMembers.jaimewaliczek,
+          companyMembers.laurandrackett,
+          companyMembers.anjakellnerrogers,
+          companyMembers.stellakutz,
+          companyMembers.gabemaddox,
+          companyMembers.laurenslater,
+          companyMembers.constanzevillines,
+          companyMembers.warrenwoo,
         ],
-        emcee: highlights.seanCalavan,
+        emcee: highlights.seancalavan,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.emmaCurtiss,
-          highlights.taePhoenix,
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+          highlights.taephoenix,
         ],
       },
     ],
@@ -823,10 +823,10 @@ const shows = {
         legacy: true,
         startDate: new Date(2019, 5, 31),
         endDate: new Date(2019, 6, 2),
-        venue: venues.yawTheater,
+        venue: venues.yawtheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.stellaKutz,
+          companyMembers.jaimewaliczek,
+          companyMembers.stellakutz,
         ],
       },
     ],
@@ -847,30 +847,30 @@ const shows = {
         legacy: true,
         startDate: new Date(2019, 2, 14),
         endDate: new Date(2019, 2, 16),
-        venue: venues.yawTheater,
+        venue: venues.yawtheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.shannonAdams,
-          companyMembers.stellaKutz,
-          companyMembers.constanzeVillines,
-          companyMembers.chelseaReinschmidt,
-          companyMembers.alexandraSipe,
-          companyMembers.warrenWoo,
+          companyMembers.jaimewaliczek,
+          companyMembers.shannonadams,
+          companyMembers.stellakutz,
+          companyMembers.constanzevillines,
+          companyMembers.chelseareinschmidt,
+          companyMembers.alexandrasipe,
+          companyMembers.warrenwoo,
         ],
-        emcee: highlights.thomasPhelan,
+        emcee: highlights.thomasphelan,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.ajRogers,
-          highlights.emmaCurtiss,
-          highlights.hannahDuffy,
-          highlights.noellePrice,
-          highlights.tomTomThePhenomenon,
+          highlights.jaimewaliczek,
+          highlights.ajrogers,
+          highlights.emmacurtiss,
+          highlights.hannahduffy,
+          highlights.noelleprice,
+          highlights.tomtomthephenomenon,
         ],
       },
     ],
   },
-  animalNature: {
-    id: 'animalNature',
+  animalnature: {
+    id: 'animalnature',
     name: 'Animal Nature',
     description: `Jerboa Dance presented an evening of revelry and sensuality, journeying from political to mystical. Acts featured Jerboa’s signature athletic and emotional style. Special guests included live music, circus arts, burlesque, and more. Friday and Saturday evening shows were followed by live DJs.
     `,
@@ -883,29 +883,29 @@ const shows = {
         legacy: true,
         startDate: new Date(2018, 2, 9),
         endDate: new Date(2018, 2, 11),
-        venue: venues.yawTheater,
+        venue: venues.yawtheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.christinaJohnson,
-          companyMembers.seanCalavan,
-          companyMembers.renadoTozer,
-          companyMembers.stellaKutz,
-          companyMembers.andresLopez,
-          companyMembers.karenGrady,
-          companyMembers.constanzeVillines,
-          companyMembers.alexUng,
+          companyMembers.jaimewaliczek,
+          companyMembers.christinajohnson,
+          companyMembers.seancalavan,
+          companyMembers.renadotozer,
+          companyMembers.stellakutz,
+          companyMembers.andreslopez,
+          companyMembers.karengrady,
+          companyMembers.constanzevillines,
+          companyMembers.alexung,
         ],
-        emcee: highlights.dustinGuyJackson,
+        emcee: highlights.dustinguyjackson,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.theLoveShowNYC,
-          highlights.sebastianLangeAndMajaZavaljevski,
-          highlights.christinaJohnson,
-          highlights.emmaCurtiss,
-          highlights.brandonMilner,
-          highlights.gypsyLeo,
-          highlights.andrewScott,
-          highlights.ajRogers,
+          highlights.jaimewaliczek,
+          highlights.theloveshownyc,
+          highlights.sebastianlangeandmajazavaljevski,
+          highlights.christinajohnson,
+          highlights.emmacurtiss,
+          highlights.brandonmilner,
+          highlights.gypsyleo,
+          highlights.andrewscott,
+          highlights.ajrogers,
         ],
       },
     ],
@@ -979,19 +979,19 @@ const shows = {
         legacy: true,
         startDate: new Date(2017, 9, 1),
         endDate: new Date(2017, 9, 3),
-        venue: venues.centerHouseTheater,
+        venue: venues.centerhousetheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.rachelKoshiol,
-          companyMembers.stellaKutz,
-          companyMembers.shakiraRaeAdams,
-          companyMembers.jacquelynCorcoran,
-          companyMembers.seanCalavan,
-          companyMembers.andresLopez,
-          companyMembers.renadoTozer,
+          companyMembers.jaimewaliczek,
+          companyMembers.rachelkoshiol,
+          companyMembers.stellakutz,
+          companyMembers.shakiraraeadams,
+          companyMembers.jacquelyncorcoran,
+          companyMembers.seancalavan,
+          companyMembers.andreslopez,
+          companyMembers.renadotozer,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
+          highlights.jaimewaliczek,
         ],
       },
       {
@@ -999,19 +999,19 @@ const shows = {
         legacy: true,
         startDate: new Date(2017, 3, 24),
         endDate: new Date(2017, 4, 1),
-        venue: venues.centerHouseTheater,
+        venue: venues.centerhousetheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.meganCourtney,
-          companyMembers.bridgetGunning,
-          companyMembers.shakiraRaeAdams,
-          companyMembers.jacquelynCorcoran,
-          companyMembers.seanCalavan,
-          companyMembers.alexUng,
-          companyMembers.renadoTozer,
+          companyMembers.jaimewaliczek,
+          companyMembers.megancourtney,
+          companyMembers.bridgetgunning,
+          companyMembers.shakiraraeadams,
+          companyMembers.jacquelyncorcoran,
+          companyMembers.seancalavan,
+          companyMembers.alexung,
+          companyMembers.renadotozer,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
+          highlights.jaimewaliczek,
         ],
       },
       {
@@ -1019,19 +1019,19 @@ const shows = {
         legacy: true,
         startDate: new Date(2010, 6, 4),
         endDate: new Date(2010, 6, 5),
-        venue: venues.actTheater,
+        venue: venues.acttheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.sarahChampion,
-          companyMembers.meghanShepard,
-          companyMembers.finnCronin,
-          companyMembers.seanCalavan,
-          companyMembers.morganHoughton,
-          companyMembers.renadoTozer,
-          companyMembers.kristenKissel,
+          companyMembers.jaimewaliczek,
+          companyMembers.sarahchampion,
+          companyMembers.meghanshepard,
+          companyMembers.finncronin,
+          companyMembers.seancalavan,
+          companyMembers.morganhoughton,
+          companyMembers.renadotozer,
+          companyMembers.kristenkissel,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
+          highlights.jaimewaliczek,
         ],
       },
     ],
@@ -1181,22 +1181,22 @@ const shows = {
         legacy: true,
         startDate: new Date(2016, 6, 24),
         endDate: new Date(2016, 6, 25),
-        venue: venues.eriksonTheater,
+        venue: venues.eriksontheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.meghanShepard,
-          companyMembers.sarahChampion,
-          companyMembers.stellaKutz,
-          companyMembers.renadoTozer,
-          companyMembers.andreasFetz,
-          companyMembers.alexUng,
-          companyMembers.karenGrady,
+          companyMembers.jaimewaliczek,
+          companyMembers.meghanshepard,
+          companyMembers.sarahchampion,
+          companyMembers.stellakutz,
+          companyMembers.renadotozer,
+          companyMembers.andreasfetz,
+          companyMembers.alexung,
+          companyMembers.karengrady,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.splinterDance,
-          highlights.parisOriginal,
-          highlights.sarahSchmidt,
+          highlights.jaimewaliczek,
+          highlights.splinterdance,
+          highlights.parisoriginal,
+          highlights.sarahschmidt,
           highlights.jenWagner,
         ],
       },
@@ -1218,31 +1218,31 @@ const shows = {
         legacy: true,
         startDate: new Date(2016, 2, 12),
         endDate: new Date(2016, 2, 14),
-        venue: venues.velocityDanceCenter,
+        venue: venues.velocitydancecenter,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.stellaKutz,
-          companyMembers.sarahChampion,
-          companyMembers.seanCalavan,
-          companyMembers.meghanShepard,
-          companyMembers.renadoTozer,
-          companyMembers.jenniferElder,
+          companyMembers.jaimewaliczek,
+          companyMembers.stellakutz,
+          companyMembers.sarahchampion,
+          companyMembers.seancalavan,
+          companyMembers.meghanshepard,
+          companyMembers.renadotozer,
+          companyMembers.jenniferelder,
         ],
-        emcees: highlights.steveDolan,
+        emcees: highlights.stevedolan,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.andreasFetz,
-          highlights.scottoMoore,
-          highlights.randiRascal,
-          highlights.harmonyGwinn,
-          highlights.andrewScott,
-          highlights.jenniferElder,
+          highlights.jaimewaliczek,
+          highlights.andreasfetz,
+          highlights.scottomoore,
+          highlights.randirascal,
+          highlights.harmonygwinn,
+          highlights.andrewscott,
+          highlights.jenniferelder,
         ],
       },
     ],
   },
-  genderallySpeaking: {
-    id: 'genderallySpeaking',
+  genderallyspeaking: {
+    id: 'genderallyspeaking',
     name: 'Genderally Speaking',
     description: `Jerboa Dance stepped outside its standard modern dance repertoire to bring you something sexier. Genderally Speaking was filled with naughty ballerinas, muscled acrobats, sultry temptresses, divalicious queens, and bawdy burlesque by none other than fantastic <a href="http://randirascal.com/">Randi Rascal</a>!
     `,
@@ -1255,31 +1255,31 @@ const shows = {
         legacy: true,
         startDate: new Date(2010, 8, 20),
         endDate: new Date(2010, 8, 20),
-        venue: venues.centerHouseTheater,
+        venue: venues.centerhousetheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.sarahChampion,
-          companyMembers.meghanShepard,
-          companyMembers.finnCronin,
-          companyMembers.seanCalavan,
-          companyMembers.morganHoughton,
-          companyMembers.renadoTozer,
-          companyMembers.kristenKissel,
+          companyMembers.jaimewaliczek,
+          companyMembers.sarahchampion,
+          companyMembers.meghanshepard,
+          companyMembers.finncronin,
+          companyMembers.seancalavan,
+          companyMembers.morganhoughton,
+          companyMembers.renadotozer,
+          companyMembers.kristenkissel,
         ],
-        emcee: highlights.jjBrychell,
+        emcee: highlights.jjbrychell,
         highlights: [
-          highlights.jaimeWaliczek,
-          highlights.randiRascal,
-          highlights.nellWaliczek,
-          highlights.seanCalavanDragQueen,
-          highlights.katieSawicki,
-          highlights.marcVonHolzen,
+          highlights.jaimewaliczek,
+          highlights.randirascal,
+          highlights.nellwaliczek,
+          highlights.seancalavanDragQueen,
+          highlights.katiesawicki,
+          highlights.marcvonholzen,
         ],
       },
     ],
   },
-  backFromTheBrink: {
-    id: 'backFromTheBrink',
+  backfromthebrink: {
+    id: 'backfromthebrink',
     name: 'Back From the Brink',
     description: `This acrobatic, energetic modern dance ballet takes audiences on a gripping journey into the human psyche. Conceived around the classic stages of grief, Act I begins after a traumatic event leads the dancers to reflect on their lives. Act II moves into the discovery of how to push forward, build new relationships, find community, and hope.
     `,
@@ -1287,21 +1287,21 @@ const shows = {
       filename: 'header.small.jpg',
     },
     photos: [
-      { filename: 'backfromthebrink_1.jpg', thumbnailFilename: 'backfromthebrink_1.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_2.jpg', thumbnailFilename: 'backfromthebrink_2.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_3.jpg', thumbnailFilename: 'backfromthebrink_3.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_4.jpg', thumbnailFilename: 'backfromthebrink_4.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_5.jpg', thumbnailFilename: 'backfromthebrink_5.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_6.jpg', thumbnailFilename: 'backfromthebrink_6.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_7.jpg', thumbnailFilename: 'backfromthebrink_7.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_8.jpg', thumbnailFilename: 'backfromthebrink_8.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_9.jpg', thumbnailFilename: 'backfromthebrink_9.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_10.jpg', thumbnailFilename: 'backfromthebrink_10.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_11.jpg', thumbnailFilename: 'backfromthebrink_11.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_12.jpg', thumbnailFilename: 'backfromthebrink_12.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_13.jpg', thumbnailFilename: 'backfromthebrink_13.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_14.jpg', thumbnailFilename: 'backfromthebrink_14.small.jpg', photographer: photographers.jesusChapaMalacara },
-      { filename: 'backfromthebrink_15.jpg', thumbnailFilename: 'backfromthebrink_15.small.jpg', photographer: photographers.jesusChapaMalacara },
+      { filename: 'backfromthebrink_1.jpg', thumbnailFilename: 'backfromthebrink_1.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_2.jpg', thumbnailFilename: 'backfromthebrink_2.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_3.jpg', thumbnailFilename: 'backfromthebrink_3.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_4.jpg', thumbnailFilename: 'backfromthebrink_4.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_5.jpg', thumbnailFilename: 'backfromthebrink_5.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_6.jpg', thumbnailFilename: 'backfromthebrink_6.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_7.jpg', thumbnailFilename: 'backfromthebrink_7.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_8.jpg', thumbnailFilename: 'backfromthebrink_8.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_9.jpg', thumbnailFilename: 'backfromthebrink_9.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_10.jpg', thumbnailFilename: 'backfromthebrink_10.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_11.jpg', thumbnailFilename: 'backfromthebrink_11.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_12.jpg', thumbnailFilename: 'backfromthebrink_12.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_13.jpg', thumbnailFilename: 'backfromthebrink_13.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_14.jpg', thumbnailFilename: 'backfromthebrink_14.small.jpg', photographer: photographers.jesuschapamalacara },
+      { filename: 'backfromthebrink_15.jpg', thumbnailFilename: 'backfromthebrink_15.small.jpg', photographer: photographers.jesuschapamalacara },
     ],
     performances: [
       {
@@ -1309,19 +1309,19 @@ const shows = {
         legacy: true,
         startDate: new Date(2010, 9, 17),
         endDate: new Date(2010, 9, 18),
-        venue: venues.actTheater,
+        venue: venues.acttheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.christinaJohnson,
-          companyMembers.sarahChampion,
-          companyMembers.renadoTozer,
-          companyMembers.kristenKissel,
-          companyMembers.meghanShepard,
-          companyMembers.jenniferElder,
-          companyMembers.seanCalavan,
+          companyMembers.jaimewaliczek,
+          companyMembers.christinajohnson,
+          companyMembers.sarahchampion,
+          companyMembers.renadotozer,
+          companyMembers.kristenkissel,
+          companyMembers.meghanshepard,
+          companyMembers.jenniferelder,
+          companyMembers.seancalavan,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
+          highlights.jaimewaliczek,
         ],
       },
       {
@@ -1329,19 +1329,19 @@ const shows = {
         legacy: true,
         startDate: new Date(2009, 2, 13),
         endDate: new Date(2009, 2, 14),
-        venue: venues.actTheater,
+        venue: venues.acttheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.christinaJohnson,
-          companyMembers.elizabethBurwell,
-          companyMembers.ericVlach,
-          companyMembers.pamVlach,
-          companyMembers.meghanShepard,
-          companyMembers.davidLorenceSchleiffers,
-          companyMembers.pamelaTurpin,
+          companyMembers.jaimewaliczek,
+          companyMembers.christinajohnson,
+          companyMembers.elizabethburwell,
+          companyMembers.ericvlach,
+          companyMembers.pamvlach,
+          companyMembers.meghanshepard,
+          companyMembers.davidlorenceschleiffers,
+          companyMembers.pamelaturpin,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
+          highlights.jaimewaliczek,
         ],
       },
       {
@@ -1349,19 +1349,19 @@ const shows = {
         legacy: true,
         startDate: new Date(2007, 11, 14),
         endDate: new Date(2007, 11, 17),
-        venue: venues.hudsonGuildTheater,
+        venue: venues.hudsonguildtheater,
         companyMembers: [
-          companyMembers.jaimeWaliczek,
-          companyMembers.christinaJohnson,
-          companyMembers.elizabethBurwell,
-          companyMembers.ericVlach,
-          companyMembers.noaSagie,
-          companyMembers.adamPellegrine,
-          companyMembers.hannaLeeSakakibara,
-          companyMembers.julieSmith,
+          companyMembers.jaimewaliczek,
+          companyMembers.christinajohnson,
+          companyMembers.elizabethburwell,
+          companyMembers.ericvlach,
+          companyMembers.noasagie,
+          companyMembers.adampellegrine,
+          companyMembers.hannaleesakakibara,
+          companyMembers.juliesmith,
         ],
         highlights: [
-          highlights.jaimeWaliczek,
+          highlights.jaimewaliczek,
         ],
       },
     ],

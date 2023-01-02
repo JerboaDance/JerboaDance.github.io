@@ -12,7 +12,7 @@
       let castMember;
 
       const pagePaths = url.pathname.split("/");
-      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0];
+      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
       if (companyMemberId) {
         castMember = companyMembers[companyMemberId];
         if (castMember?.suppressPage) {
