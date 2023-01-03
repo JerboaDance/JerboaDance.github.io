@@ -28,7 +28,7 @@ const priorities = {
 const links = [
   { url: '', priority: priorities.urgent },
   { url: '/index.html', priority: priorities.urgent },
-  { url: '/about.html', priority: priorities.important },
+  { url: '/About.html', priority: priorities.important },
 ];
 
 const { currentShow, currentPerformance } = findCurrentShow(shows);
