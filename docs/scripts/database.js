@@ -668,6 +668,19 @@ const highlights = {
      Instagram <a href="https://www.instagram.com/magicianonamotorcycle/">@magicianonamotorcycle</a>
    `,
   },
+  rubenbarron:
+  {
+    id: 'rubenbarron',
+    name: 'Ruben Barron',
+    role: 'Magician',
+    headshot: {
+      filename: 'RubenBarron.jpg'
+    },
+    bio: `Ruben Barron is San Antonio’s funniest magician! Ruben is currently performing live shows once again, as well as teaching magic!
+    <p>
+    <a href="https://sanantoniocomedymagician.com/">sanantoniocomedymagician.com</a>  
+    `,
+  }
 };
 
 const shows = {
@@ -704,7 +717,7 @@ const shows = {
         highlights: [
           highlights.jaimewaliczek,
           highlights.emmacurtiss,
-          highlights.nikoleo,
+          highlights.rubenbarron,
           highlights.lizazurlinden,
         ],
         companyMembers: [
