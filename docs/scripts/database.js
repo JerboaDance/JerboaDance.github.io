@@ -185,6 +185,15 @@ const companyMembers = {
     bio: `After graduating from Birmingham-Southern College with a degree in French and dance, Elizabeth moved to New York to pursue a career in dance. She’s danced with such notables as Saba Dance Theater, Kenny Larson and Beth Soll. She also appeared in Lois Greenfield’s Breaking Bounds calendar. Elizabeth and her husband, Clay, own High Performance NYC, a private personal training facility in New York. There, she works as a personal trainer fusing her dance training with various other techniques such as Pilates and Kettlebells to help her clients get fit. She feels very lucky to have two careers that she loves. Speaking of love, she recently got a Doberman puppy named Zulu.
     `,
   },
+  emilyrose: {
+    id: 'emilyrose',
+    name: 'Emily Rose',
+    headshot: {
+      filename: 'EmilyRose.jpg',
+    },
+    bio: `Em is an explorer of movement and engages in a diverse range of practices. She has studied movement as an art and therapeutic practice for several years through dance, dance/movement therapy, yoga, and partner acrobatics. Throughout her professional career, Em has enjoyed the experience of performing collaboratively with fellow movers, teaching others how to move their bodies, and supporting people in developing an inner awareness of how their mind, body, and breath speak. At present, she practices as a massage therapist and teaches both yoga and partner acrobatics.
+    `,
+  },
   ericvlach: {
     id: 'ericvlach',
     name: 'Eric Vlach',
