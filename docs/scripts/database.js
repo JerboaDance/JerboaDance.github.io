@@ -693,7 +693,7 @@ const highlights = {
 };
 
 const shows = {
-  unhinge: {
+  fractured: {
     id: 'fractured',
     name: 'Fractured',
     description: 'Prepare to be transported into a realm where brokenness becomes a source of strength and resilience. Jerboa proudly presents "Fractured", an exquisite dance performance that will leave you inspired. Immerse yourself in a captivating blend of athleticism and emotional depth, exploring both the darkness and the light, the profound and the absurd, all presented through the transformative power of dance. Our charismatic host, Brenna Duffitt, will be your guide for an evening that weaves together music, dance, and circus artistry. Embrace the warmth and vitality of our artsy antics, providing a much-needed escape from the cold grip of winter. This is an opportunity you won’t want to miss!',
