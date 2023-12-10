@@ -694,6 +694,52 @@ const highlights = {
 
 const shows = {
   unhinge: {
+    id: 'fractured',
+    name: 'Fractured',
+    description: 'Prepare to be transported into a realm where brokenness becomes a source of strength and resilience. Jerboa proudly presents "Fractured", an exquisite dance performance that will leave you inspired. Immerse yourself in a captivating blend of athleticism and emotional depth, exploring both the darkness and the light, the profound and the absurd, all presented through the transformative power of dance. Our charismatic host, Brenna Duffitt, will be your guide for an evening that weaves together music, dance, and circus artistry. Embrace the warmth and vitality of our artsy antics, providing a much-needed escape from the cold grip of winter. This is an opportunity you won’t want to miss!',
+    headerImage: {
+      filename: 'fractured.jpg',
+    },
+    performances: [
+      {
+        dates: 'February 9th, 10th, 16th, and 17th 2024',
+        showtimes: ['2/3 7:30pm', '2/4 3:00pm', '2/4 7:30pm', '2/10 7:30pm', '2/11 7:30pm'],
+        startDate: new Date(2024, 2, 3),
+        endDate: new Date(2024, 2, 17),
+        venue: venues.yawtheater,
+        bptId: 6188099,
+        ticketTiers: [
+          {
+            name: 'VIP tickets $75 presale, $90 at the door',
+            description: 'Front row seats, champagne, and chocolate included',
+          },
+          {
+            name: 'GA tickets $30 presale, $35 at the door',
+            description: '$10 kids’ tickets for the family-friendly Saturday 2/4 matinee with kid participation',
+          },
+          {
+            name: 'Live stream tickets $15',
+            description: 'Link will be sent out before the event via email',
+          },
+        ],
+        emcee: highlights.brennaduffitt,
+        highlights: [
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+        ],
+        companyMembers: [
+          companyMembers.jaimewaliczek,
+          companyMembers.seancalavan,
+          companyMembers.laurandrackett,
+          companyMembers.stellakutz,
+          companyMembers.emilyrose,
+          companyMembers.meghanshepard,
+          companyMembers.alexandrasipe,
+        ],
+      },
+    ],
+  },
+  unhinge: {
     id: 'unhinge',
     name: 'Unhinge',
     description: 'Mark your calendars for Jerboa’s next show, Unhinge, coming in February 2023. Unhinge will be hosted by our fabulous emcee, Brenna Duffitt, and feature cyr wheel, a magician, live violin, along with our quintessential athletic dance. We are back to our partnering antics and will be exploring the ways in which we are all labeled and put into boxes that are too small for the entirety of who we are as humans. Come enjoy this entertaining jaunt through serious to absurd and take a break from your regularly scheduled life. We cannot wait to see you!',

@@ -20,10 +20,19 @@
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Unhinge.html
+            https://jerboadance.com/performances/Fractured.html
         </loc>
         <priority>
             1.0
+        </priority>
+        <lastmod>2023-12-10</lastmod>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/performances/Unhinge.html
+        </loc>
+        <priority>
+            0.2
         </priority>
         <lastmod>2022-12-09</lastmod>
     </url>
