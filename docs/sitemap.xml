@@ -20,10 +20,19 @@
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Fractured.html
+            https://jerboadance.com/performances/Flux.html
         </loc>
         <priority>
             1.0
+        </priority>
+        <lastmod>2024-12-27</lastmod>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/performances/Fractured.html
+        </loc>
+        <priority>
+            0.2
         </priority>
         <lastmod>2023-12-10</lastmod>
     </url>
@@ -167,17 +176,23 @@
             0.9
         </priority>
         <lastmod>2022-12-09</lastmod>
-    </url>   
+    </url> 
+    <url>
+        <loc>https://jerboadance.com/company/JasonPerreault.html</loc>
+        <priority>
+            0.7
+        </priority>
+        <lastmod>2023-12-27</lastmod>
+    </url>  
     <url>
         <loc>https://jerboadance.com/company/IraEcho.html</loc>
         <priority>
-            0.9
+            0.5
         </priority>
         <lastmod>2023-01-17</lastmod>
     </url>   
     <url>
         <loc>https://jerboadance.com/company/BrennaDuffitt.html</loc>
-
         <priority>
             1.0
         </priority>

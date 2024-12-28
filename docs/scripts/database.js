@@ -259,6 +259,15 @@ const companyMembers = {
     bio: `Jaime Waliczek is a choreographer, dancer, and acrobat from Chicago. After moving to Seattle as an adult, she began choreographing for the Eastside Moving Company while performing works by Deborah Wolf, Wade Madsen, among others. Founding Jerboa Dance in 2003, Jaime has continued as artistic director and choreographer. Along with Jerboa, Jaime has performed with many local companies including DASS Dance and the Seattle Opera. While producing Back from the Brink for Jerboa Dance in NYC, she also danced with Angela Harriell’s company, The Love Show. In addition to her work with Jerboa Dance, Jaime’s choreography has been presented at festivals including the DUMBO festival, the Cool NY festival, DNA Works in Progress, the Guild dance company, Around the World in 80 Sips, and Trip and Fall. Her background in competitive gymnastics and as a yoga instructor inform her movement and choreography. Jaime’s favorite things are her 2 adorable children and moving with the wonderful artists in Seattle.
     `,
   },
+  jasonperreault: {
+    id: 'jasonperreault',
+    name: 'Jason Perreault',
+    headshot: {
+      filename: 'JasonPerreault.jpg',
+    },
+    bio: `Jason Perreault.
+    `,
+  },
   jenniferelder: {
     id: 'jenniferelder',
     name: 'Jennifer Elder',
@@ -536,7 +545,7 @@ const highlights = {
   emmacurtiss: {
     id: 'emmacurtiss',
     name: 'Emma Curtiss',
-    role: 'Cyr wheel',
+    role: 'Circus Artist',
     headshot: {
       filename: 'EmmaCurtiss.jpg',
     },
@@ -702,6 +711,52 @@ const highlights = {
 };
 
 const shows = {
+  flux: {
+    id: 'flux',
+    name: 'Flux',
+    description: 'Step into a world that captures the essence of transformation and the beauty of impermanence. Jerboa proudly presents “Flux”, a mesmerizing dance performance where athleticism and emotional depth intertwine to inspire a sense of hope. Prepare to be transported on an evocative journey from sorrow to joy and anxiety to humor through the power of movement. Our enchanting host, Brenna Duffitt, will usher you through your evening of exquisite dance, music, and circus artistry to celebrate the human spirit’s ability to thrive amidst change. Come enjoy our artsy escapades and take a much-needed break from your regularly scheduled life. This is a show you won’t want to miss!',
+    headerImage: {
+      filename: 'flux.jpg',
+    },
+    performances: [
+      {
+        dates: 'February 7th, 8th, 14th, and 15th 2024',
+        showtimes: ['2/7 7:30pm', '2/8 3:00pm', '2/8 7:30pm', '2/14 7:30pm', '2/15 7:30pm'],
+        startDate: new Date(2024, 2, 7),
+        endDate: new Date(2024, 2, 15),
+        venue: venues.yawtheater,
+        bptId: 6513771,
+        ticketTiers: [
+          {
+            name: 'VIP tickets $75 presale, $90 at the door',
+            description: 'Front row seats, champagne, and chocolate included',
+          },
+          {
+            name: 'GA tickets $30 presale, $35 at the door',
+            description: '$10 kids’ tickets for the family-friendly Saturday 2/10 matinee with kid participation',
+          },
+          {
+            name: 'Live stream tickets $15',
+            description: 'Link will be sent out before the event via email',
+          },
+        ],
+        emcee: highlights.brennaduffitt,
+        highlights: [
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+        ],
+        companyMembers: [
+          companyMembers.jaimewaliczek,
+          companyMembers.seancalavan,
+          companyMembers.laurandrackett,
+          companyMembers.stellakutz,
+          companyMembers.emilyrose,
+          companyMembers.alexandrasipe,
+          companyMembers.jasonperreault,
+        ],
+      },
+    ],
+  },
   fractured: {
     id: 'fractured',
     name: 'Fractured',
