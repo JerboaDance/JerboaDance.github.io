@@ -766,10 +766,10 @@ const shows = {
     },
     performances: [
       {
-        dates: 'February 9th, 10th, 16th, and 17th 2024',
+        dates: 'February 9th, 10th, 16th, and 17th 2025',
         showtimes: ['2/9 7:30pm', '2/10 3:00pm', '2/10 7:30pm', '2/16 7:30pm', '2/17 7:30pm'],
-        startDate: new Date(2024, 2, 9),
-        endDate: new Date(2024, 2, 17),
+        startDate: new Date(2025, 2, 9),
+        endDate: new Date(2025, 2, 17),
         venue: venues.yawtheater,
         bptId: 6188099,
         ticketTiers: [
