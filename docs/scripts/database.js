@@ -733,7 +733,7 @@ const shows = {
           },
           {
             name: 'GA tickets $30 presale, $35 at the door',
-            description: '$10 kids’ tickets for the family-friendly Saturday 2/10 matinee with kid participation',
+            description: '$10 kids’ tickets for the family-friendly Saturday 2/8 matinee with kid participation',
           },
           {
             name: 'Live stream tickets $15',
