@@ -711,6 +711,56 @@ const highlights = {
 };
 
 const shows = {
+  nomatter: {
+    id: 'nomatter',
+    name: '(no) matter',
+    description: `Art has the power to give life meaning, especially amidst our modern stress. Jerboa Dance proudly presents "(no) matter"—a breathtaking performance that explores the full spectrum of human experience through our signature athletic style. From struggle to joy, with moments of humor and playfulness along the way, this production invites you on an unforgettable journey. Guided by our charismatic host, Brenna Duffitt, and joined by spectacular guest performers alongside the Jerboa company, you'll be swept into worlds of imagination and emotion. Take a break from the everyday and let your mind wander through the landscapes we've created. This is more than a performance—it's an experience you won't want to miss.`,
+    shortDescription: `Jerboa Dance presents "(no) matter"—an electrifying show that moves from struggle to joy with humor, heart, and our signature athletic style. Hosted by Brenna Duffitt with dazzling guest performers, this is a wild ride you won't want to miss.`,
+    headerImage: {
+      filename: 'nomatter.jpg',
+    },
+    performances: [
+      {
+        dates: 'February 6th, 7th, 13th, and 14th 2026',
+        showtimes: ['2/6 7:30pm', '2/7 3:00pm', '2/7 7:30pm', '2/13 7:30pm', '2/14 7:30pm'],
+        startDate: new Date(2026, 1, 6),
+        endDate: new Date(2026, 1, 14),
+        venue: venues.yawtheater,
+        ticketTiers: [
+          {
+            name: 'VIP tickets $75 presale, $90 at the door',
+            description: 'Front row seats, champagne, and chocolate included',
+          },
+          {
+            name: 'GA tickets $30 presale, $35 at the door',
+            description: '$10 kids' tickets for the family-friendly Friday 2/7 matinee with kid participation',
+          },
+          {
+            name: 'Live stream tickets $15',
+            description: 'Link will be sent out before the event via email',
+          },
+        ],
+        emcee: highlights.brennaduffitt,
+        highlights: [
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+          // TODO: Add zachfarber when bio is ready
+          // TODO: Add jessicaglein when confirmed
+          // TODO: Add thelebanesblonde when bio is ready
+        ],
+        companyMembers: [
+          companyMembers.jaimewaliczek,
+          companyMembers.laurandrackett,
+          // TODO: Add desireekong when bio is ready
+          // TODO: Add alexandrakronz when bio is ready
+          companyMembers.stellakutz,
+          companyMembers.jasonperreault,
+          companyMembers.meghanshepard,
+          companyMembers.constanzevillines,
+        ],
+      },
+    ],
+  },
   flux: {
     id: 'flux',
     name: 'Flux',
