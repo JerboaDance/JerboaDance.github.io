@@ -13,38 +13,34 @@ function populateVenue(venueElement, venue) {
   venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
 }
 
-function populateBrownPaperTicketsWidget(bptElement, bptId) {
-  if (bptId) {
-    const widgetText = `
-      <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v671.css" /> 
-      <DIV ID="bpt_eventbody">
-        <CENTER>
-          <BR><BR>
-          Brown Paper Tickets Ticket Widget Loading...
-          <BR><BR>
-          <A HREF="https://www.brownpapertickets.com/event/${bptId}">Click Here</A> to visit the Brown Paper Tickets event page.
-        </CENTER>
-        <BR><BR>
-      </DIV>
-    `;
-    bptElement.innerHTML = widgetText;
+function populateEventbriteWidget(eventbriteElement, eventbriteId) {
+  if (eventbriteId) {
+    // Create container div with unique ID
+    const containerId = `eventbrite-widget-container-${eventbriteId}`;
+    eventbriteElement.innerHTML = `<div id="${containerId}"></div>`;
 
-    const head = document.querySelector('head');
-
-    const script1 = document.createElement('script');
-    script1.src = `https://www.brownpapertickets.com/eventwidget.js?event=${bptId}&nodescription=1&notitle=1`;
-    script1.type = 'text/javascript';
-    script1.language = 'javascript';
-    head.append(script1);
-
-    const script2 = document.createElement('script');
-    script2.src = `https://www.brownpapertickets.com/widget_v671.js?event=${bptId}`;
-    script2.type = 'text/javascript';
-    script2.language = 'javascript';
-    head.append(script2);
+    // Load Eventbrite widget script if not already loaded
+    if (!document.querySelector('script[src*="eb_widgets.js"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
+      script.onload = () => initializeEventbriteWidget(eventbriteId, containerId);
+      document.head.append(script);
+    } else {
+      // Script already loaded, initialize immediately
+      initializeEventbriteWidget(eventbriteId, containerId);
+    }
   } else {
-    bptElement.hidden = true;
+    eventbriteElement.hidden = true;
   }
+}
+
+function initializeEventbriteWidget(eventId, containerId) {
+  window.EBWidgets.createWidget({
+    widgetType: 'checkout',
+    eventId: eventId,
+    iframeContainerId: containerId,
+    iframeContainerHeight: 625
+  });
 }
 
 function populateTicketTiers(ticketTiersListElement, ticketTiers) {
@@ -159,7 +155,7 @@ function checkForPriorPerformances(show) {
 export {
   populateHeaderImage,
   populateVenue,
-  populateBrownPaperTicketsWidget,
+  populateEventbriteWidget,
   populateTicketTiers,
   populateShowtimes,
   populateCastList,

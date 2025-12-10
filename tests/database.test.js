@@ -162,7 +162,7 @@ test.each(Object.keys(database.shows))('show id: %s', (showId) => {
     if (performance.legacy) {
       // Skip this data for performances prior to the website redesign because the data is missing
       expect(performance.showtimes).toBeUndefined();
-      expect(performance.bptId).toBeUndefined();
+      expect(performance.eventbriteId).toBeUndefined();
       expect(performance.ticketTiers).toBeUndefined();
     } else {
       // Check showtimes
@@ -172,10 +172,10 @@ test.each(Object.keys(database.shows))('show id: %s', (showId) => {
         expect(showtime).toBeValidString();
       });
 
-      // Check bptId
-      expect(performance.bptId).toBeDefined();
-      expect(performance.bptId).not.toBeNull();
-      expect(typeof performance.bptId).toEqual('number');
+      // Check eventbriteId
+      expect(performance.eventbriteId).toBeDefined();
+      expect(performance.eventbriteId).not.toBeNull();
+      expect(typeof performance.eventbriteId).toEqual('string');
 
       // Check ticketTiers
       expect(performance.ticketTiers).toBeDefined();

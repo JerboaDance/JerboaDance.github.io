@@ -726,6 +726,7 @@ const shows = {
         startDate: new Date(2026, 1, 6),
         endDate: new Date(2026, 1, 14),
         venue: venues.yawtheater,
+        eventbriteId: '1977339812608',
         ticketTiers: [
           {
             name: 'VIP tickets $75 presale, $90 at the door',
@@ -775,7 +776,7 @@ const shows = {
         startDate: new Date(2025, 2, 7),
         endDate: new Date(2025, 2, 15),
         venue: venues.yawtheater,
-        bptId: 6513771,
+        eventbriteId: '6513771',
         ticketTiers: [
           {
             name: 'VIP tickets $75 presale, $90 at the door',
@@ -822,7 +823,7 @@ const shows = {
         startDate: new Date(2024, 2, 9),
         endDate: new Date(2024, 2, 17),
         venue: venues.yawtheater,
-        bptId: 6188099,
+        eventbriteId: '6188099',
         ticketTiers: [
           {
             name: 'VIP tickets $75 presale, $90 at the door',
@@ -869,7 +870,7 @@ const shows = {
         startDate: new Date(2023, 2, 3),
         endDate: new Date(2023, 2, 11),
         venue: venues.yawtheater,
-        bptId: 5664115,
+        eventbriteId: '5664115',
         ticketTiers: [
           {
             name: 'VIP tickets $60 presale, $75 at the door',
@@ -921,7 +922,7 @@ const shows = {
         startDate: new Date(2022, 2, 11),
         endDate: new Date(2022, 2, 13),
         venue: venues.yawtheater,
-        bptId: 5337210,
+        eventbriteId: '5337210',
         ticketTiers: [
           {
             name: 'VIP tickets $60 presale, $75 at the door',
