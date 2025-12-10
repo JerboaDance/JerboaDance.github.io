@@ -11,7 +11,7 @@
         findCurrentShow,
         populateHeaderImage,
         populateVenue,
-        populateBrownPaperTicketsWidget,
+        populateEventbriteWidget,
         populateTicketTiers,
         populateShowtimes,
         populateCastList,
@@ -19,13 +19,13 @@
       import generateYouTubeEmbed from "/scripts/youTube.js"
       
       function populateCurrentPerformance(currentShow, currentPerformance) {
-        const { dates, venue, bptId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
+        const { dates, venue, eventbriteId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
 
         const headerImage = document.getElementById("headerImage");
         populateHeaderImage(headerImage, currentShow);
         
-        const bptElement = document.getElementById("currentBptWidget");
-        populateBrownPaperTicketsWidget(bptElement, bptId);
+        const eventbriteElement = document.getElementById("currentBptWidget");
+        populateEventbriteWidget(eventbriteElement, eventbriteId);
 
         const nameElement = document.getElementById("name");
         nameElement.innerText = currentShow.name;
