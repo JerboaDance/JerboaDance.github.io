@@ -171,9 +171,18 @@ const companyMembers = {
     headshot: {
       filename: 'ConstanzeVillines.jpg',
     },
-    bio: `Constanze Villines trained at SVN, Tanzprojekt, as well as the Munich Opera dance academy (Bosl Stiftung) until age eleven. She then expanded her dance training to tap, jazz, and contemporary/modern in Los Angeles, Texas, and Seattle. Constnaze has also trained in gymnastics, rhythmical gymnastics, and contact improvisation. She has danced for Brigitta Toma, Tanztheater Salome, Marlo Ariz, Sapience Dance Collective (Sara Sader & Amy Weaver), Cyrus Khambatta, Maya Soto, Alicia Mullikin, and 3 rd Shift Dance (Xaviera Vandermay), amongst others. She has had the pleasure of performing at The Munich Opera, Tanztheater Salome, Tollwood Festival, Dance Experiment Los Angeles, VE’s Standing in the Storm, Body Politics, Converge Dance Festival, The Seattle Intl. Dance Festival, and more.
+    bio: `Constanze Villines trained at SVN, Tanzprojekt, as well as the Munich Opera dance academy (Bosl Stiftung) until age eleven. She then expanded her dance training to tap, jazz, and contemporary/modern in Los Angeles, Texas, and Seattle. Constnaze has also trained in gymnastics, rhythmical gymnastics, and contact improvisation. She has danced for Brigitta Toma, Tanztheater Salome, Marlo Ariz, Sapience Dance Collective (Sara Sader & Amy Weaver), Cyrus Khambatta, Maya Soto, Alicia Mullikin, and 3 rd Shift Dance (Xaviera Vandermay), amongst others. She has had the pleasure of performing at The Munich Opera, Tanztheater Salome, Tollwood Festival, Dance Experiment Los Angeles, VE's Standing in the Storm, Body Politics, Converge Dance Festival, The Seattle Intl. Dance Festival, and more.
     <p>
-    As a choreographer, Constanze’s work has been shown in Germany as part of the Tollwood Festival and throughout the country. Since moving to Seattle in 2009, she has worked and collaborated with different Seattle artists and since 2013 produces, together with Cyrus Khambatta, The Seattle International Dance Festival. She is the managing director of Khambatta Dance Company and since 2014 the artistic director of reflexion Dance Company. Constanze’s choreographic works have been shown throughout Seattle at Velocity Dance Center, Body Politics Festival Tacoma, The Seattle International Dance Festival, The Pocket Theater, Out on a Limb Dance Festival in Olympia, and more. Her work has been commissioned for the 2016 The Glossary at The Neptune Theater and the 2016 LitCrawl.
+    As a choreographer, Constanze's work has been shown in Germany as part of the Tollwood Festival and throughout the country. Since moving to Seattle in 2009, she has worked and collaborated with different Seattle artists and since 2013 produces, together with Cyrus Khambatta, The Seattle International Dance Festival. She is the managing director of Khambatta Dance Company and since 2014 the artistic director of reflexion Dance Company. Constanze's choreographic works have been shown throughout Seattle at Velocity Dance Center, Body Politics Festival Tacoma, The Seattle International Dance Festival, The Pocket Theater, Out on a Limb Dance Festival in Olympia, and more. Her work has been commissioned for the 2016 The Glossary at The Neptune Theater and the 2016 LitCrawl.
+    `,
+  },
+  desireekong: {
+    id: 'desireekong',
+    name: 'Desiree Kong',
+    headshot: {
+      filename: 'DesireeKong.jpg',
+    },
+    bio: `Desiree Kong (she/her) grew up under the bright lights of Las Vegas before coming to Seattle.  In 2020 she graduated from Cornish College of the Arts with her BFA in Dance. As a young dancer she was classically trained at Nevada Ballet Theater, as well as majored in dance and minored in theater/musical theater while attending K. O. Knudson Middle School and Las Vegas Academy. Her current training focuses on contemporary, modern, floor work and partnering as she takes classes in Seattle to expand her skills. Since graduating Desiree has performed alongside eXitSPACE, Under Current, El Suẽno, DITO Dance Collective, and in other freelance projects around the city. When not in the studio dancing to counts, you can catch Desiree on the dance floor dancing to the beat!
     `,
   },
   davidlorenceschleiffers: {
@@ -762,7 +771,7 @@ const shows = {
           companyMembers.jaimewaliczek,
           companyMembers.laurandrackett,
           companyMembers.alexandrakronz,
-          // TODO: Add desireekong when bio is ready
+          companyMembers.desireekong,
           companyMembers.stellakutz,
           companyMembers.jasonperreault,
           companyMembers.meghanshepard,
