@@ -77,7 +77,16 @@ const companyMembers = {
     headshot: {
       filename: 'AlexUng.jpg',
     },
-    bio: `In his second year with JERBOA Dance, Alex Ung is giddy to be in his first burlesque show. A hip hop dancer turned contemporary/modern, Alex started his career in college as a hip hop teacher/choreographer. Now his styles vary from crew-style hip hop to contemporary jazz to Broadway and Musical Theatre, and even contemporary ballet. He’s taught at Pacific Northwest Ballet School, Seattle Children’s Theatre, Bainbridge Ballet, Northwest School of Dance, and Momentum Dance. He’s made award-winning choreography for Bainbridge Ballet Competition Dance Team and also choreographed for Olympic Performance Group. On stage, Alex has performed with Peaches Christ Productions, Seattle Musical Theatre, Bainbridge Performing Arts, Olympic Ballet Theatre, Olympic Performance Group, Seattle PRIDE Mainstage, and Pacific MusicWorks, among other dance and theater companies. He spends his free time rock climbing, biking, and backpacking (as mountains and ocean are not native to this Iowan), while also finding time to teach and substitute at PNB School and Seattle Children’s Theatre, and creating with his amazing JERBOA Dance comrades.
+    bio: `In his second year with JERBOA Dance, Alex Ung is giddy to be in his first burlesque show. A hip hop dancer turned contemporary/modern, Alex started his career in college as a hip hop teacher/choreographer. Now his styles vary from crew-style hip hop to contemporary jazz to Broadway and Musical Theatre, and even contemporary ballet. He's taught at Pacific Northwest Ballet School, Seattle Children's Theatre, Bainbridge Ballet, Northwest School of Dance, and Momentum Dance. He's made award-winning choreography for Bainbridge Ballet Competition Dance Team and also choreographed for Olympic Performance Group. On stage, Alex has performed with Peaches Christ Productions, Seattle Musical Theatre, Bainbridge Performing Arts, Olympic Ballet Theatre, Olympic Performance Group, Seattle PRIDE Mainstage, and Pacific MusicWorks, among other dance and theater companies. He spends his free time rock climbing, biking, and backpacking (as mountains and ocean are not native to this Iowan), while also finding time to teach and substitute at PNB School and Seattle Children's Theatre, and creating with his amazing JERBOA Dance comrades.
+    `,
+  },
+  alexandrakronz: {
+    id: 'alexandrakronz',
+    name: 'Alexandra Kronz',
+    headshot: {
+      filename: 'AlexKronz.jpg',
+    },
+    bio: `Alex (Alexandra) Kronz is a Seattle based dancer, choreographer, theater artist, drag performer and writer. They love performing dances that combine theatricality, athleticism, and play so they're over the moon to be dancing with Jerboa this year. Alex's influences come from a variety of stylistic worlds, from musicality and partnering rooted in American social dance to clowning, stage combat and contemporary/modern dance technique. Recent credits include: Ojak Bridge Dance festival (Nov 2025 choreographer, MMDC company dancer), The Guild Dance Company (Oct 2025, dancer), Exit Space's LAUNCH (Oct 2025, choreographer), ACT Theatre's 'The Wave, and What Came After' (July 2025, choreographer), '12 Minutes Max' (April 2025, dancer and choreographer). Future updates on insta: @alexandrakronz
     `,
   },
   andreasfetz: {
@@ -752,8 +761,8 @@ const shows = {
         companyMembers: [
           companyMembers.jaimewaliczek,
           companyMembers.laurandrackett,
+          companyMembers.alexandrakronz,
           // TODO: Add desireekong when bio is ready
-          // TODO: Add alexandrakronz when bio is ready
           companyMembers.stellakutz,
           companyMembers.jasonperreault,
           companyMembers.meghanshepard,
