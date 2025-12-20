@@ -664,6 +664,11 @@ const highlights = {
     id: 'jessicaglein',
     name: 'Jessica Glein',
     role: 'Pole Performer',
+    headshot: {
+      filename: 'JessicaGlein.jpg',
+    },
+    bio: `Dancing is just one of the ways that Jessica Glein explores being alive and the complicated joys of having a heartbeat. She is a pleasure muse and guide who loves to dig into the nuances of embodiment, liberation, and sexuality. When she dances, it is a personal invitation to luxuriate in time and space - by partner-dancing with herself. Fundamentally, she believes that we could all use a little more delight in our worlds.
+    `,
   },
   theloveshownyc: {
     id: 'theloveshownyc',
@@ -721,9 +726,19 @@ const highlights = {
     headshot: {
       filename: 'RubenBarron.jpg'
     },
-    bio: `Ruben Barron is San Antonio’s funniest magician! Ruben is currently performing live shows once again, as well as teaching magic!
+    bio: `Ruben Barron is San Antonio's funniest magician! Ruben is currently performing live shows once again, as well as teaching magic!
     <p>
     <a href="https://sanantoniocomedymagician.com/">sanantoniocomedymagician.com</a>  
+    `,
+  },
+  zachfarber: {
+    id: 'zachfarber',
+    name: 'Zach Farber',
+    role: 'Singer/Musician',
+    headshot: {
+      filename: 'ZachFarber.jpg',
+    },
+    bio: `Zach Farber is a Portland-based vocalist whose singing has been quietly hijacked by acrobatics and improvisational movement. He aims for responsive, in-the-moment performance and occasionally pretends this was the plan all along.
     `,
   }
 };
@@ -763,8 +778,8 @@ const shows = {
         highlights: [
           highlights.jaimewaliczek,
           highlights.emmacurtiss,
-          // TODO: Add zachfarber when bio is ready
-          // TODO: Add jessicaglein when confirmed
+          highlights.zachfarber,
+          highlights.jessicaglein,
           // TODO: Add thelebanesblonde when bio is ready
         ],
         companyMembers: [
