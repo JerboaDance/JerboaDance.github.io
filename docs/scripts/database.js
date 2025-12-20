@@ -740,6 +740,16 @@ const highlights = {
     },
     bio: `Zach Farber is a Portland-based vocalist whose singing has been quietly hijacked by acrobatics and improvisational movement. He aims for responsive, in-the-moment performance and occasionally pretends this was the plan all along.
     `,
+  },
+  thelebanesblonde: {
+    id: 'thelebanesblonde',
+    name: 'The Lebanese Blonde',
+    role: 'Belly Dance & Pole Performer',
+    headshot: {
+      filename: 'TheLebaneseBlonde.jpg',
+    },
+    bio: `Jeni, known on stage as The Lebanese Blonde, is a captivating performer celebrated for her slow, sensual movement and deep connection to music. With over 20 years of experience in belly dance and a decade immersed in pole and sensual movement, she brings a rich fusion of traditions and contemporary expression to her performances. Her artistry emphasizes musicality, emotional depth, and flowing transitions, blending technical mastery with a unique personal style.
+    `,
   }
 };
 
@@ -780,7 +790,7 @@ const shows = {
           highlights.emmacurtiss,
           highlights.zachfarber,
           highlights.jessicaglein,
-          // TODO: Add thelebanesblonde when bio is ready
+          highlights.thelebanesblonde,
         ],
         companyMembers: [
           companyMembers.jaimewaliczek,
