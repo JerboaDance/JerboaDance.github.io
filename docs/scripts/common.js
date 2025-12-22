@@ -10,7 +10,7 @@ function addGoogleAnalytics() {
     m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
   }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'));
 
-  ga('create', '{{ site.google_analytics }}', 'auto');
+  ga('create', 'G-9JSV1XS3DN', 'auto');
   ga('send', 'pageview');
 }
 
