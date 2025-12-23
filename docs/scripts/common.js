@@ -3,15 +3,18 @@ import { findCurrentShow } from '/scripts/shows.js';
 import { getShowUrl } from '/scripts/urls.js';
 /* eslint-disable */
 function addGoogleAnalytics() {
-  (function (i, s, o, g, r, a, m) {
-    i.GoogleAnalyticsObject = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments);
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
-  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga'));
+  // Load gtag.js script
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-9JSV1XS3DN';
+  document.head.appendChild(script);
 
-  ga('create', '{{ site.google_analytics }}', 'auto');
-  ga('send', 'pageview');
+  // Initialize dataLayer and gtag
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', 'G-9JSV1XS3DN');
 }
 
 function addTwitterUniversalTag() {
