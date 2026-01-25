@@ -703,11 +703,35 @@ const highlights = {
     headshot: {
       filename: 'RubenBarron.jpg'
     },
-    bio: `Ruben Barron is San Antonio’s funniest magician! Ruben is currently performing live shows once again, as well as teaching magic!
+    bio: `Ruben Barron is San Antonio's funniest magician! Ruben is currently performing live shows once again, as well as teaching magic!
     <p>
     <a href="https://sanantoniocomedymagician.com/">sanantoniocomedymagician.com</a>  
     `,
-  }
+  },
+  terrycrane: {
+    id: 'terrycrane',
+    name: 'Terry Crane',
+    role: 'Circus Artist',
+    headshot: {
+      filename: 'TerryCrane.jpg',
+    },
+    bio: `Terry Crane surrendered to restless urges that led him to walk calmly away with the circus at the tender age of 20. He is the founder of Acrobatic Conundrum, a contemporary circus company based in Seattle. He has performed on 4 continents, in theaters, under the big top, and on the street. Terry is delighted to share his love of rope technique, circus creation, and collaboration via workshops and performances across the globe. As a director, Terry is on a relentless quest to tell true fictions, contradict human isolation, and portray paradox.
+    `,
+  },
+  oroki: {
+    id: 'oroki',
+    name: 'Oroki',
+    role: 'Circus Artist',
+    headshot: {
+      filename: 'oroki.jpg',
+    },
+    bio: `Oroki is a Seattle-based aerial instructor, performer, and producer, currently teaching at ECTA/SANCA.
+    <p>
+    As a burlesque artist, they have performed in Seattle Vice '76, Moisture Festival, What the Funk Fest, the Seattle Boylesque Festival, ECTA's Mardi Gras, the Seattle Erotic Arts Festival, and Broho Takes Flight.
+    <p>
+    They also produce works such as Alice in Shadowland and A Circus of Steam & Shadows. Coming up they'll be producing a show on the Rice on Repeat: An AAPI Circus at the Seattle Center and 12th Avenue Arts. Details coming through social media, website and newsletter!
+    `,
+  },
 };
 
 const shows = {
@@ -744,7 +768,8 @@ const shows = {
         emcee: highlights.brennaduffitt,
         highlights: [
           highlights.jaimewaliczek,
-          highlights.emmacurtiss,
+          highlights.terrycrane,
+          highlights.oroki,
           // TODO: Add zachfarber when bio is ready
           // TODO: Add jessicaglein when confirmed
           // TODO: Add thelebanesblonde when bio is ready
