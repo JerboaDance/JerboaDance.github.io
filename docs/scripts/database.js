@@ -750,7 +750,25 @@ const highlights = {
     },
     bio: `Jeni, known on stage as The Lebanese Blonde, is a captivating performer celebrated for her slow, sensual movement and deep connection to music. With over 20 years of experience in belly dance and a decade immersed in pole and sensual movement, she brings a rich fusion of traditions and contemporary expression to her performances. Her artistry emphasizes musicality, emotional depth, and flowing transitions, blending technical mastery with a unique personal style.
     `,
-  }
+  },
+  terrycrane: {
+    id: 'terrycrane',
+    name: 'Terry Crane',
+    role: 'Guest Performer',
+    headshot: {
+      filename: 'TerryCrane.jpg',
+    },
+    bio: `Terry Crane is a guest performer.`,
+  },
+  oroki: {
+    id: 'oroki',
+    name: 'Oroki',
+    role: 'Guest Performer',
+    headshot: {
+      filename: 'Oroki.jpg',
+    },
+    bio: `Oroki is a guest performer.`,
+  },
 };
 
 const shows = {
