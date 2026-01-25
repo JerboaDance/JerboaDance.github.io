@@ -787,7 +787,8 @@ const shows = {
         emcee: highlights.brennaduffitt,
         highlights: [
           highlights.jaimewaliczek,
-          highlights.emmacurtiss,
+          highlights.terrycrane,
+          highlights.oroki,
           highlights.zachfarber,
           highlights.jessicaglein,
           highlights.thelebanesblonde,
