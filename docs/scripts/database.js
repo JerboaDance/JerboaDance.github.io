@@ -77,7 +77,16 @@ const companyMembers = {
     headshot: {
       filename: 'AlexUng.jpg',
     },
-    bio: `In his second year with JERBOA Dance, Alex Ung is giddy to be in his first burlesque show. A hip hop dancer turned contemporary/modern, Alex started his career in college as a hip hop teacher/choreographer. Now his styles vary from crew-style hip hop to contemporary jazz to Broadway and Musical Theatre, and even contemporary ballet. He’s taught at Pacific Northwest Ballet School, Seattle Children’s Theatre, Bainbridge Ballet, Northwest School of Dance, and Momentum Dance. He’s made award-winning choreography for Bainbridge Ballet Competition Dance Team and also choreographed for Olympic Performance Group. On stage, Alex has performed with Peaches Christ Productions, Seattle Musical Theatre, Bainbridge Performing Arts, Olympic Ballet Theatre, Olympic Performance Group, Seattle PRIDE Mainstage, and Pacific MusicWorks, among other dance and theater companies. He spends his free time rock climbing, biking, and backpacking (as mountains and ocean are not native to this Iowan), while also finding time to teach and substitute at PNB School and Seattle Children’s Theatre, and creating with his amazing JERBOA Dance comrades.
+    bio: `In his second year with JERBOA Dance, Alex Ung is giddy to be in his first burlesque show. A hip hop dancer turned contemporary/modern, Alex started his career in college as a hip hop teacher/choreographer. Now his styles vary from crew-style hip hop to contemporary jazz to Broadway and Musical Theatre, and even contemporary ballet. He's taught at Pacific Northwest Ballet School, Seattle Children's Theatre, Bainbridge Ballet, Northwest School of Dance, and Momentum Dance. He's made award-winning choreography for Bainbridge Ballet Competition Dance Team and also choreographed for Olympic Performance Group. On stage, Alex has performed with Peaches Christ Productions, Seattle Musical Theatre, Bainbridge Performing Arts, Olympic Ballet Theatre, Olympic Performance Group, Seattle PRIDE Mainstage, and Pacific MusicWorks, among other dance and theater companies. He spends his free time rock climbing, biking, and backpacking (as mountains and ocean are not native to this Iowan), while also finding time to teach and substitute at PNB School and Seattle Children's Theatre, and creating with his amazing JERBOA Dance comrades.
+    `,
+  },
+  alexandrakronz: {
+    id: 'alexandrakronz',
+    name: 'Alexandra Kronz',
+    headshot: {
+      filename: 'AlexKronz.jpg',
+    },
+    bio: `Alex (Alexandra) Kronz is a Seattle based dancer, choreographer, theater artist, drag performer and writer. They love performing dances that combine theatricality, athleticism, and play so they're over the moon to be dancing with Jerboa this year. Alex's influences come from a variety of stylistic worlds, from musicality and partnering rooted in American social dance to clowning, stage combat and contemporary/modern dance technique. Recent credits include: Ojak Bridge Dance festival (Nov 2025 choreographer, MMDC company dancer), The Guild Dance Company (Oct 2025, dancer), Exit Space's LAUNCH (Oct 2025, choreographer), ACT Theatre's 'The Wave, and What Came After' (July 2025, choreographer), '12 Minutes Max' (April 2025, dancer and choreographer). Future updates on insta: @alexandrakronz
     `,
   },
   andreasfetz: {
@@ -162,9 +171,18 @@ const companyMembers = {
     headshot: {
       filename: 'ConstanzeVillines.jpg',
     },
-    bio: `Constanze Villines trained at SVN, Tanzprojekt, as well as the Munich Opera dance academy (Bosl Stiftung) until age eleven. She then expanded her dance training to tap, jazz, and contemporary/modern in Los Angeles, Texas, and Seattle. Constnaze has also trained in gymnastics, rhythmical gymnastics, and contact improvisation. She has danced for Brigitta Toma, Tanztheater Salome, Marlo Ariz, Sapience Dance Collective (Sara Sader & Amy Weaver), Cyrus Khambatta, Maya Soto, Alicia Mullikin, and 3 rd Shift Dance (Xaviera Vandermay), amongst others. She has had the pleasure of performing at The Munich Opera, Tanztheater Salome, Tollwood Festival, Dance Experiment Los Angeles, VE’s Standing in the Storm, Body Politics, Converge Dance Festival, The Seattle Intl. Dance Festival, and more.
+    bio: `Constanze Villines trained at SVN, Tanzprojekt, as well as the Munich Opera dance academy (Bosl Stiftung) until age eleven. She then expanded her dance training to tap, jazz, and contemporary/modern in Los Angeles, Texas, and Seattle. Constnaze has also trained in gymnastics, rhythmical gymnastics, and contact improvisation. She has danced for Brigitta Toma, Tanztheater Salome, Marlo Ariz, Sapience Dance Collective (Sara Sader & Amy Weaver), Cyrus Khambatta, Maya Soto, Alicia Mullikin, and 3 rd Shift Dance (Xaviera Vandermay), amongst others. She has had the pleasure of performing at The Munich Opera, Tanztheater Salome, Tollwood Festival, Dance Experiment Los Angeles, VE's Standing in the Storm, Body Politics, Converge Dance Festival, The Seattle Intl. Dance Festival, and more.
     <p>
-    As a choreographer, Constanze’s work has been shown in Germany as part of the Tollwood Festival and throughout the country. Since moving to Seattle in 2009, she has worked and collaborated with different Seattle artists and since 2013 produces, together with Cyrus Khambatta, The Seattle International Dance Festival. She is the managing director of Khambatta Dance Company and since 2014 the artistic director of reflexion Dance Company. Constanze’s choreographic works have been shown throughout Seattle at Velocity Dance Center, Body Politics Festival Tacoma, The Seattle International Dance Festival, The Pocket Theater, Out on a Limb Dance Festival in Olympia, and more. Her work has been commissioned for the 2016 The Glossary at The Neptune Theater and the 2016 LitCrawl.
+    As a choreographer, Constanze's work has been shown in Germany as part of the Tollwood Festival and throughout the country. Since moving to Seattle in 2009, she has worked and collaborated with different Seattle artists and since 2013 produces, together with Cyrus Khambatta, The Seattle International Dance Festival. She is the managing director of Khambatta Dance Company and since 2014 the artistic director of reflexion Dance Company. Constanze's choreographic works have been shown throughout Seattle at Velocity Dance Center, Body Politics Festival Tacoma, The Seattle International Dance Festival, The Pocket Theater, Out on a Limb Dance Festival in Olympia, and more. Her work has been commissioned for the 2016 The Glossary at The Neptune Theater and the 2016 LitCrawl.
+    `,
+  },
+  desireekong: {
+    id: 'desireekong',
+    name: 'Desiree Kong',
+    headshot: {
+      filename: 'DesireeKong.jpg',
+    },
+    bio: `Desiree Kong (she/her) grew up under the bright lights of Las Vegas before coming to Seattle.  In 2020 she graduated from Cornish College of the Arts with her BFA in Dance. As a young dancer she was classically trained at Nevada Ballet Theater, as well as majored in dance and minored in theater/musical theater while attending K. O. Knudson Middle School and Las Vegas Academy. Her current training focuses on contemporary, modern, floor work and partnering as she takes classes in Seattle to expand her skills. Since graduating Desiree has performed alongside eXitSPACE, Under Current, El Suẽno, DITO Dance Collective, and in other freelance projects around the city. When not in the studio dancing to counts, you can catch Desiree on the dance floor dancing to the beat!
     `,
   },
   davidlorenceschleiffers: {
@@ -646,6 +664,11 @@ const highlights = {
     id: 'jessicaglein',
     name: 'Jessica Glein',
     role: 'Pole Performer',
+    headshot: {
+      filename: 'JessicaGlein.jpg',
+    },
+    bio: `Dancing is just one of the ways that Jessica Glein explores being alive and the complicated joys of having a heartbeat. She is a pleasure muse and guide who loves to dig into the nuances of embodiment, liberation, and sexuality. When she dances, it is a personal invitation to luxuriate in time and space - by partner-dancing with herself. Fundamentally, she believes that we could all use a little more delight in our worlds.
+    `,
   },
   theloveshownyc: {
     id: 'theloveshownyc',
@@ -708,30 +731,26 @@ const highlights = {
     <a href="https://sanantoniocomedymagician.com/">sanantoniocomedymagician.com</a>  
     `,
   },
-  terrycrane: {
-    id: 'terrycrane',
-    name: 'Terry Crane',
-    role: 'Circus Artist',
+  zachfarber: {
+    id: 'zachfarber',
+    name: 'Zach Farber',
+    role: 'Singer/Musician',
     headshot: {
-      filename: 'TerryCrane.jpg',
+      filename: 'ZachFarber.jpg',
     },
-    bio: `Terry Crane surrendered to restless urges that led him to walk calmly away with the circus at the tender age of 20. He is the founder of Acrobatic Conundrum, a contemporary circus company based in Seattle. He has performed on 4 continents, in theaters, under the big top, and on the street. Terry is delighted to share his love of rope technique, circus creation, and collaboration via workshops and performances across the globe. As a director, Terry is on a relentless quest to tell true fictions, contradict human isolation, and portray paradox.
+    bio: `Zach Farber is a Portland-based vocalist whose singing has been quietly hijacked by acrobatics and improvisational movement. He aims for responsive, in-the-moment performance and occasionally pretends this was the plan all along.
     `,
   },
-  oroki: {
-    id: 'oroki',
-    name: 'Oroki',
-    role: 'Circus Artist',
+  thelebanesblonde: {
+    id: 'thelebanesblonde',
+    name: 'The Lebanese Blonde',
+    role: 'Belly Dance & Pole Performer',
     headshot: {
-      filename: 'oroki.jpg',
+      filename: 'TheLebaneseBlonde.jpg',
     },
-    bio: `Oroki is a Seattle-based aerial instructor, performer, and producer, currently teaching at ECTA/SANCA.
-    <p>
-    As a burlesque artist, they have performed in Seattle Vice '76, Moisture Festival, What the Funk Fest, the Seattle Boylesque Festival, ECTA's Mardi Gras, the Seattle Erotic Arts Festival, and Broho Takes Flight.
-    <p>
-    They also produce works such as Alice in Shadowland and A Circus of Steam & Shadows. Coming up they'll be producing a show on the Rice on Repeat: An AAPI Circus at the Seattle Center and 12th Avenue Arts. Details coming through social media, website and newsletter!
+    bio: `Jeni, known on stage as The Lebanese Blonde, is a captivating performer celebrated for her slow, sensual movement and deep connection to music. With over 20 years of experience in belly dance and a decade immersed in pole and sensual movement, she brings a rich fusion of traditions and contemporary expression to her performances. Her artistry emphasizes musicality, emotional depth, and flowing transitions, blending technical mastery with a unique personal style.
     `,
-  },
+  }
 };
 
 const shows = {
@@ -758,7 +777,7 @@ const shows = {
           },
           {
             name: 'GA tickets $30 presale, $35 at the door',
-            description: '$10 kids’ tickets for the family-friendly Saturday 2/8 matinee with kid participation',
+            description: '$10 kids’ tickets for the family-friendly Saturday 2/7 matinee with kid participation',
           },
           {
             name: 'Live stream tickets $15',
@@ -770,15 +789,15 @@ const shows = {
           highlights.jaimewaliczek,
           highlights.terrycrane,
           highlights.oroki,
-          // TODO: Add zachfarber when bio is ready
-          // TODO: Add jessicaglein when confirmed
-          // TODO: Add thelebanesblonde when bio is ready
+          highlights.zachfarber,
+          highlights.jessicaglein,
+          highlights.thelebanesblonde,
         ],
         companyMembers: [
           companyMembers.jaimewaliczek,
           companyMembers.laurandrackett,
-          // TODO: Add desireekong when bio is ready
-          // TODO: Add alexandrakronz when bio is ready
+          companyMembers.alexandrakronz,
+          companyMembers.desireekong,
           companyMembers.stellakutz,
           companyMembers.jasonperreault,
           companyMembers.meghanshepard,
