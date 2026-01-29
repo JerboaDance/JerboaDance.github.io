@@ -3,7 +3,7 @@
     <meta http-equiv='content-language' content='en-US'>
     <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg" />
     <link rel="stylesheet" href="/css/main.css"/>
-    <title></title>
+    <title>Transformation - Acrobatic Contemporary Dance | Jerboa Dance</title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { shows } from "/scripts/database.js";
@@ -136,7 +136,7 @@
           const show = shows[showId];
           
           const title = document.querySelector('title');
-          title.innerText = `Jerboa Dance - ${show.name}`;
+          title.innerText = `${show.name} - Acrobatic Contemporary Dance | Jerboa Dance`;
 
           const headerImage = document.getElementById("headerImage");
           populateHeaderImage(headerImage, show);
