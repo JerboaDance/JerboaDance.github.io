@@ -168,12 +168,12 @@
             }
 
             if (show.videos && show.videos.length > 0){
-              console.log(JSON.stringify(show.videos))
+              const showVideosElement = document.getElementById("showVideos");
               show.videos.forEach(video => {
                 const teaserVideo = document.createElement("div")
                 teaserVideo.setAttribute("class", "performance-clip");
                 teaserVideo.append(generateYouTubeEmbed({ id: video.id, aspectRatio:video.aspectRatio}));
-                mainElement.append(teaserVideo);
+                showVideosElement.append(teaserVideo);
               })
             }
 
