@@ -33,6 +33,16 @@
           );
           headerImageContainer.appendChild(videoEmbed);
           
+          // Function to switch to image
+          const switchToImage = () => {
+            console.log('Switching to header image');
+            headerImageContainer.innerHTML = '';
+            const headerImage = document.createElement('img');
+            headerImage.id = 'headerImage';
+            headerImageContainer.appendChild(headerImage);
+            populateHeaderImage(headerImage, currentShow);
+          };
+          
           // Load YouTube IFrame API if not already loaded
           if (!window.YT) {
             const tag = document.createElement('script');
@@ -42,28 +52,40 @@
           
           // Setup player to listen for video end
           const setupPlayer = () => {
-            new YT.Player(playerId, {
-              events: {
-                'onStateChange': (event) => {
-                  // YT.PlayerState.ENDED = 0
-                  if (event.data === 0) {
-                    // Video ended - switch to image
-                    headerImageContainer.innerHTML = '';
-                    const headerImage = document.createElement('img');
-                    headerImage.id = 'headerImage';
-                    headerImageContainer.appendChild(headerImage);
-                    populateHeaderImage(headerImage, currentShow);
+            console.log('Setting up YouTube player...');
+            try {
+              const player = new YT.Player(playerId, {
+                events: {
+                  'onReady': (event) => {
+                    console.log('YouTube player ready');
+                  },
+                  'onStateChange': (event) => {
+                    console.log('YouTube state changed:', event.data);
+                    // YT.PlayerState.ENDED = 0
+                    if (event.data === 0) {
+                      console.log('Video ended');
+                      switchToImage();
+                    }
+                  },
+                  'onError': (event) => {
+                    console.error('YouTube player error:', event.data);
                   }
                 }
-              }
-            });
+              });
+            } catch (error) {
+              console.error('Error setting up YouTube player:', error);
+            }
           };
           
           // Wait for API to be ready
           if (window.YT && window.YT.Player) {
-            setupPlayer();
+            // API already loaded, wait a bit for iframe to be in DOM
+            setTimeout(setupPlayer, 100);
           } else {
-            window.onYouTubeIframeAPIReady = setupPlayer;
+            window.onYouTubeIframeAPIReady = () => {
+              // Wait a bit for iframe to be fully ready in DOM
+              setTimeout(setupPlayer, 100);
+            };
           }
         } else {
           const headerImage = document.getElementById("headerImage");
