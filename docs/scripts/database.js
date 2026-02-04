@@ -784,6 +784,12 @@ const shows = {
     headerImage: {
       filename: 'nomatter.jpg',
     },
+    videos: [
+      {
+        id: 'DYh-yE6j4VE',
+        aspectRatio: '16x9',
+      },
+    ],
     performances: [
       {
         dates: 'February 6th, 7th, 13th, and 14th 2026',
