@@ -21,8 +21,19 @@
       function populateCurrentPerformance(currentShow, currentPerformance) {
         const { dates, venue, eventbriteId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
 
-        const headerImage = document.getElementById("headerImage");
-        populateHeaderImage(headerImage, currentShow);
+        // Check if show has videos - display video instead of image
+        if (currentShow.videos && currentShow.videos.length > 0) {
+          const headerImageContainer = document.querySelector('.header-image');
+          headerImageContainer.innerHTML = ''; // Clear the img element
+          const videoEmbed = generateYouTubeEmbed(
+            currentShow.videos[0],
+            { autoplay: true, muted: true }
+          );
+          headerImageContainer.appendChild(videoEmbed);
+        } else {
+          const headerImage = document.getElementById("headerImage");
+          populateHeaderImage(headerImage, currentShow);
+        }
         
         const eventbriteElement = document.getElementById("currentBptWidget");
         populateEventbriteWidget(eventbriteElement, eventbriteId);
