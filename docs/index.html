@@ -25,11 +25,46 @@
         if (currentShow.videos && currentShow.videos.length > 0) {
           const headerImageContainer = document.querySelector('.header-image');
           headerImageContainer.innerHTML = ''; // Clear the img element
+          
+          const playerId = 'header-video-player';
           const videoEmbed = generateYouTubeEmbed(
             currentShow.videos[0],
-            { autoplay: true, muted: true }
+            { autoplay: true, muted: true, playerId: playerId }
           );
           headerImageContainer.appendChild(videoEmbed);
+          
+          // Load YouTube IFrame API if not already loaded
+          if (!window.YT) {
+            const tag = document.createElement('script');
+            tag.src = "https://www.youtube.com/iframe_api";
+            document.head.appendChild(tag);
+          }
+          
+          // Setup player to listen for video end
+          const setupPlayer = () => {
+            new YT.Player(playerId, {
+              events: {
+                'onStateChange': (event) => {
+                  // YT.PlayerState.ENDED = 0
+                  if (event.data === 0) {
+                    // Video ended - switch to image
+                    headerImageContainer.innerHTML = '';
+                    const headerImage = document.createElement('img');
+                    headerImage.id = 'headerImage';
+                    headerImageContainer.appendChild(headerImage);
+                    populateHeaderImage(headerImage, currentShow);
+                  }
+                }
+              }
+            });
+          };
+          
+          // Wait for API to be ready
+          if (window.YT && window.YT.Player) {
+            setupPlayer();
+          } else {
+            window.onYouTubeIframeAPIReady = setupPlayer;
+          }
         } else {
           const headerImage = document.getElementById("headerImage");
           populateHeaderImage(headerImage, currentShow);
