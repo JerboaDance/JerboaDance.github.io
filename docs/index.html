@@ -16,7 +16,8 @@
         populateShowtimes,
         populateCastList,
       } from "/scripts/shows.js";
-      import generateYouTubeEmbed from "/scripts/youTube.js"
+      import generateYouTubeEmbed from "/scripts/youTube.js";
+      import { getShowImageUrl } from "/scripts/urls.js";
       
       function populateCurrentPerformance(currentShow, currentPerformance) {
         const { dates, venue, eventbriteId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
@@ -24,6 +25,15 @@
         // Check if show has videos - display video instead of image
         if (currentShow.videos && currentShow.videos.length > 0) {
           const headerImageContainer = document.querySelector('.header-image');
+          
+          // Pre-load the header image so it's ready when video ends
+          const preloadedImage = new Image();
+          const imageUrl = getShowImageUrl(currentShow, currentShow.headerImage.filename);
+          preloadedImage.src = imageUrl;
+          preloadedImage.onload = () => {
+            console.log('Header image preloaded and ready');
+          };
+          
           headerImageContainer.innerHTML = ''; // Clear the img element
           
           const playerId = 'header-video-player';
@@ -33,14 +43,38 @@
           );
           headerImageContainer.appendChild(videoEmbed);
           
-          // Function to switch to image
+          // Set fixed height to prevent layout shift
+          setTimeout(() => {
+            const videoContainer = headerImageContainer.querySelector('.youtube');
+            if (videoContainer) {
+              const videoHeight = videoContainer.offsetHeight;
+              headerImageContainer.style.minHeight = `${videoHeight}px`;
+              headerImageContainer.style.transition = 'opacity 0.5s ease-in-out';
+              console.log('Container height set to:', videoHeight + 'px');
+            }
+          }, 100);
+          
+          // Function to switch to image with smooth transition
           const switchToImage = () => {
             console.log('Switching to header image');
-            headerImageContainer.innerHTML = '';
-            const headerImage = document.createElement('img');
-            headerImage.id = 'headerImage';
-            headerImageContainer.appendChild(headerImage);
-            populateHeaderImage(headerImage, currentShow);
+            
+            // Fade out
+            headerImageContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+              headerImageContainer.innerHTML = '';
+              const headerImage = document.createElement('img');
+              headerImage.id = 'headerImage';
+              headerImage.src = preloadedImage.src; // Use preloaded image
+              headerImage.style.width = '100%';
+              headerImage.style.height = 'auto';
+              headerImageContainer.appendChild(headerImage);
+              
+              // Fade in
+              setTimeout(() => {
+                headerImageContainer.style.opacity = '1';
+              }, 50);
+            }, 500);
           };
           
           // Load YouTube IFrame API if not already loaded
