@@ -121,7 +121,7 @@ function populateCastList(castListElement, emcee, highlights, companyMembers) {
 
 function findCurrentPerformanceOfShow(show) {
   let currentPerformance = null;
-  if (show?.performances?.length > 0 && show.performances[0].endDate > Date.now()) {
+  if (show?.performances?.length > 0 && show.performances[0].endDate >= Date.now()) {
     currentPerformance = show.performances[0];
   }
   return currentPerformance;
