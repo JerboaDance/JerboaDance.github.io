@@ -151,6 +151,66 @@
         populateCastList(castListElement, emcee, highlights, companyMembers);
       }
 
+      function findMostRecentShow(shows) {
+        let mostRecentShow = null;
+        let mostRecentEndDate = 0;
+        
+        Object.keys(shows).forEach((showId) => {
+          const show = shows[showId];
+          if (show.performances?.length > 0) {
+            const performance = show.performances[0];
+            if (performance.endDate < Date.now() && performance.endDate > mostRecentEndDate) {
+              mostRecentShow = show;
+              mostRecentEndDate = performance.endDate;
+            }
+          }
+        });
+        
+        return mostRecentShow;
+      }
+      
+      function populateNoCurrentShow(mainElement) {
+        const mostRecentShow = findMostRecentShow(shows);
+        
+        if (mostRecentShow) {
+          // Most Recent Show Section
+          const recentShowSection = document.createElement("div");
+          recentShowSection.setAttribute("class", "recent-show-section");
+          recentShowSection.innerHTML = `
+            <h2>Our Most Recent Production</h2>
+            <h1><a href="/show.html?showId=${mostRecentShow.id}">${mostRecentShow.name}</a></h1>
+            <p>${mostRecentShow.shortDescription || mostRecentShow.description}</p>
+          `;
+          mainElement.append(recentShowSection);
+        }
+        
+        // Stay Tuned Section
+        const stayTunedSection = document.createElement("div");
+        stayTunedSection.setAttribute("class", "stay-tuned-section");
+        stayTunedSection.innerHTML = `
+          <h2>Stay Connected</h2>
+          <p>Thank you for your interest in Jerboa Dance! We're planning our next production. Check back soon for updates on upcoming performances.</p>
+        `;
+        mainElement.append(stayTunedSection);
+        
+        // YouTube Video Gallery
+        const youtubeSection = document.createElement("div");
+        youtubeSection.setAttribute("class", "youtube-gallery-section");
+        youtubeSection.innerHTML = `
+          <h2>Watch Our Performances</h2>
+          <div class="youtube-embed-container">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=UU9bL2TfWQ0MyGwCgNws4h2w" 
+                    width="100%" 
+                    height="400" 
+                    frameborder="0" 
+                    allowfullscreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+            </iframe>
+          </div>
+        `;
+        mainElement.append(youtubeSection);
+      }
+
       function populatePage() {
         const mainElement = document.getElementById("main");
         
@@ -163,6 +223,8 @@
           
           const headerImage = document.getElementById("headerImage");
           headerImage.src = `/assets/defaultIndexHeader.jpg`;
+          
+          populateNoCurrentShow(mainElement);
         }
 
         /* 

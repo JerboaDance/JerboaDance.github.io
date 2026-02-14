@@ -795,7 +795,7 @@ const shows = {
         dates: 'February 6th, 7th, 13th, and 14th 2026',
         showtimes: ['2/6 7:30pm', '2/7 3:00pm', '2/7 7:30pm', '2/13 7:30pm', '2/14 7:30pm'],
         startDate: new Date(2026, 1, 6),
-        endDate: new Date(2026, 1, 15),
+        endDate: new Date(Date.UTC(2026, 1, 15, 5, 0, 0)),
         venue: venues.yawtheater,
         eventbriteId: '1977339812608',
         ticketTiers: [
