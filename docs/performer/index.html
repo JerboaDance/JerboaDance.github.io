@@ -8,13 +8,23 @@
     <script type="module">
       import { companyMembers, highlights} from "/scripts/database.js";
       import { getHeadshotImageUrl } from "/scripts/urls.js";
+      
       const url = new URL(document.location);
+      // Extract performer ID from path: /performer/jaimewaliczek -> jaimewaliczek
+      const pathParts = url.pathname.split("/").filter(Boolean);
+      const performerId = pathParts[pathParts.length - 1];
+      
       let castMember;
 
-      const pagePaths = url.pathname.split("/");
-      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
-      if (companyMemberId) {
-        castMember = highlights[companyMemberId];
+      // Check if it's a company member first
+      if (performerId && companyMembers[performerId]) {
+        castMember = companyMembers[performerId];
+        if (castMember?.suppressPage) {
+          castMember = null;
+        }
+      } else if (performerId && highlights[performerId]) {
+        // Otherwise check if it's a highlight/featured performer
+        castMember = highlights[performerId];
       }
 
       // check for valid cast member
