@@ -9,17 +9,17 @@ function getShowImageUrl(show, filename) {
 }
 
 function getShowUrl(show) {
-  const url = `/show/${show.id}`;
+  const url = `/show.html?showId=${show.id}`;
   return url;
 }
 
 function getCompanyMemberBioUrl(companyMember) {
-  const url = `/performer/${companyMember.id}`;
+  const url = `/castMember.html?companyMemberId=${companyMember.id}`;
   return url;
 }
 
 function getHighlightBioUrl(highlight) {
-  const url = `/performer/${highlight.id}`;
+  const url = `/castMember.html?highlightId=${highlight.id}`;
   return url;
 }
 

@@ -11,21 +11,16 @@
       const url = new URL(document.location);
       let castMember;
 
-      const companyMemberId = url.searchParams.get("companyMemberId");
+      const pagePaths = url.pathname.split("/");
+      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
       if (companyMemberId) {
         castMember = companyMembers[companyMemberId];
-        if (castMember?.suppressPage) {
-          castMember = null;
-        }
-      } else {
-        const emceeId = url.searchParams.get("emceeId");
-        if (emceeId) {
-          castMember = highlights[emceeId];
+        if (castMember) {  
+          if (castMember?.suppressPage) {
+            castMember = null;
+          } 
         } else {
-          const highlightId = url.searchParams.get("highlightId");
-          if (highlightId) {
-            castMember = highlights[highlightId];
-          }
+          castMember = highlights[companyMemberId];
         }
       }
 

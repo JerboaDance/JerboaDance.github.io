@@ -17,7 +17,7 @@
         populateCastList,
       } from "/scripts/shows.js";
       import generateYouTubeEmbed from "/scripts/youTube.js";
-      import { getShowImageUrl, getShowUrl } from "/scripts/urls.js";
+      import { getShowImageUrl } from "/scripts/urls.js";
       
       function populateCurrentPerformance(currentShow, currentPerformance) {
         const { dates, venue, eventbriteId, ticketTiers, showtimes, emcee, highlights, companyMembers } = currentPerformance;
@@ -178,7 +178,7 @@
           recentShowSection.setAttribute("class", "recent-show-section");
           recentShowSection.innerHTML = `
             <h2>Our Most Recent Production</h2>
-            <h1><a href="${getShowUrl(mostRecentShow)}">${mostRecentShow.name}</a></h1>
+            <h1><a href="/show.html?showId=${mostRecentShow.id}">${mostRecentShow.name}</a></h1>
             <p>${mostRecentShow.shortDescription || mostRecentShow.description}</p><br>
           `;
           mainElement.append(recentShowSection);

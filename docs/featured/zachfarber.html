@@ -11,20 +11,14 @@
       const url = new URL(document.location);
       let castMember;
 
-      const companyMemberId = url.searchParams.get("companyMemberId");
-      if (companyMemberId) {
-        castMember = companyMembers[companyMemberId];
-        if (castMember?.suppressPage) {
-          castMember = null;
-        }
-      } else {
-        const emceeId = url.searchParams.get("emceeId");
-        if (emceeId) {
-          castMember = highlights[emceeId];
-        } else {
-          const highlightId = url.searchParams.get("highlightId");
-          if (highlightId) {
-            castMember = highlights[highlightId];
+      const pagePaths = url.pathname.split("/");
+      const highlightId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
+      if (highlightId) {
+        castMember = highlights[highlightId];
+        if (!castMember) {
+          castMember = companyMembers[highlightId];
+          if (castMember?.suppressPage) {
+            castMember = null;
           }
         }
       }

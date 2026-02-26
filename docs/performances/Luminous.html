@@ -3,7 +3,7 @@
     <meta http-equiv='content-language' content='en-US'>
     <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg" />
     <link rel="stylesheet" href="/css/main.css"/>
-    <title></title>
+    <title>Luminous - Acrobatic Contemporary Dance | Jerboa Dance</title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { shows } from "/scripts/database.js";
@@ -126,7 +126,8 @@
 
       function populatePage() {
         const url = new URL(document.location);
-        const showId = url.searchParams.get("showId");
+        const pagePaths = url.pathname.split("/");
+        const showId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
 
         const mainElement = document.getElementById("main");
 
@@ -135,7 +136,7 @@
           const show = shows[showId];
           
           const title = document.querySelector('title');
-          title.innerText = `Jerboa Dance - ${show.name}`;
+          title.innerText = `${show.name} - Acrobatic Contemporary Dance | Jerboa Dance`;
 
           const headerImage = document.getElementById("headerImage");
           populateHeaderImage(headerImage, show);
@@ -167,15 +168,17 @@
               populatePriorPerformances(priorPerformanceListElement, show);
             }
 
+            /*
             if (show.videos && show.videos.length > 0){
-              const showVideosElement = document.getElementById("showVideos");
+              console.log(JSON.stringify(show.videos))
               show.videos.forEach(video => {
                 const teaserVideo = document.createElement("div")
                 teaserVideo.setAttribute("class", "performance-clip");
                 teaserVideo.append(generateYouTubeEmbed({ id: video.id, aspectRatio:video.aspectRatio}));
-                showVideosElement.append(teaserVideo);
+                mainElement.append(teaserVideo);
               })
             }
+            */
 
             if (show.photos?.length > 0) {
               const photoGalleryElement = document.getElementById("photoGallery");
