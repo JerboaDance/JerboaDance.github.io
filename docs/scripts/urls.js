@@ -9,7 +9,7 @@ function getShowImageUrl(show, filename) {
 }
 
 function getShowUrl(show) {
-  const url = `/show.html?showId=${show.id}`;
+  const url = `/performances/${show.id}.html`;
   return url;
 }
 
