@@ -138,8 +138,197 @@ const id = url.pathname.split("/").pop().split(".")[0].toLowerCase();
 
 This approach provides Google-indexable URLs while maintaining a single codebase for each page type.
 
-## How to data
+## Adding New Shows
 
-## How to validate
+### 1. Add Show Data to Database
 
-## How to manage images
+Edit `docs/scripts/database.js` and add a new show object to the `shows` const:
+
+```javascript
+const shows = {
+  // ... existing shows ...
+  
+  mynewshow: {  // Use lowercase, no spaces for the ID
+    id: 'mynewshow',
+    name: 'My New Show',  // Display name with proper capitalization
+    description: `Full description of the show...`,
+    shortDescription: `Brief one-liner for previews...`,
+    headerImage: {
+      filename: 'header.jpg',
+      photographer: photographers.photographername,
+    },
+    performances: [
+      {
+        startDate: new Date('2026-03-15'),
+        endDate: new Date('2026-03-16'),
+        dates: 'March 15-16, 2026',
+        venue: venues.venueid,
+        eventbriteId: '123456789',
+        ticketTiers: [
+          { name: 'General Admission', price: '$25' },
+        ],
+        showtimes: [
+          { day: 'Saturday', time: '7:30 PM' },
+          { day: 'Sunday', time: '2:00 PM' },
+        ],
+        emcee: highlights.emceename,
+        highlights: [highlights.guest1, highlights.guest2],
+        companyMembers: [
+          companyMembers.dancer1,
+          companyMembers.dancer2,
+          // ... all company members performing
+        ],
+      },
+    ],
+    photos: [
+      {
+        filename: 'mynewshow_01.jpg',
+        thumbnailFilename: 'mynewshow_01.small.jpg',
+        photographer: photographers.photographername,
+      },
+      // ... more photos
+    ],
+    videos: [
+      {
+        id: 'YouTubeVideoID',
+        aspectRatio: '16:9',
+      },
+    ],
+  },
+};
+```
+
+### 2. Generate Show Pages
+
+After adding show data, run these scripts **in order**:
+
+```bash
+# 1. Generate the main show pages in /shows/ directory
+node tools/generateShowsFolder.cjs
+
+# 2. Update /performances/ files to redirect to /shows/
+node tools/createPerformancesRedirects.cjs
+
+# 3. Regenerate the sitemap
+node tools/generateSitemap.js
+```
+
+**What each script does:**
+
+- **`generateShowsFolder.cjs`**: Creates `/shows/{showid}.html` files with SEO-optimized titles
+- **`createPerformancesRedirects.cjs`**: Converts `/performances/*.html` to redirects pointing to `/shows/`
+- **`generateSitemap.js`**: Updates `sitemap.xml` with all show, company member, and featured performer URLs
+
+### 3. Commit and Deploy
+
+```bash
+git add docs/shows/ docs/performances/ docs/sitemap.xml
+git commit -m "Add new show: My New Show"
+git push
+```
+
+## Show Page Architecture
+
+### Current Architecture (SEO-Optimized)
+
+**Primary Location**: `/shows/{showid}.html` (lowercase)
+- Full show content with SEO-optimized titles
+- Format: `{Show Name} - Acrobatic Contemporary Dance | Jerboa Dance`
+- Listed in sitemap.xml
+- All internal links point here (via `docs/scripts/urls.js`)
+
+**Legacy Location**: `/performances/{ShowName}.html` (mixed case)
+- Simple redirect files pointing to `/shows/`
+- Maintains backward compatibility for old links
+- Search engines follow redirects to canonical `/shows/` URLs
+
+**Example:**
+- Canonical URL: `/shows/flux.html` (full content, SEO title)
+- Legacy URL: `/performances/Flux.html` (redirect)
+- Both work, but search engines index the canonical URL
+
+### Why This Architecture?
+
+1. **SEO**: Each show gets a unique, indexable URL with optimized title tag
+2. **Clean URLs**: Lowercase, consistent naming (e.g., `/shows/flux.html`)
+3. **Backward Compatibility**: Old `/performances/` links still work via redirects
+4. **Single Source of Truth**: Show data lives in `database.js`, pages generated from it
+5. **Easy Maintenance**: Adding a show = update database + run scripts
+
+## How to Validate
+
+### Run Tests
+
+```bash
+npm test
+```
+
+This runs the test suite in `tests/database.test.js` which validates:
+- All show IDs are lowercase
+- All required fields are present (name, description, performances)
+- Date formats are correct
+- References to venues, photographers, company members, and highlights exist
+
+### Manual Validation
+
+After generating pages, verify:
+
+1. **Show pages work**: Visit `/shows/{showid}.html` in a browser
+2. **Redirects work**: Visit `/performances/{ShowName}.html` and confirm it redirects
+3. **Sitemap includes new show**: Check `docs/sitemap.xml` contains the new URL
+4. **Internal links work**: Verify links from index page point to `/shows/` directory
+
+## How to Manage Images
+
+### Show Images
+
+Images for each show are stored in:
+```
+docs/assets/shows/{showid}/
+  ├── header.jpg              # Header image for show page
+  ├── {showid}_01.jpg         # Full-size photo 1
+  ├── {showid}_01.small.jpg   # Thumbnail for photo 1
+  ├── {showid}_02.jpg         # Full-size photo 2
+  ├── {showid}_02.small.jpg   # Thumbnail for photo 2
+  └── ...
+```
+
+**Image Guidelines:**
+- **Header images**: Should be wide format (e.g., 1920x600px)
+- **Full-size photos**: Max 2000px on longest side, optimized for web
+- **Thumbnails**: Suffix with `.small.jpg`, ~400px on longest side
+
+### Headshots
+
+Performer headshots are stored in:
+```
+docs/assets/headshots/
+  ├── JaimeWaliczek.jpg
+  ├── AlexandraSipe.jpg
+  └── ...
+```
+
+**Headshot Guidelines:**
+- Portrait orientation preferred
+- Consistent sizing (e.g., 800x1000px)
+- Professional quality
+- File naming matches performer ID (camelCase)
+
+### Adding Images
+
+1. **Add files to appropriate directory** (`docs/assets/shows/{showid}/` or `docs/assets/headshots/`)
+2. **Reference in database.js**:
+   ```javascript
+   headerImage: {
+     filename: 'header.jpg',
+     photographer: photographers.photographername,
+   }
+   ```
+3. **Commit and push**:
+   ```bash
+   git add docs/assets/
+   git commit -m "Add images for show"
+   git push
+   ```
+
+GitHub Pages will automatically serve the images.
