@@ -1,4 +1,4 @@
-import { getShowImageUrl, getCompanyMemberBioUrl, getHighlightBioUrl } from './urls.js';
+import { getShowImageUrl, getPerformerUrl } from './urls.js';
 
 function populateHeaderImage(headerImageElement, show) {
   if (show.headerImage?.filename) {
@@ -68,10 +68,8 @@ function generateHighlight(highlight) {
 
   if (highlight.url) {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${highlight.url}">${highlight.name}</a>`;
-  } else if (highlight.useCompanyMemberPage) {
-    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getCompanyMemberBioUrl(highlight)}">${highlight.name}</a>`;
   } else if (highlight.bio) {
-    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getHighlightBioUrl(highlight)}">${highlight.name}</a>`;
+    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getPerformerUrl(highlight)}">${highlight.name}</a>`;
   } else {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> ${highlight.name}`;
   }
@@ -90,7 +88,7 @@ function generateCompanyMembersList(companyMembers) {
     companyMembers.forEach((companyMember) => {
       const companyMemberElement = document.createElement('li');
       if (!companyMember.suppressPage) {
-        companyMemberElement.innerHTML = `<a href="${getCompanyMemberBioUrl(companyMember)}">${companyMember.name}</a>`;
+        companyMemberElement.innerHTML = `<a href="${getPerformerUrl(companyMember)}">${companyMember.name}</a>`;
       } else {
         companyMemberElement.innerText = companyMember.name;
       }

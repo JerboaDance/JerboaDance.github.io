@@ -11,6 +11,7 @@ import { shows, companyMembers, highlights } from '../docs/scripts/database.js';
 import { findCurrentShow } from '../docs/scripts/shows.js';
 import {
   getShowUrl,
+  getPerformerUrl,
 } from '../docs/scripts/urls.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -22,57 +23,10 @@ const priorities = {
   nonUrgent: 0.2,
 };
 
-// Helper function to capitalize first letter of each word for file names
-function capitalizeFileName(id) {
-  return id
-    .split(/(?=[A-Z])/)
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join('');
-}
-
-// Helper function to get company member bio URL (direct HTML file or fallback)
-function getCompanyMemberBioUrlForSitemap(companyMember) {
-  const fileName = capitalizeFileName(companyMember.id);
-  const htmlPath = path.join(__dirname, '../docs/company', `${fileName}.html`);
-  
-  if (existsSync(htmlPath)) {
-    return `/company/${fileName}.html`;
-  }
-  
-  console.warn(`Warning: HTML file not found for company member "${companyMember.name}" (${companyMember.id}). Expected: ${htmlPath}`);
-  return `/castMember.html?companyMemberId=${companyMember.id}`;
-}
-
-// Helper function to get highlight bio URL (direct HTML file or fallback)
-function getHighlightBioUrlForSitemap(highlight) {
-  // Check if highlight should use company member page
-  if (highlight.useCompanyMemberPage) {
-    const fileName = capitalizeFileName(highlight.id);
-    const htmlPath = path.join(__dirname, '../docs/company', `${fileName}.html`);
-    
-    if (existsSync(htmlPath)) {
-      return `/company/${fileName}.html`;
-    }
-    
-    console.warn(`Warning: HTML file not found for highlight "${highlight.name}" (${highlight.id}). Expected: ${htmlPath}`);
-    return `/castMember.html?highlightId=${highlight.id}`;
-  }
-  
-  // Otherwise check featured directory
-  const fileName = highlight.id;
-  const htmlPath = path.join(__dirname, '../docs/featured', `${fileName}.html`);
-  
-  if (existsSync(htmlPath)) {
-    return `/featured/${fileName}.html`;
-  }
-  
-  console.warn(`Warning: HTML file not found for highlight "${highlight.name}" (${highlight.id}). Expected: ${htmlPath}`);
-  return `/castMember.html?highlightId=${highlight.id}`;
-}
 
 // An array with your links
 const links = [
-  { url: '/index.html', priority: priorities.urgent },
+  { url: '/', priority: priorities.urgent },
   { url: '/About.html', priority: priorities.important },
 ];
 
@@ -83,6 +37,10 @@ Object.keys(shows).forEach((showId) => {
 });
 
 const currentCompanyMembers = currentPerformance?.companyMembers;
+const currentHighlights = currentPerformance?.highlights;
+const currentEmcee = currentPerformance?.emcee;
+
+// Add all company members
 Object.keys(companyMembers).forEach((companyMemberId) => {
   const companyMember = companyMembers[companyMemberId];
   if (!companyMember.suppressPage) {
@@ -90,20 +48,20 @@ Object.keys(companyMembers).forEach((companyMemberId) => {
       (currentCompanyMember) => currentCompanyMember.id === companyMember.id,
     ));
     const priority = isCurrent ? priorities.urgent : priorities.nonUrgent;
-    links.push({ url: getCompanyMemberBioUrlForSitemap(companyMember), priority });
+    links.push({ url: getPerformerUrl(companyMember), priority });
   }
 });
 
-const currentHighlights = currentPerformance?.highlights;
+// Add all highlights
 Object.keys(highlights).forEach((highlightId) => {
   const highlight = highlights[highlightId];
   if (highlight.bio) {
     const isCurrent = !!(currentHighlights?.find(
       (currentHighlight) => currentHighlight.id === highlight.id,
     ));
-    const isCurrentEmcee = currentPerformance?.emcee === highlight;
+    const isCurrentEmcee = currentEmcee === highlight;
     const priority = isCurrent || isCurrentEmcee ? priorities.urgent : priorities.nonUrgent;
-    links.push({ url: getHighlightBioUrlForSitemap(highlight), priority });
+    links.push({ url: getPerformerUrl(highlight), priority });
   }
 });
 
