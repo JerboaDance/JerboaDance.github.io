@@ -3,7 +3,7 @@
     <meta http-equiv='content-language' content='en-US'>
     <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg" />
     <link rel="stylesheet" href="/css/main.css"/>
-    <title>Unhinge - Acrobatic Contemporary Dance | Jerboa Dance</title>
+    <title>Acrobatic Contemporary Dance | Jerboa Dance</title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { shows } from "/scripts/database.js";
@@ -126,8 +126,9 @@
 
       function populatePage() {
         const url = new URL(document.location);
-        const pagePaths = url.pathname.split("/");
-        const showId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
+        // Extract show ID from path: /show/flux -> flux
+        const pathParts = url.pathname.split("/").filter(Boolean);
+        const showId = pathParts[pathParts.length - 1];
 
         const mainElement = document.getElementById("main");
 
@@ -168,17 +169,15 @@
               populatePriorPerformances(priorPerformanceListElement, show);
             }
 
-            /*
             if (show.videos && show.videos.length > 0){
-              console.log(JSON.stringify(show.videos))
+              const showVideosElement = document.getElementById("showVideos");
               show.videos.forEach(video => {
                 const teaserVideo = document.createElement("div")
                 teaserVideo.setAttribute("class", "performance-clip");
                 teaserVideo.append(generateYouTubeEmbed({ id: video.id, aspectRatio:video.aspectRatio}));
-                mainElement.append(teaserVideo);
+                showVideosElement.append(teaserVideo);
               })
             }
-            */
 
             if (show.photos?.length > 0) {
               const photoGalleryElement = document.getElementById("photoGallery");

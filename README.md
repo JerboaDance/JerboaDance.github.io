@@ -143,3 +143,7 @@ This approach provides Google-indexable URLs while maintaining a single codebase
 ## How to validate
 
 ## How to manage images
+
+## ToDo
+- We're also missing social links for bsky tictok and yourtube in the footer
+- route to single location for pages, remove .htm stubs
