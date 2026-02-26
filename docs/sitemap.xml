@@ -2,12 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
         <loc>
-            https://jerboadance.com/
+            https://jerboadance.com/index.html
         </loc>
         <priority>
             1.0
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
@@ -16,529 +15,565 @@
         <priority>
             0.7
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Flux.html
+            https://jerboadance.com/shows/nomatter.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2024-12-27</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Fractured.html
+            https://jerboadance.com/shows/flux.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2023-12-10</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Unhinge.html
+            https://jerboadance.com/shows/fractured.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Delirium.html
+            https://jerboadance.com/shows/unhinge.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Moxie.html
+            https://jerboadance.com/shows/delirium.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/reconstruct.html
+            https://jerboadance.com/shows/moxie.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Embrace.html
+            https://jerboadance.com/shows/reconstruct.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/AnimalNature.html
+            https://jerboadance.com/shows/embrace.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/continuum.html
+            https://jerboadance.com/shows/animalnature.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Transformation.html
+            https://jerboadance.com/shows/continuum.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/Luminous.html
+            https://jerboadance.com/shows/transformation.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/GenderallySpeaking.html
+            https://jerboadance.com/shows/luminous.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/BackFromTheBrink.html
+            https://jerboadance.com/shows/genderallyspeaking.html
         </loc>
         <priority>
             0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
         <loc>
-            https://jerboadance.com/performances/NoMatter.html
+            https://jerboadance.com/shows/backfromthebrink.html
         </loc>
         <priority>
-            1.0
+            0.2
         </priority>
-        <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-        <loc>https://jerboadance.com/company/ConstanzeVillines.html</loc>
+        <loc>
+            https://jerboadance.com/company/Adampellegrine.html
+        </loc>
         <priority>
-            0.8
+            0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
-     </url>
+    </url>
     <url>
-        <loc>https://jerboadance.com/company/JaimeWaliczek.html</loc>
+        <loc>
+            https://jerboadance.com/company/Alexandrasipe.html
+        </loc>
         <priority>
-            0.9
+            0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
-        <loc>https://jerboadance.com/company/LauranDrackett.html</loc>
+        <loc>
+            https://jerboadance.com/company/Alexung.html
+        </loc>
         <priority>
-            0.8
+            0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
-        <loc>https://jerboadance.com/company/SeanCalavan.html</loc>
+        <loc>
+            https://jerboadance.com/company/Alexandrakronz.html
+        </loc>
         <priority>
-            0.4
+            0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
     </url>
     <url>
-        <loc>https://jerboadance.com/company/EmilyRose.html</loc>
+        <loc>
+            https://jerboadance.com/company/Andreasfetz.html
+        </loc>
         <priority>
-            0.4
+            0.2
         </priority>
-        <lastmod>2023-11-26</lastmod>
     </url>
     <url>
-        <loc>https://jerboadance.com/company/JasonPerreault.html</loc>
+        <loc>
+            https://jerboadance.com/company/Andreslopez.html
+        </loc>
         <priority>
-            0.7
+            0.2
         </priority>
-        <lastmod>2023-12-27</lastmod>
-    </url>  
+    </url>
     <url>
-        <loc>https://jerboadance.com/company/WarrenWoo.html</loc>
+        <loc>
+            https://jerboadance.com/company/Angelaschmidt.html
+        </loc>
         <priority>
-            0.5
+            0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
-    </url>      
+    </url>
     <url>
-        <loc>https://jerboadance.com/company/StellaKutz.html</loc>
+        <loc>
+            https://jerboadance.com/company/Anjakellnerrogers.html
+        </loc>
         <priority>
-            0.9
+            0.2
         </priority>
-        <lastmod>2022-12-09</lastmod>
-    </url> 
-    <url>
-        <loc>https://jerboadance.com/company/AngelaSchmidt.html</loc>
-        <lastmod>2021-12-28</lastmod>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/ChristopherEMontoya.html</loc>
-        <lastmod>2021-12-28</lastmod>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AdamPellegrine.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AlexandraKronz.html</loc>
-        <lastmod>2025-12-20</lastmod>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AlexandraSipe.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AlexUng.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AndreasFetz.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AndresLopez.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AngelaSchmidt.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/AnjaKellnerRogers.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/BridgetGunning.html</loc>
-        <priority>0.4</priority>
-    </url>
-     <url>
-        <loc>https://jerboadance.com/company/ChelseaReinschmidt.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/ChristinaJohnson.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/DavidLorenceSchleiffers.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/DesireeKong.html</loc>
-        <lastmod>2025-12-20</lastmod>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/ElizabethBurwell.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/EricVlach.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/FinnCronin.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/GabeMaddox.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/Hanna-LeeSakakibara.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/JacquelynCorcoran.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/JenniferElder.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/JulieSmith.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/KarenGrady.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/KatieSawicki.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/LaurenSlater.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/MeganCourtney.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/MeghanShepard.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/MorganHoughton.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/NoaSagie.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/pamelaturpin.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/PamVlach.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/RachelKoshiol.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/RenadoTozer.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/SarahChampion.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/ShakiraRaeAdams.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/ShannonAdams.html</loc>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/company/ThomasPhelan.html</loc>
-        <priority>0.4</priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/ajrogers.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Bridgetgunning.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/andrewscott.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Chelseareinschmidt.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/brandonmilner.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Christinajohnson.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/christinajohnson.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Christopheremontoya.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/dustinguyjackson.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Constanzevillines.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/gypsyleo.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Desireekong.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/hannahduffy.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Davidlorenceschleiffers.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/harmonygwinn.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Elizabethburwell.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/jenWagner.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Emilyrose.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/jessicaglein.html</loc>
-        <lastmod>2025-12-20</lastmod>
-        <priority>1.0</priority>
+        <loc>
+            https://jerboadance.com/company/Ericvlach.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/jjbrychell.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+        <loc>
+            https://jerboadance.com/company/Finncronin.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/angelaharriell.html</loc>
-        <lastmod>2026-01-29</lastmod>
-        <priority>0.4</priority>
+        <loc>
+            https://jerboadance.com/company/Gabemaddox.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
     <url>
-        <loc>https://jerboadance.com/featured/phenixlaughlin.html</loc>
-        <lastmod>2026-01-29</lastmod>
-        <priority>0.4</priority>
+        <loc>
+            https://jerboadance.com/castMember.html?companyMemberId=hannaleesakakibara
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/jesuschapamalacara.html</loc>
-        <lastmod>2026-01-29</lastmod>
-        <priority>0.4</priority>
-    </url>
-    <url>
-        <loc>https://jerboadance.com/featured/brennaduffitt.html</loc>
-        <lastmod>2026-01-29</lastmod>
-        <priority>1.0</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Jacquelyncorcoran.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/emmacurtiss.html</loc>
-        <lastmod>2026-01-29</lastmod>
-        <priority>1.0</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Jaimewaliczek.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/iraecho.html</loc>
-        <lastmod>2026-01-29</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Jasonperreault.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/lizazurlinden.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Jenniferelder.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/marcvonholzen.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Juliesmith.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/nellwaliczek.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Karengrady.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/nikoleo.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Laurandrackett.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/noelleprice.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Laurenslater.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/oroki.html</loc>
-        <lastmod>2026-01-25</lastmod>
-        <priority>1.0</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Megancourtney.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/parisoriginal.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Meghanshepard.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/randirascal.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Morganhoughton.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/rubenbarron.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Noasagie.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/sarahschmidt.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Pamelaturpin.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/scottomoore.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Pamvlach.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/sebastianlangeandmajazavaljevski.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Rachelkoshiol.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/splinterdance.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Renadotozer.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/stevedolan.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Sarahchampion.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/taephoenix.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Seancalavan.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/terrycrane.html</loc>
-        <lastmod>2026-01-25</lastmod>
-        <priority>1.0</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Shakiraraeadams.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/thelebanesblonde.html</loc>
-        <lastmod>2025-12-20</lastmod>
-        <priority>1.0</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Shannonadams.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/theloveshownyc.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Stellakutz.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/tomtomthephenomenon.html</loc>
-        <lastmod>2024-12-20</lastmod>
-        <priority>0.2</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Thomasphelan.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
-    <url>
-        <loc>https://jerboadance.com/featured/zachfarber.html</loc>
-        <lastmod>2025-12-20</lastmod>
-        <priority>1.0</priority>
+    <url>
+        <loc>
+            https://jerboadance.com/company/Warrenwoo.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/brennaduffitt.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/iraecho.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/emmacurtiss.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/castMember.html?highlightId=katiesawicki
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/jessicaglein.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/lizazurlinden.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/nikoleo.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/rubenbarron.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/zachfarber.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/thelebanesblonde.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/terrycrane.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
+    </url>
+    <url>
+        <loc>
+            https://jerboadance.com/featured/oroki.html
+        </loc>
+        <priority>
+            0.2
+        </priority>
     </url>
 </urlset>
