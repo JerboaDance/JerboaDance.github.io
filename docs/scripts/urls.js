@@ -13,13 +13,8 @@ function getShowUrl(show) {
   return url;
 }
 
-function getCompanyMemberBioUrl(companyMember) {
-  const url = `/castMember.html?companyMemberId=${companyMember.id}`;
-  return url;
-}
-
-function getHighlightBioUrl(highlight) {
-  const url = `/castMember.html?highlightId=${highlight.id}`;
+function getPerformerUrl(performer) {
+  const url = `/performers/${performer.id}.html`;
   return url;
 }
 
@@ -27,6 +22,5 @@ export {
   getHeadshotImageUrl,
   getShowImageUrl,
   getShowUrl,
-  getCompanyMemberBioUrl,
-  getHighlightBioUrl,
+  getPerformerUrl,
 };

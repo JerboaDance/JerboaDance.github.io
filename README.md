@@ -198,7 +198,7 @@ const shows = {
 };
 ```
 
-### 2. Generate Show Pages
+### 2. Generate Show and Performer Pages
 
 After adding show data, run these scripts **in order**:
 
@@ -206,18 +206,26 @@ After adding show data, run these scripts **in order**:
 # 1. Generate the main show pages in /shows/ directory
 node tools/generateShowsFolder.cjs
 
-# 2. Update /performances/ files to redirect to /shows/
+# 2. Generate performer pages in /performers/ directory
+node tools/generatePerformersFolder.cjs
+
+# 3. Update /performances/ files to redirect to /shows/
 node tools/createPerformancesRedirects.cjs
 
-# 3. Regenerate the sitemap
+# 4. Update /company/ and /featured/ files to redirect to /performers/
+node tools/createPerformersRedirects.cjs
+
+# 5. Regenerate the sitemap
 node tools/generateSitemap.js
 ```
 
 **What each script does:**
 
 - **`generateShowsFolder.cjs`**: Creates `/shows/{showid}.html` files with SEO-optimized titles
+- **`generatePerformersFolder.cjs`**: Creates `/performers/{performerid}.html` files for all company members and highlights
 - **`createPerformancesRedirects.cjs`**: Converts `/performances/*.html` to redirects pointing to `/shows/`
-- **`generateSitemap.js`**: Updates `sitemap.xml` with all show, company member, and featured performer URLs
+- **`createPerformersRedirects.cjs`**: Converts `/company/*.html` and `/featured/*.html` to redirects pointing to `/performers/`
+- **`generateSitemap.js`**: Updates `sitemap.xml` with all show and performer URLs
 
 ### 3. Commit and Deploy
 
@@ -254,6 +262,48 @@ git push
 3. **Backward Compatibility**: Old `/performances/` links still work via redirects
 4. **Single Source of Truth**: Show data lives in `database.js`, pages generated from it
 5. **Easy Maintenance**: Adding a show = update database + run scripts
+
+## Performer Page Architecture
+
+### Current Architecture (SEO-Optimized)
+
+**Primary Location**: `/performers/{performerid}.html` (lowercase, unified)
+- Full performer bio with SEO-optimized titles
+- Format: `{Performer Name} - Acrobatic Contemporary Dance | Jerboa Dance`
+- Contains both company members and guest performers (highlights)
+- Listed in sitemap.xml
+- All internal links point here (via `docs/scripts/urls.js`)
+
+**Legacy Locations**: 
+- `/company/{MemberName}.html` (mixed case) - Company member redirects
+- `/featured/{highlightid}.html` (lowercase) - Guest performer redirects
+- Both redirect to `/performers/` for unified SEO structure
+
+**Example:**
+- Canonical URL: `/performers/jaimewaliczek.html` (full content, SEO title)
+- Legacy URLs: 
+  - `/company/JaimeWaliczek.html` (redirect)
+  - `/featured/jaimewaliczek.html` (redirect if exists)
+- All work, but search engines index the canonical URL
+
+### Why This Architecture?
+
+1. **Unified Structure**: All performers in one directory, easier to maintain
+2. **SEO**: Clean, consistent URLs with optimized title tags
+3. **No Duplicate Content**: Company members and highlights unified (some people are both)
+4. **Backward Compatibility**: Old `/company/` and `/featured/` links still work via redirects
+5. **Flexible**: Supports performers who transition between roles (company → guest → company)
+6. **Scalable**: Adding a performer = update database + run scripts
+
+### How Performer Pages Work
+
+All performer pages use identical code that:
+1. Parses the filename to get performer ID
+2. Checks `companyMembers[id]` first
+3. Falls back to `highlights[id]` if not found
+4. Displays: name, role, bio, headshot, and photographer credit
+
+This flexibility allows the same page structure to display any type of performer.
 
 ## How to Validate
 
