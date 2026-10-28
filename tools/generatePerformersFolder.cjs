@@ -78,7 +78,7 @@ const performerPageTemplate = (performerName) => `<html>
       let castMember;
 
       const pagePaths = url.pathname.split("/");
-      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
+      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0];
       if (companyMemberId) {
         castMember = companyMembers[companyMemberId];
         if (castMember) {  
@@ -203,7 +203,7 @@ generatedFiles.forEach(({ performerId, filename, name, type }) => {
   const oldDir = type === 'company' ? companyDir : featuredDir;
   
   // Try to find the original file (check various case combinations)
-  const possibleOldFiles = fs.readdirSync(oldDir).filter(f => 
+  const possibleOldFiles = (fs.existsSync(oldDir) ? fs.readdirSync(oldDir) : []).filter(f =>
     f.toLowerCase() === filename.toLowerCase()
   );
   
