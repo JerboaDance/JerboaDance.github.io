@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Page not found | Jerboa Dance</title>
+    <script type="module">
+      import getLegacyRedirect from "/scripts/legacyRedirects.js";
+
+      const target = getLegacyRedirect(window.location.pathname);
+      if (target) {
+        const destination = `${target}${window.location.search}${window.location.hash}`;
+        document.title = "Page moved | Jerboa Dance";
+        document.getElementById("heading").innerText = "This page has moved";
+        const link = document.getElementById("destination");
+        link.setAttribute("href", destination);
+        link.innerText = "Continue to the updated page";
+        window.location.replace(destination);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="bodyWrapper">
+      <main>
+        <h1 id="heading">Page not found</h1>
+        <p>The address you followed is no longer available.</p>
+        <p><a id="destination" href="/">Visit Jerboa Dance</a></p>
+      </main>
+    </div>
+  </body>
+</html>

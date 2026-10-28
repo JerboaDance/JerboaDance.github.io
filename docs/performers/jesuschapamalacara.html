@@ -3,7 +3,7 @@
     <meta http-equiv='content-language' content='en-US'>
     <link rel="icon" type="image/png" href="/assets/logos/logo-black.jpg" />
     <link rel="stylesheet" href="/css/main.css"/>
-    <title></title>
+    <title>Jesus Chapa-Malacara - Acrobatic Contemporary Dance | Jerboa Dance</title>
     <script src="/scripts/common.js" type="module"></script>
     <script type="module">
       import { companyMembers, highlights} from "/scripts/database.js";
@@ -12,13 +12,20 @@
       let castMember;
 
       const pagePaths = url.pathname.split("/");
-      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0].toLowerCase();
+      const companyMemberId = pagePaths[pagePaths.length - 1].split(".")[0];
       if (companyMemberId) {
-        castMember = highlights[companyMemberId];
+        castMember = companyMembers[companyMemberId];
+        if (castMember) {
+          if (castMember?.suppressPage) {
+            castMember = null;
+          }
+        } else {
+          castMember = highlights[companyMemberId];
+        }
       }
 
       // check for valid cast member
-      if (castMember) {        
+      if (castMember) {
         const title = document.querySelector('title');
         const name = document.getElementById("name");
         const role = document.getElementById("role");
@@ -26,10 +33,10 @@
         const headshot = document.getElementById("headshot");
         const photoCredit = document.getElementById("photoCredit");
 
-        title.innerText = `Jerboa Dance - ${castMember.name}`;
+        title.innerText = `${castMember.name} - Acrobatic Contemporary Dance | Jerboa Dance`;
 
         name.innerText = castMember.name;
-        
+
         if (castMember.bio) {
           bio.innerHTML = castMember.bio;
         } else {
@@ -45,7 +52,7 @@
         const filename = castMember.headshot?.filename ? castMember.headshot.filename : "default.png";
         headshot.setAttribute("src", `${getHeadshotImageUrl(filename)}`);
         headshot.setAttribute("alt", `Photograph of ${castMember.name}`);
-        
+
         if (castMember.headshot?.photographer) {
           const photographer = castMember.headshot.photographer;
           let innerHTML = "Photo credit: "
@@ -74,8 +81,8 @@
         </div>
         <div class="bio-title">
             <h1 id="name"></h1>
-            <h2 id="role"></h2>  
-        </div>  
+            <h2 id="role"></h2>
+        </div>
         <p id="bio" class="bio"></p>
       </main>
       <footer id="footer"></footer>

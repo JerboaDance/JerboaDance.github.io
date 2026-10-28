@@ -319,6 +319,17 @@ const companyMembers = {
     bio: `Jennifer Elder discovered her love of dance at the age of 12 after gymnastics, baton twirling, tennis, horseback riding, track and field and swimming didn’t quite work out. A native of the Pacific Northwest, Jen received her dance training at the Southwest Washington Dance Center in Ballet and Modern where she was a member of the Southwest Washington Ballet Ensemble and Blacken Tan Dance. She later went on to earn her BFA in Modern Dance graduating Cum Laude from the University of Utah. While attending the U of U, she danced for the department’s Performing Dance Company, performing original works by Abby Fiat, Eric Handman, and Brent Schneider. Since moving to Seattle in 2008, Jen has made her own work, which has appeared in the BOOST Dance Festival, Northwest Dance Festival, and TAKE pause. Jen has had the honor to dance for local Seattle artists and companies such as Marlo Martin, Michele Miller/Catapult, Khambatta Dance Company, DASSdance, Whibey Island Dance Theater, Jerboa Dance Company, Redd Legg Dance, and Northwest Dance Syndrome. Currently, Jen is proud to be a continuing member of Badmarmar Dance under the direction of Marlo Martin.
     `,
   },
+  jesuschapamalacara: {
+    id: 'jesuschapamalacara',
+    name: 'Jesus Chapa-Malacara',
+    role: 'Dancer',
+    headshot: {
+      filename: 'JesusChapa-Malacara.jpg',
+    },
+    bio: `<em>Archived biography.</em><br><br>
+    Jesus was born in Monterrey, Mexico, grew up in Kansas City, MO and now lives in a queer feminists’ commune (with cats) in Brooklyn.  He started dancing 5 years ago while a junior in college and has since trained and performed all over the US and in Pakistan and Spain.  Other credits include The Love Show (NYC), Hamza (Islamabad), Dakshina/Daniel Singh (DC).  He has also played the rat king in the Nutcracker: Rated very much G, maybe slightly PG.  Training: Ailey, New Haven Ballet, ADF, Peridance.  Other pursuits include photography, food, writing and political rabble rousing.  He holds a BA in Political Science from Yale.
+    `,
+  },
   juliesmith: {
     id: 'juliesmith',
     name: 'Julie Smith',
@@ -411,6 +422,17 @@ const companyMembers = {
       filename: 'PamVlach.jpg',
     },
     bio: `Pam Vlach moved to Seattle in 2002 to attend the UW and received her BA in Communication in 2006.  She has spent time in New York studying lyrical and jazz under the direction of Suzi Taylor and Joe Lanteri at Steps on Broadway. Additionally, she studied tap under the direction of Roxane Butterfly in the summer of 2005 and performed choreography by Sonia Dawkins and Savion Glover in Dance this…! at the Seattle Paramount Theatre. Recent credits include Excerpts From the Soul of a Woman (2008), Black Nativity at Seattle’s Intiman Theatre (2007), Macy’s Thanksgiving Day Parade (2007), Masters of Lindy Hop and Tap at the Century Ballroom (2007), Young Scrooge in A Tap Dance Christmas Carol (2005), and En L’Air (2005, 2006, 2008). Pam was a founding member of the Solesound Tap Company.  Recent choreography credits include a music video for Nordstrom showcasing their spring line in March of 2007.
+    `,
+  },
+  phenixlaughlin: {
+    id: 'phenixlaughlin',
+    name: 'Phenix Laughlin',
+    role: 'Dancer',
+    headshot: {
+      filename: 'PhenixLaughlin.jpg',
+    },
+    bio: `<em>Archived biography.</em><br><br>
+    Phenix Laughlin has lived and danced in Seattle for 3 years. He was raised in Colorado, and found his love of dance with the guidance of Kari Herman, Chris Harris, and Lisa Wood. As a student at Cornish College of the Arts, Phenix danced in works choreographed by Wade Madsen, Gerard Theoret, and Bruce Mccormick. He has also danced with Interweave Dance Company in Boulder, CO., as well as The Guild Dance Company in Seattle. Outside of dance, Phenix finds happiness in creating visual art and making sweet treats in the kitchen. He also finds love and gratitude in his family and close friends in Colorado.
     `,
   },
   rachelkoshiol: {
