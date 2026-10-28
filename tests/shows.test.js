@@ -32,6 +32,7 @@ test.each([
   ['seancalavan', 'seancalavan'],
   ['thomasphelan', 'thomasphelan'],
   ['jaimewaliczek', 'jaimewaliczek'],
+  ['angelaharriell', 'angelaharriell'],
   ['seancalavanDragQueen', 'seancalavan'],
   ['andreasfetz', 'andreasfetz'],
   ['jenniferelder', 'jenniferelder'],
