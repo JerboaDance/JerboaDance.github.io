@@ -18,6 +18,14 @@
     </url>
     <url>
         <loc>
+            https://jerboadance.com/shows/deliriumnyc.html
+        </loc>
+        <priority>
+            1.0
+        </priority>
+    </url>
+    <url>
+        <loc>
             https://jerboadance.com/shows/nomatter.html
         </loc>
         <priority>

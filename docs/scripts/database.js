@@ -1,4 +1,10 @@
 const venues = {
+  thehiddenjewelboxtheater: {
+    id: 'thehiddenjewelboxtheater',
+    name: 'The Hidden Jewel Box Theater',
+    city: 'New York',
+    url: 'https://linktr.ee/thehiddenjewelboxtheater',
+  },
   eriksontheater: {
     id: 'eriksontheater',
     name: 'Erikson Theater',
@@ -790,6 +796,50 @@ const highlights = {
 };
 
 const shows = {
+  deliriumnyc: {
+    id: 'deliriumnyc',
+    name: 'Delirium',
+    description: `Seattle-based Jerboa Dance returns to NYC at The Hidden Jewel Box Theater with Delirium — an exhilarating performance that explores the breadth of human experience through our signature athletic style. Bringing Seattle audience favorites together with new work, we use humor and playfulness to draw you into the tantalizing worlds we have created.
+    <p>
+    Reuniting dancers from our past—Christina Johnson, Angela Harriell, and Renado Tozer—with Jerboa mainstays Jaime Waliczek and Stella Kutz, this show is a treat. Take a break from everyday reality and enjoy an unforgettable journey into worlds of imagination.
+    <p>
+    The theater is inside the Port Authority Bus Terminal. Directions to the entrance will be provided upon ticket purchase.`,
+    shortDescription: 'Seattle-based Jerboa Dance returns to NYC with Delirium — an electrifying show with humor, heart, and our signature athletic style!',
+    headerImage: {
+      filename: 'header.small.jpg',
+    },
+    performances: [
+      {
+        dates: 'November 6th and 7th, 2026',
+        showtimes: ['11/6 8:00pm Eastern', '11/7 8:00pm Eastern'],
+        startDate: new Date('2026-11-06T20:00:00-05:00'),
+        endDate: new Date('2026-11-07T21:30:00-05:00'),
+        venue: venues.thehiddenjewelboxtheater,
+        eventbriteId: '1999871044128',
+        ticketTiers: [
+          {
+            name: 'General Admission $40',
+            description: 'Admission to Delirium.',
+          },
+          {
+            name: 'VIP Loveseat for 2 $120',
+            description: 'One loveseat for two guests.',
+          },
+        ],
+        highlights: [
+          highlights.jaimewaliczek,
+          highlights.angelaharriell,
+        ],
+        companyMembers: [
+          companyMembers.angelaharriell,
+          companyMembers.christinajohnson,
+          companyMembers.stellakutz,
+          companyMembers.renadotozer,
+          companyMembers.jaimewaliczek,
+        ],
+      },
+    ],
+  },
   nomatter: {
     id: 'nomatter',
     name: '(no) matter',

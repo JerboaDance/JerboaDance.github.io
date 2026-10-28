@@ -1,5 +1,5 @@
-import { companyMembers, highlights } from '../docs/scripts/database.js';
-import { populateCastList } from '../docs/scripts/shows.js';
+import { companyMembers, highlights, shows } from '../docs/scripts/database.js';
+import { populateCastList, findCurrentShow } from '../docs/scripts/shows.js';
 
 const originalDocument = globalThis.document;
 
@@ -84,4 +84,44 @@ test('does not link a suppressed company bio', () => {
   };
 
   expect(renderHighlight(highlight)).toBe('<h3>Guest</h3> Kristen Kissel');
+});
+
+test('renders the NYC rework with two choreographers and five company members', () => {
+  const performance = shows.deliriumnyc.performances[0];
+  const castList = document.createElement('ul');
+  populateCastList(
+    castList,
+    performance.emcee,
+    performance.highlights,
+    performance.companyMembers,
+  );
+
+  expect(castList.children).toHaveLength(3);
+  expect(castList.children[0].innerHTML).toBe('<h3>Choreographer</h3> <a href="/performers/jaimewaliczek.html">Jaime Waliczek</a>');
+  expect(castList.children[1].innerHTML).toBe('<h3>Choreographer</h3> <a href="/performers/angelaharriell.html">Angela Harriell</a>');
+
+  const companyList = castList.children[2].children[0];
+  expect(companyList.children).toHaveLength(5);
+  ['angelaharriell', 'christinajohnson', 'stellakutz', 'renadotozer', 'jaimewaliczek'].forEach((id, index) => {
+    expect(companyList.children[index].innerHTML).toBe(`<a href="/performers/${id}.html">${companyMembers[id].name}</a>`);
+  });
+});
+
+test.each([
+  ['2026-10-28T00:00:00Z', true],
+  ['2026-11-08T02:29:59Z', true],
+  ['2026-11-08T02:30:01Z', false],
+])('selects the NYC rework at %s only while upcoming or running', (time, isCurrent) => {
+  const now = import.meta.jest.spyOn(Date, 'now').mockReturnValue(Date.parse(time));
+  try {
+    const { currentShow } = findCurrentShow(shows);
+    if (isCurrent) {
+      expect(currentShow?.id).toBe('deliriumnyc');
+      expect(currentShow).not.toBe(shows.delirium);
+    } else {
+      expect(currentShow).toBeUndefined();
+    }
+  } finally {
+    now.mockRestore();
+  }
 });
