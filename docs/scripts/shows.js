@@ -10,7 +10,11 @@ function populateHeaderImage(headerImageElement, show) {
 }
 
 function populateVenue(venueElement, venue) {
-  venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
+  if (venue) {
+    venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
+  } else {
+    venueElement.hidden = true;
+  }
 }
 
 function initializeEventbriteWidget(eventId, containerId) {
@@ -39,7 +43,7 @@ function populateEventbriteWidget(eventbriteElement, eventbriteId) {
       initializeEventbriteWidget(eventbriteId, containerId);
     }
   } else {
-    eventbriteElement.hidden = true;
+    eventbriteElement.innerText = 'Ticket link coming soon!';
   }
 }
 
@@ -114,13 +118,16 @@ function populateCastList(castListElement, emcee, highlights, companyMembers) {
     });
   }
 
-  const companyMembersElement = generateCompanyMembersList(companyMembers);
-  castListElement.append(companyMembersElement);
+  if (companyMembers?.length) {
+    const companyMembersElement = generateCompanyMembersList(companyMembers);
+    castListElement.append(companyMembersElement);
+  }
 }
 
 function findCurrentPerformanceOfShow(show) {
   let currentPerformance = null;
-  if (show?.performances?.length > 0 && show.performances[0].endDate >= Date.now()) {
+  if (show?.performances?.length > 0
+    && (show.performances[0].endDate === undefined || show.performances[0].endDate >= Date.now())) {
     currentPerformance = show.performances[0];
   }
   return currentPerformance;
@@ -132,7 +139,7 @@ function findCurrentShow(shows) {
   Object.keys(shows).forEach((showId) => {
     const show = shows[showId];
     const performance = findCurrentPerformanceOfShow(show);
-    if (performance) {
+    if (performance?.startDate && performance.endDate) {
       if (!currentShow) {
         currentShow = show;
         currentPerformance = performance;

@@ -116,8 +116,10 @@ test.each(Object.keys(database.shows))('show id: %s', (showId) => {
   expect(show.id).toEqual(showId);
   expect(show.name).toBeValidString();
   expect(show.description).toBeValidString();
-  validatePhotographData(show.headerImage);
-  checkAssetExists(getShowImageUrl(show, show.headerImage.filename));
+  if (show.headerImage !== undefined) {
+    validatePhotographData(show.headerImage);
+    checkAssetExists(getShowImageUrl(show, show.headerImage.filename));
+  }
 
   // videos
   // TODO - when the videos are fixed
@@ -139,10 +141,16 @@ test.each(Object.keys(database.shows))('show id: %s', (showId) => {
     expect(performance.dates).toBeValidString();
 
     // Check dates
-    expect(performance.endDate.valueOf()).toBeGreaterThanOrEqual(performance.startDate.valueOf());
+    if (performance.startDate !== undefined || performance.endDate !== undefined) {
+      expect(performance.startDate).toBeInstanceOf(Date);
+      expect(performance.endDate).toBeInstanceOf(Date);
+      expect(performance.endDate.valueOf()).toBeGreaterThanOrEqual(performance.startDate.valueOf());
+    }
 
     // Check venue
-    expect(Object.values(database.venues)).toContain(performance.venue);
+    if (performance.venue !== undefined) {
+      expect(Object.values(database.venues)).toContain(performance.venue);
+    }
 
     // Check emcee
     if (performance.emcee !== undefined) {
@@ -160,11 +168,13 @@ test.each(Object.keys(database.shows))('show id: %s', (showId) => {
     }
 
     // Check company members
-    expect(performance.companyMembers).not.toBeNull();
-    performance.companyMembers.forEach((companyMember) => {
-      expect(companyMember).not.toBeNull();
-      expect(Object.values(database.companyMembers)).toContain(companyMember);
-    });
+    if (performance.companyMembers !== undefined) {
+      expect(performance.companyMembers).not.toBeNull();
+      performance.companyMembers.forEach((companyMember) => {
+        expect(companyMember).not.toBeNull();
+        expect(Object.values(database.companyMembers)).toContain(companyMember);
+      });
+    }
 
     if (performance.legacy) {
       // Skip this data for performances prior to the website redesign because the data is missing
@@ -173,24 +183,26 @@ test.each(Object.keys(database.shows))('show id: %s', (showId) => {
       expect(performance.ticketTiers).toBeUndefined();
     } else {
       // Check showtimes
-      expect(performance.showtimes).toBeDefined();
-      expect(performance.showtimes).not.toBeNull();
-      performance.showtimes.forEach((showtime) => {
-        expect(showtime).toBeValidString();
-      });
+      if (performance.showtimes !== undefined) {
+        expect(performance.showtimes).not.toBeNull();
+        performance.showtimes.forEach((showtime) => {
+          expect(showtime).toBeValidString();
+        });
+      }
 
       // Check eventbriteId
-      expect(performance.eventbriteId).toBeDefined();
-      expect(performance.eventbriteId).not.toBeNull();
-      expect(typeof performance.eventbriteId).toEqual('string');
+      if (performance.eventbriteId !== undefined) {
+        expect(performance.eventbriteId).toBeValidString();
+      }
 
       // Check ticketTiers
-      expect(performance.ticketTiers).toBeDefined();
-      expect(performance.ticketTiers).not.toBeNull();
-      performance.ticketTiers.forEach((ticketTier) => {
-        expect(ticketTier.name).toBeValidString();
-        expect(ticketTier.description).toBeValidString();
-      });
+      if (performance.ticketTiers !== undefined) {
+        expect(performance.ticketTiers).not.toBeNull();
+        performance.ticketTiers.forEach((ticketTier) => {
+          expect(ticketTier.name).toBeValidString();
+          expect(ticketTier.description).toBeValidString();
+        });
+      }
     }
   });
 });

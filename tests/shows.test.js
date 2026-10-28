@@ -1,5 +1,15 @@
 import { companyMembers, highlights, shows } from '../docs/scripts/database.js';
-import { populateCastList, findCurrentShow } from '../docs/scripts/shows.js';
+import {
+  populateCastList,
+  populateEventbriteWidget,
+  populateHeaderImage,
+  populateShowtimes,
+  populateVenue,
+  findCurrentPerformanceOfShow,
+  findCurrentShow,
+  checkForPriorPerformances,
+} from '../docs/scripts/shows.js';
+import { getShowUrl } from '../docs/scripts/urls.js';
 
 const originalDocument = globalThis.document;
 
@@ -119,8 +129,111 @@ test.each([
       expect(currentShow?.id).toBe('deliriumnyc');
       expect(currentShow).not.toBe(shows.delirium);
     } else {
-      expect(currentShow).toBeUndefined();
+      expect(currentShow).toBe(shows.muse);
     }
+  } finally {
+    now.mockRestore();
+  }
+});
+
+test('renders Muse with the known MC, guest, choreographer, and company', () => {
+  const performance = shows.muse.performances[0];
+  const castList = document.createElement('ul');
+  populateCastList(
+    castList,
+    performance.emcee,
+    performance.highlights,
+    performance.companyMembers,
+  );
+
+  expect(castList.children).toHaveLength(4);
+  expect(castList.children[0].innerHTML).toContain('Brenna Duffitt');
+  expect(castList.children[1].innerHTML).toBe('<h3>Choreographer</h3> <a href="/performers/jaimewaliczek.html">Jaime Waliczek</a>');
+  expect(castList.children[2].innerHTML).toContain('Emma Curtiss');
+  const companyList = castList.children[3].children[0];
+  expect(companyList.children).toHaveLength(7);
+  ['stellakutz', 'constanzevillines', 'desireekong', 'alexandrakronz', 'laurandrackett', 'evelynbartlett', 'jaimewaliczek'].forEach((id, index) => {
+    expect(companyList.children[index].innerHTML).toBe(`<a href="/performers/${id}.html">${companyMembers[id].name}</a>`);
+  });
+});
+
+test('renders the five Muse times including the family matinee', () => {
+  const showtimes = document.createElement('ul');
+  populateShowtimes(showtimes, shows.muse.performances[0].showtimes);
+
+  expect(showtimes.children.map((child) => child.innerText)).toEqual([
+    '2/5 7:30pm Pacific',
+    '2/6 7:30pm Pacific',
+    '2/7 3:00pm Pacific (family matinee)',
+    '2/12 7:30pm Pacific',
+    '2/13 7:30pm Pacific',
+  ]);
+});
+
+test('displays an undated performance without featuring it or treating it as past', () => {
+  const show = shows.stackedcircus;
+
+  expect(findCurrentPerformanceOfShow(show)).toBe(show.performances[0]);
+  expect(checkForPriorPerformances(show)).toBe(false);
+  expect(findCurrentShow({ stackedcircus: show })).toEqual({
+    currentShow: undefined,
+    currentPerformance: undefined,
+  });
+});
+
+test('omits unknown venue, artwork, and company instead of showing placeholders', () => {
+  const show = shows.stackedcircus;
+  const performance = show.performances[0];
+  const venue = document.createElement('a');
+  const image = document.createElement('img');
+  const castList = document.createElement('ul');
+
+  populateVenue(venue, performance.venue);
+  populateHeaderImage(image, show);
+  populateCastList(castList, performance.emcee, performance.highlights, performance.companyMembers);
+
+  expect(venue.hidden).toBe(true);
+  expect(image.hidden).toBe(true);
+  expect(image.src).toBeUndefined();
+  expect(castList.children).toHaveLength(0);
+});
+
+test('shows a coming-soon message without attempting to load checkout when tickets are unknown', () => {
+  const widget = document.createElement('div');
+  populateEventbriteWidget(widget);
+
+  expect(widget.innerText).toBe('Ticket link coming soon!');
+  expect(widget.hidden).not.toBe(true);
+  expect(widget.children).toHaveLength(0);
+});
+
+test('keeps the June URL when dates are filled in and the performance becomes eligible', () => {
+  const original = shows.stackedcircus;
+  const completed = {
+    ...original,
+    performances: [{
+      ...original.performances[0],
+      startDate: new Date('2027-06-05T19:30:00-07:00'),
+      endDate: new Date('2027-06-06T00:00:00-07:00'),
+    }],
+  };
+  const now = import.meta.jest.spyOn(Date, 'now').mockReturnValue(Date.parse('2027-05-01T00:00:00Z'));
+  try {
+    expect(getShowUrl(completed)).toBe(getShowUrl(original));
+    expect(getShowUrl(completed)).toBe('/shows/stackedcircus.html');
+    expect(findCurrentShow({ stackedcircus: completed }).currentShow).toBe(completed);
+  } finally {
+    now.mockRestore();
+  }
+});
+
+test.each([
+  ['2027-02-14T07:59:59Z', 'muse'],
+  ['2027-02-14T08:00:01Z', undefined],
+])('respects the last Muse performance day at %s', (time, showId) => {
+  const now = import.meta.jest.spyOn(Date, 'now').mockReturnValue(Date.parse(time));
+  try {
+    expect(findCurrentShow(shows).currentShow?.id).toBe(showId);
   } finally {
     now.mockRestore();
   }
