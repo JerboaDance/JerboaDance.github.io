@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { writeFile, existsSync } from 'fs';
+import { writeFile } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -22,7 +22,6 @@ const priorities = {
   important: 0.7,
   nonUrgent: 0.2,
 };
-
 
 // An array with your links
 const links = [
