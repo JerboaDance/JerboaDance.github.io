@@ -19,6 +19,7 @@ const __dirname = path.dirname(__filename);
 
 const priorities = {
   urgent: 1.0,
+  featured: 0.9,
   important: 0.7,
   nonUrgent: 0.2,
 };
@@ -46,7 +47,10 @@ Object.keys(companyMembers).forEach((companyMemberId) => {
     const isCurrent = !!(currentCompanyMembers?.find(
       (currentCompanyMember) => currentCompanyMember.id === companyMember.id,
     ));
-    const priority = isCurrent ? priorities.urgent : priorities.nonUrgent;
+    let priority = isCurrent ? priorities.important : priorities.nonUrgent;
+    if (isCurrent && companyMemberId === 'angelaharriell') {
+      priority = priorities.featured;
+    }
     links.push({ url: getPerformerUrl(companyMember), priority });
   }
 });
@@ -59,7 +63,7 @@ Object.keys(highlights).forEach((highlightId) => {
       (currentHighlight) => currentHighlight.id === highlight.id,
     ));
     const isCurrentEmcee = currentEmcee === highlight;
-    const priority = isCurrent || isCurrentEmcee ? priorities.urgent : priorities.nonUrgent;
+    const priority = isCurrent || isCurrentEmcee ? priorities.important : priorities.nonUrgent;
     links.push({ url: getPerformerUrl(highlight), priority });
   }
 });
