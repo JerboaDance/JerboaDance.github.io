@@ -806,6 +806,51 @@ const highlights = {
 };
 
 const shows = {
+  muse: {
+    id: 'muse',
+    name: 'Muse',
+    description: 'Save the dates for Muse at Yaw Theater in Seattle. Featuring Brenna Duffitt as MC and Emma Curtiss on Cyr wheel.',
+    performances: [
+      {
+        dates: 'February 5, 6, 7, 12, and 13, 2027',
+        showtimes: [
+          '2/5 7:30pm Pacific',
+          '2/6 7:30pm Pacific',
+          '2/7 3:00pm Pacific (family matinee)',
+          '2/12 7:30pm Pacific',
+          '2/13 7:30pm Pacific',
+        ],
+        startDate: new Date('2027-02-05T19:30:00-08:00'),
+        // Expire after the final announced day without assuming a running time.
+        endDate: new Date('2027-02-14T00:00:00-08:00'),
+        venue: venues.yawtheater,
+        emcee: highlights.brennaduffitt,
+        highlights: [
+          highlights.jaimewaliczek,
+          highlights.emmacurtiss,
+        ],
+        companyMembers: [
+          companyMembers.stellakutz,
+          companyMembers.constanzevillines,
+          companyMembers.desireekong,
+          companyMembers.alexandrakronz,
+          companyMembers.laurandrackett,
+          companyMembers.evelynbartlett,
+          companyMembers.jaimewaliczek,
+        ],
+      },
+    ],
+  },
+  stackedcircus: {
+    id: 'stackedcircus',
+    name: 'Jerboa Dance + Stacked Circus',
+    description: 'A new co-creation by Jerboa Dance and Stacked Circus, with one weekend in Seattle and one in Portland. The Seattle performances will be at Yaw Theater; the Portland venue and city order are still to be announced. Stay tuned for more information.',
+    performances: [
+      {
+        dates: 'First two weekends in June 2027',
+      },
+    ],
+  },
   deliriumnyc: {
     id: 'deliriumnyc',
     name: 'Delirium',
