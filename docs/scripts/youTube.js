@@ -15,7 +15,7 @@ function generateYouTubeEmbed(video, options = {}) {
     params.push('enablejsapi=1'); // Enable YouTube API for event tracking
   }
 
-  const queryString = params.length > 0 ? '?' + params.join('&') : '';
+  const queryString = params.length > 0 ? `?${params.join('&')}` : '';
 
   const embedElement = document.createElement('div');
   embedElement.setAttribute('class', `youtube youtube-${video.aspectRatio}`);

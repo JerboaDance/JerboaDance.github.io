@@ -3,7 +3,7 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as database from '../docs/scripts/database.js';
 
-import { getHeadshotImageUrl, getShowImageUrl } from '../docs/scripts/urls.js';
+import { getHeadshotImageUrl, getShowImageUrl, getPerformerUrl } from '../docs/scripts/urls.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -87,6 +87,13 @@ test.each(Object.keys(database.highlights))('highlight id: %s', (highlightId) =>
   expect(highlight.id).toEqual(highlightId);
   expect(highlight.name).toBeValidString();
   expect(highlight.role).toBeValidString();
+
+  if (highlight.companyMember !== undefined) {
+    expect(Object.values(database.companyMembers)).toContain(highlight.companyMember);
+    if (!highlight.companyMember.suppressPage) {
+      checkAssetExists(getPerformerUrl(highlight.companyMember));
+    }
+  }
 
   if (highlight.url !== undefined) {
     // url property is optional, but if present it must not be null

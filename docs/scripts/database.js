@@ -487,7 +487,7 @@ const highlights = {
     id: 'seancalavan',
     name: 'Sean Calavan',
     role: 'Master of Ceremonies',
-    useCompanyMemberPage: true,
+    companyMember: companyMembers.seancalavan,
   },
   stevedolan: {
     id: 'stevedolan',
@@ -503,7 +503,7 @@ const highlights = {
     id: 'thomasphelan',
     name: 'Thomas Phelan',
     role: 'Master of Ceremonies',
-    useCompanyMemberPage: true,
+    companyMember: companyMembers.thomasphelan,
   },
   dustinguyjackson: {
     id: 'dustinguyjackson',
@@ -523,7 +523,7 @@ const highlights = {
     id: 'jaimewaliczek',
     name: 'Jaime Waliczek',
     role: 'Choreographer',
-    useCompanyMemberPage: true,
+    companyMember: companyMembers.jaimewaliczek,
   },
   splinterdance: {
     id: 'splinterdance',
@@ -549,7 +549,7 @@ const highlights = {
     id: 'seancalavanDragQueen',
     name: 'Sean Calavan',
     role: 'Drag Queen',
-    useCompanyMemberPage: true,
+    companyMember: companyMembers.seancalavan,
   },
   iraecho: {
     id: 'iraecho',
@@ -558,7 +558,7 @@ const highlights = {
     headshot: {
       filename: 'IraEcho.jpg',
     },
-    bio: `Ira Echo, with his foundation in dance and music improvisation, is a performer who brings spontaneity, play and virtuosity to their collaborations. Specializing in creating soundscapes for dancers, Ira’s practice lies at the intersection of percussion, somatics, found sound, and eastern european violin tradition. Ira's movement and music practice is informed by their roots in Contact Improvisation as well as their study of Gaga and butoh. Ira dances and performs music regularly in improv communities around the world. Their work has been featured at Fort Mason center for Arts and Culture, Material Institute of New Orleans, Earthdance, San Francisco Movement Arts Festival.`,
+    bio: 'Ira Echo, with his foundation in dance and music improvisation, is a performer who brings spontaneity, play and virtuosity to their collaborations. Specializing in creating soundscapes for dancers, Ira’s practice lies at the intersection of percussion, somatics, found sound, and eastern european violin tradition. Ira\'s movement and music practice is informed by their roots in Contact Improvisation as well as their study of Gaga and butoh. Ira dances and performs music regularly in improv communities around the world. Their work has been featured at Fort Mason center for Arts and Culture, Material Institute of New Orleans, Earthdance, San Francisco Movement Arts Festival.',
   },
   emmacurtiss: {
     id: 'emmacurtiss',
@@ -584,7 +584,7 @@ const highlights = {
     id: 'andreasfetz',
     name: 'Andreas Fetz',
     role: 'Arm Balancer',
-    useCompanyMemberPage: true,
+    companyMember: companyMembers.andreasfetz,
   },
   scottomoore: {
     id: 'scottomoore',
@@ -614,7 +614,7 @@ const highlights = {
     id: 'jenniferelder',
     name: 'Jennifer Elder',
     role: 'Dancer',
-    useCompanyMemberPage: true,
+    companyMember: companyMembers.jenniferelder,
   },
   nellwaliczek: {
     id: 'nellwaliczek',
@@ -724,7 +724,7 @@ const highlights = {
     name: 'Ruben Barron',
     role: 'Magician',
     headshot: {
-      filename: 'RubenBarron.jpg'
+      filename: 'RubenBarron.jpg',
     },
     bio: `Ruben Barron is San Antonio's funniest magician! Ruben is currently performing live shows once again, as well as teaching magic!
     <p>
@@ -758,7 +758,7 @@ const highlights = {
     headshot: {
       filename: 'TerryCrane.jpg',
     },
-    bio: `Terry Crane surrendered to restless urges that led him to walk calmly away with the circus at the tender age of 20. He is the founder of Acrobatic Conundrum, a contemporary circus company based in Seattle. He has performed on 4 continents, in theaters, under the big top, and on the street. Terry is delighted to share his love of rope technique, circus creation, and collaboration via workshops and performances across the globe. As a director, Terry is on a relentless quest to tell true fictions, contradict human isolation, and portray paradox.`,
+    bio: 'Terry Crane surrendered to restless urges that led him to walk calmly away with the circus at the tender age of 20. He is the founder of Acrobatic Conundrum, a contemporary circus company based in Seattle. He has performed on 4 continents, in theaters, under the big top, and on the street. Terry is delighted to share his love of rope technique, circus creation, and collaboration via workshops and performances across the globe. As a director, Terry is on a relentless quest to tell true fictions, contradict human isolation, and portray paradox.',
   },
   oroki: {
     id: 'oroki',
@@ -779,8 +779,8 @@ const shows = {
   nomatter: {
     id: 'nomatter',
     name: '(no) matter',
-    description: `Art has the power to give life meaning, especially amidst our modern stress. Jerboa Dance proudly presents "(no) matter"—a breathtaking performance that explores the full spectrum of human experience through our signature athletic style. From struggle to joy, with moments of humor and playfulness along the way, this production invites you on an unforgettable journey. Guided by our charismatic host, Brenna Duffitt, and joined by spectacular guest performers alongside the Jerboa company, you'll be swept into worlds of imagination and emotion. Take a break from the everyday and let your mind wander through the landscapes we've created. This is more than a performance—it's an experience you won't want to miss.`,
-    shortDescription: `Jerboa Dance presents "(no) matter"—an electrifying show that moves from struggle to joy with humor, heart, and our signature athletic style. Hosted by Brenna Duffitt with dazzling guest performers, this is a wild ride you won't want to miss.`,
+    description: 'Art has the power to give life meaning, especially amidst our modern stress. Jerboa Dance proudly presents "(no) matter"—a breathtaking performance that explores the full spectrum of human experience through our signature athletic style. From struggle to joy, with moments of humor and playfulness along the way, this production invites you on an unforgettable journey. Guided by our charismatic host, Brenna Duffitt, and joined by spectacular guest performers alongside the Jerboa company, you\'ll be swept into worlds of imagination and emotion. Take a break from the everyday and let your mind wander through the landscapes we\'ve created. This is more than a performance—it\'s an experience you won\'t want to miss.',
+    shortDescription: 'Jerboa Dance presents "(no) matter"—an electrifying show that moves from struggle to joy with humor, heart, and our signature athletic style. Hosted by Brenna Duffitt with dazzling guest performers, this is a wild ride you won\'t want to miss.',
     headerImage: {
       filename: 'nomatter.jpg',
     },

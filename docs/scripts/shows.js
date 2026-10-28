@@ -13,6 +13,15 @@ function populateVenue(venueElement, venue) {
   venueElement.innerHTML = `<a href="${venue.url}">${venue.name}, ${venue.city}</a>`;
 }
 
+function initializeEventbriteWidget(eventId, containerId) {
+  window.EBWidgets.createWidget({
+    widgetType: 'checkout',
+    eventId,
+    iframeContainerId: containerId,
+    iframeContainerHeight: 625,
+  });
+}
+
 function populateEventbriteWidget(eventbriteElement, eventbriteId) {
   if (eventbriteId) {
     // Create container div with unique ID
@@ -32,15 +41,6 @@ function populateEventbriteWidget(eventbriteElement, eventbriteId) {
   } else {
     eventbriteElement.hidden = true;
   }
-}
-
-function initializeEventbriteWidget(eventId, containerId) {
-  window.EBWidgets.createWidget({
-    widgetType: 'checkout',
-    eventId: eventId,
-    iframeContainerId: containerId,
-    iframeContainerHeight: 625
-  });
 }
 
 function populateTicketTiers(ticketTiersListElement, ticketTiers) {
@@ -65,11 +65,12 @@ function populateShowtimes(showtimesListElement, showtimes) {
 
 function generateHighlight(highlight) {
   const highlightElement = document.createElement('li');
+  const performer = highlight.companyMember || highlight;
 
   if (highlight.url) {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${highlight.url}">${highlight.name}</a>`;
-  } else if (highlight.bio) {
-    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getPerformerUrl(highlight)}">${highlight.name}</a>`;
+  } else if (!performer.suppressPage && (highlight.companyMember || highlight.bio)) {
+    highlightElement.innerHTML = `<h3>${highlight.role}</h3> <a href="${getPerformerUrl(performer)}">${highlight.name}</a>`;
   } else {
     highlightElement.innerHTML = `<h3>${highlight.role}</h3> ${highlight.name}`;
   }
