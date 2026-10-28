@@ -235,6 +235,16 @@ const companyMembers = {
     bio: `Eric Vlach, originally from Portland, Oregon, graduated from NYU’s Tisch School of the Arts in 2005 with a B.F.A. in dance. As a freelance dancer and digital designer, he manages to satisfy both his artistic and techno-geek appetites. This season, in addition to Jerboa Dance, Eric is working with Lydia Johnson Dance and Eglevsky Ballet.
     `,
   },
+  evelynbartlett: {
+    id: 'evelynbartlett',
+    name: 'Evelyn Bartlett',
+    headshot: {
+      filename: 'EvelynBartlett.jpg',
+    },
+    bio: `Evelyn Bartlett, She/They
+    <p>
+    Evelyn started dancing when she was seven years old.  Evelyn has been dancing for over twenty years in every style of dance available to her.  From ballet to breakdancing, ballroom to stage combat she has absorbed and reveled in every opportunity she has gotten to dance.  In 2017 she graduated from Western Washington University with her Bachelor’s Degree in Dance.  While at WWU, Evelyn had the privilege to participate in Graffiti Dance Theatre for their 2016 season and performed a piece set by Nolan Dennett.  Additionally, she performed under Director Pam Kuntz in Kuntz and Company.  With Kuntz and Company, they performed in “Airings: Voices of our Youth” at middle schools and performing arts spaces around the greater Bellingham area in 2017.  Evelyn also participated in many renditions of the Seattle City Nutcracker in various roles with DASSdance under direction from Daniel Wilkens from 2019-2022.  Years later, she has now found herself in love with aerial dancing and takes every opportunity she has to hang upside down in a Lyra.  Most recently, they have performed in Not Man Apart’s show Queen of the Skies.`,
+  },
   finncronin: {
     id: 'finncronin',
     name: 'Finn Cronin',
