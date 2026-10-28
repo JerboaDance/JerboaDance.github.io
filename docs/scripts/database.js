@@ -103,6 +103,14 @@ const companyMembers = {
     He has spent a summer in Cuba studying Video Dance with Silvina Szperling, and a year in Brazil taking studied in fashion photography. He’s been part of dance collectives in Medellin allowing him to travel with contemporary dance companies. Andr&eacute;s is very excited to be making his Seattle dance debut 
     `,
   },
+  angelaharriell: {
+    id: 'angelaharriell',
+    name: 'Angela Harriell',
+    headshot: {
+      filename: 'AngelaHarriell.jpg',
+    },
+    bio: 'Angela Harriell is the director and choreographer of The Love Show Dancers, and the creator and designer of The Hidden Jewel Box Theater.  She has choreographed for The Public Theater\'s "Shakespeare in the Park", as well as several productions at La Mama, Theater 80, Theater for the New City, The Kraine Theater, and Dixon Place.  Her private/corporate show choreography clients include Vogue magazine, The BBC, Perrier, Yelp, Dom Pérignon, Veuve Clicquot, Virgin Voyages, VICE media, Love Shack Fancy, and Google.  She has set choreography for the live premieres of Banksy\'s film "Exit Through the Gift Shop", TNT Drama\'s premiere of "Claws", "Will" and "Animal Kingdom" and the premiere of the movie "Savages".  She has also created and choreographed shows and performances for multiple nightlife venues including The House of Yes, The Highline, Le Poisson Rouge, The Slipper Room, The Diamond Horseshoe, Soho House, The Standard, The Dream Hotel, Webster Hall,  ZUMA NYC, Hudson Yards, and Bowery Ballroom.  Angela has choreographed 4 times for different NY Fashion Week events.   She was granted a month long residency with Chashama in 2020, and created a show that resulted in 2 photo spreads in The Guardian.  Her dance company, The Love Show NYC, has also toured its productions to Japan, Egypt, Italy, Aruba and Mexico.',
+  },
   angelaschmidt: {
     id: 'angelaschmidt',
     name: 'Angela Schmidt',
@@ -524,6 +532,12 @@ const highlights = {
     name: 'Jaime Waliczek',
     role: 'Choreographer',
     companyMember: companyMembers.jaimewaliczek,
+  },
+  angelaharriell: {
+    id: 'angelaharriell',
+    name: 'Angela Harriell',
+    role: 'Choreographer',
+    companyMember: companyMembers.angelaharriell,
   },
   splinterdance: {
     id: 'splinterdance',
